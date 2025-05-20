@@ -2,6 +2,7 @@ import React from "react";
 import search from "../assets/svg/header/search.svg";
 import heart from "../assets/svg/header/heart1.svg";
 import cart from "../assets/svg/header/cart.svg";
+import user from "../assets/svg/header/user.svg";
 
 const Header = () => {
   return (
@@ -10,7 +11,7 @@ const Header = () => {
         <div className="w-[90%] h-[88px]  rounded-[40px] shadow-lg flex justify-between items-center  px-[30px]">
           <p className="font-[poppins] text-[24px] font-bold">Billy-Mart</p>
 
-          <nav className="w-[367px] h-[38px]  font-[Poppins] flex justify-between ">
+          <nav className="xl:w-[367px] w-[280px] h-[38px] hidden items-center  font-[Poppins] lg:flex justify-between ">
             <a
               href=""
               className="text-[16px] hover:underline hover:text-slate-500 "
@@ -25,7 +26,7 @@ const Header = () => {
             </a>
             <a
               href=""
-              className="text-[16px] hover:underline hover:text-slate-500 "
+              className="text-[16px]  hover:underline hover:text-slate-500 "
             >
               About
             </a>
@@ -37,8 +38,8 @@ const Header = () => {
             </a>
           </nav>
 
-          <div className="w-[376px] h-[38px]  justify-between flex  items-center">
-            <div className="flex flex-1 h-[40px] mr-[20px] px-[10px] py-[10px] pl-[20px] bg-[#00000020] items-center rounded-[20px]">
+          <div className=" xl:w-[496px] md:w-[396px]  h-[38px]  justify-between flex  items-center">
+            <div className="md:flex  hidden flex-1 h-[40px] mr-[20px] px-[10px] py-[10px] pl-[20px] bg-[#00000020] items-center rounded-[20px]">
               <input
                 type="text"
                 className="flex-1 outline-0"
@@ -50,7 +51,7 @@ const Header = () => {
                 className="w-[24px] h-[24px]"
               />
             </div>
-            <div className="flex justify-between w-[70px] ">
+            <div className="flex justify-between w-[130px] ">
               <div className="relative ">
                 <img
                   src={heart}
@@ -67,6 +68,9 @@ const Header = () => {
                         2
                      </p>
 
+              </div>
+              <div>
+                <img src={user} alt="user icon"   className="w-[24px] h-[24px]"/>
               </div>
 
 
