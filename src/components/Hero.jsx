@@ -31,9 +31,9 @@ function Hero () {
     
     const {categories} = useValueContext();
   return (
-    <section className='w-full mt-[150px] h-[500px] flex justify-center bg-slate-100  border-t border-slate-300'>
+    <section className='w-full mt-[150px] md:h-[500px] sm:h-[400px] h-[300px] flex justify-center bg-slate-100  border-t border-slate-300'>
         <div className='w-[90%] px-[30px] flex   '>
-            <div className='pr-[50px] pb-[50px] flex flex-col pt-[30px] border-r border-slate-300 '>
+            <div className='pr-[50px] pb-[50px] hidden md:flex flex-col pt-[30px] border-r border-slate-300 '>
               { categories.map((category,index) => <a href='' key={index} className='text-[18px]  hover:text-slate-500 hover:underline  mb-[16px] font-[poppins]'>
                    { `${category.slice(0,1).toUpperCase()}${category.slice(1,category.length)}`}
                 </a>
@@ -42,7 +42,7 @@ function Hero () {
             </div>
             <div className=' flex-1 h-auto '>
                             <div
-                                    className="relative w-full h-[100%] mx-auto overflow-hidden rounded"
+                                    className="relative w-full h-full mx-auto overflow-hidden rounded"
                                   
                                 >
                     <img src={images[current]} alt="Gallery" className="w-full h-full object-contain" />
