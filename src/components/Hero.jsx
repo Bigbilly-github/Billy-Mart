@@ -10,7 +10,7 @@ import image5 from "../assets/img/hero/img5.png";
 
 const Hero = () => {
 
-    const images = [image2, image3, image4, image5];
+    const images = [image2, image3, image4, image5];   
 
     const [current, setCurrent] = useState(0);
     const length = images.length;
