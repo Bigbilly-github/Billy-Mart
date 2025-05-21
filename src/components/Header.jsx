@@ -7,8 +7,8 @@ import user from "../assets/svg/header/user.svg";
 const Header = () => {
   return (
     <>
-      <header className="h-[150px] fixed right-0 left-0  flex justify-center items-center">
-        <div className="w-[90%] h-[88px]  rounded-[40px] shadow-lg flex justify-between items-center  px-[30px]">
+      <header className="h-[150px] bg-slate-100 fixed right-0 left-0 top-0 flex justify-center items-center">
+        <div className="w-[90%] h-[88px]  bg-white rounded-[40px] shadow-lg flex justify-between items-center  px-[30px]">
           <p className="font-[poppins] text-[24px] font-bold">Billy-Mart</p>
 
           <nav className="xl:w-[367px] w-[280px] h-[38px] hidden items-center  font-[Poppins] lg:flex justify-between ">
