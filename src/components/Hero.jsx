@@ -1,6 +1,6 @@
 import React, { useState,useEffect,useRef } from 'react'
 import { useValueContext } from '../contexts/propscontext'
-import image1 from "../assets/svg/hero/img.svg";
+
 import image2 from "../assets/img/hero/img2.png";
 import image3 from "../assets/img/hero/img3.png";
 import image4 from "../assets/img/hero/img4.png";
@@ -8,7 +8,7 @@ import image5 from "../assets/img/hero/img5.png";
 
 
 
-const Hero = () => {
+function Hero () {
 
     const images = [image2, image3, image4, image5];   
 
