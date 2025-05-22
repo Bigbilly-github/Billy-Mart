@@ -14,7 +14,7 @@ function FlashSales() {
   const scroll = (direction) => {
     const container = carouselRef.current;
     const cardWidth = container.firstChild.offsetWidth + 30;
-    const scrollAmount = cardWidth * 2;
+    const scrollAmount = cardWidth * 1;
 
     if (direction === "left") {
       container.scrollBy({ left: -scrollAmount, behavior: "smooth" });
