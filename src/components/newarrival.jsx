@@ -21,16 +21,16 @@ function NewArrival (){
                  </div>
 
                 <div className="w-[90%] md:h-[600px] flex flex-col items-center md:flex-row md:justify-center mt-[30px] gap-[30px]">
-                            <div className="md:w-[50%] w-[400px] sm:w-[600px] rounded-[4px] relative md:h-[100%] h-[400px] bg-black flex items-center justify-center">
+                            <div className="md:w-[50%] w-[90%] sm:w-[600px] rounded-[4px] relative md:h-[100%] h-[400px] bg-black flex items-center justify-center">
                                 <img src={ps5} alt="" className="object-contain h-[100%] " />
                                 <div className="absolute bottom-[20px] left-[20px]  flex flex-col gap-[10px]">
-                                    <h1 className="font-semibold text-[24px] text-white">
+                                    <h1 className="font-semibold sm:text-[24px] text-[16px] text-white">
                                     PlayStation 5
                                     </h1>
-                                    <p className="text-[14px] text-white">
+                                    <p className="sm:text-[14px] text-[12px] w-[100%]  text-white">
                                     Black and White version of the PS5 coming out on sale.
                                     </p>
-                                    <p className="text-[16px] font-medium text-slate-400">
+                                    <p className="sm:text-[16px] text-[14px] font-medium text-slate-400">
                                         Coming Soon
                                     </p>
 
@@ -38,17 +38,17 @@ function NewArrival (){
 
                             </div>
 
-                            <div className="flex flex-col  md:w-[50%] w-[400px]  sm:w-[600px] gap-[32px] h-[100%]">
+                            <div className="flex flex-col  md:w-[50%] w-[90%]  sm:w-[600px] gap-[32px] h-[100%]">
                                 <div className="w-[100%] relative h-[284px] bg-black rounded-[4px]   ">
                                     <img src={woman} alt="" className="object-contain "/>
                                     <div className="absolute bottom-[20px] left-[20px] flex flex-col gap-[10px]">
-                                            <h1 className="font-semibold text-[24px] text-white">
+                                            <h1 className="font-semibold sm:text-[24px] text-[16px] text-white">
                                             Women’s Collections
                                             </h1>
-                                            <p className="text-[14px] w-[300px] text-white">
+                                            <p className="sm:text-[14px] text-[12px] w-[100%]  text-white">
                                             Featured woman collections that give you another vibe.
                                             </p>
-                                            <p className="text-[16px] font-medium text-slate-400">
+                                            <p className="sm:text-[16px] text-[14px] font-medium text-slate-400">
                                                 Coming Soon
                                             </p>
                                     </div>
@@ -59,13 +59,13 @@ function NewArrival (){
                                     <div className="w-[50%] relative h-[100%] bg-black rounded-[4px]  flex items-center justify-center ">
                                         <img src={speaker} alt="speaker image" className="object-contain " />
                                         <div className="absolute bottom-[20px] left-[20px] flex flex-col gap-[10px]">
-                                            <h1 className="font-semibold text-[24px] text-white">
+                                            <h1 className="font-semibold sm:text-[24px] text-[16px] text-white">
                                             Speakers
                                             </h1>
-                                            <p className="text-[14px] w-[300px] text-white">
+                                            <p className="sm:text-[14px] text-[12px] w-[100%] text-white">
                                             Amazon wireless speakers
                                             </p>
-                                            <p className="text-[16px] font-medium text-slate-400">
+                                            <p className="sm:text-[16px] text-[14px] font-medium text-slate-400">
                                                 Coming Soon
                                             </p>
                                     </div>
@@ -74,13 +74,13 @@ function NewArrival (){
                                     <div className="w-[50%] relative h-[100%] bg-black rounded-[4px]  flex items-center justify-center ">
                                         <img src={gucci} alt="image of a gucci parfum" />
                                         <div className="absolute bottom-[20px] left-[20px] flex flex-col gap-[10px]">
-                                            <h1 className="font-semibold text-[24px] text-white">
+                                            <h1 className="font-semibold sm:text-[24px] text-[16px] text-white">
                                             Perfume
                                             </h1>
-                                            <p className="text-[14px] w-[300px] text-white">
+                                            <p className="sm:text-[14px] text-[12px] w-[100%] text-white">
                                             GUCCI INTENSE OUD EDP
                                             </p>
-                                            <p className="text-[16px] font-medium text-slate-400">
+                                            <p className="sm:text-[16px] text-[14px] font-medium text-slate-400">
                                                 Coming Soon
                                             </p>
                                         </div>
