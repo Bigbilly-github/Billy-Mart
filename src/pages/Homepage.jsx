@@ -5,6 +5,7 @@ import FlashSales from '../components/flashsales'
 import Category from '../components/category'
 import BestSelling from '../components/bestselling'
 import Hero from '../components/hero'
+import Ad from '../components/ad'
 
 
 
@@ -18,6 +19,7 @@ const Homepage = () => {
            <FlashSales/>
             <Category/>
             <BestSelling/>
+            <Ad/>
 
 
         </main>
