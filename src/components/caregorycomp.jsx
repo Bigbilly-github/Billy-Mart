@@ -1,8 +1,16 @@
 
 
+import { useValueContext } from '../contexts/propscontext'
 
 
 function CategoryComp ({categories,carouselRef,selectImage}){
+     const {products} = useValueContext();
+
+     function categoryLength (category){
+        const catLength = products.filter((product,_)=>  product.category === category);
+        return catLength.length;
+
+     }
 
     return(
         <>
@@ -16,7 +24,7 @@ function CategoryComp ({categories,carouselRef,selectImage}){
                       {category}
                     </p>
                     <p className="text-[16px] text-[#00000060]">
-                        84 products
+                        {categoryLength(category)} products
                     </p>
                 </div>
                 
