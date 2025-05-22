@@ -6,6 +6,7 @@ import Category from '../components/category'
 import BestSelling from '../components/bestselling'
 import Hero from '../components/hero'
 import Ad from '../components/ad'
+import NewArrival from '../components/newarrival'
 
 
 
@@ -20,6 +21,7 @@ const Homepage = () => {
             <Category/>
             <BestSelling/>
             <Ad/>
+            <NewArrival/>
 
 
         </main>
