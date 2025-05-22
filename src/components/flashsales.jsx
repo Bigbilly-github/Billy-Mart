@@ -36,7 +36,7 @@ function FlashSales() {
           <div className="w-full h-[380px] mt-[40px]  overflow-hidden ">
             <FlashSalesComp
               products={products}
-              img1={img1}
+              
               carouselRef={carouselRef}
             />
           </div>

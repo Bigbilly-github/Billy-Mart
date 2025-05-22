@@ -2,7 +2,7 @@
 import img from "../assets/svg/flashsales/Fill Heart.svg";
 import image from "../assets/svg/flashsales/Five star.svg"
 
-function FlashSalesComp ({carouselRef,products,img1}){
+function FlashSalesComp ({carouselRef,products}){
 
 
     return(

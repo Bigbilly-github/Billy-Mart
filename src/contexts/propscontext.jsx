@@ -10,6 +10,8 @@ function ContextProvider ({ children }){
     const [products, setProducts] = useState([]);
     const [categories, setCategories] = useState([]);
 
+  
+
    
 
    

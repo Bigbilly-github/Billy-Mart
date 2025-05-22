@@ -82,9 +82,9 @@ function Category (){
             }
       };
 
-      /*if (!Array.isArray(categories) || categories.length === 0) {
+      if (!Array.isArray(categories) || categories.length === 0) {
         return <p className="text-center mt-10">Loading categories...</p>;
-      } */
+      } 
     
 
 
