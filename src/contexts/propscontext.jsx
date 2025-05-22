@@ -11,6 +11,8 @@ function ContextProvider ({ children }){
     const [categories, setCategories] = useState([]);
 
    
+
+   
   
 
 
@@ -20,7 +22,7 @@ function ContextProvider ({ children }){
             try{
                 const response = await fetch('https://dummyjson.com/products?limit=0');
                 const responseData = await response.json();
-                setProducts(responseData);
+                setProducts(responseData.products);
                 const response1 =await fetch('https://dummyjson.com/products/category-list');
                 const response1Data = await response1.json();
                 setCategories(response1Data.slice(0,10));
