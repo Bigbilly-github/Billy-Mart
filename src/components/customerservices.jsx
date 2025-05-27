@@ -1,6 +1,6 @@
-import services from '../assets/svg/customer service/services.svg'
-import services1 from '../assets/svg/customer service/services1.svg'
-import services2 from '../assets/svg/customer service/services2.svg'
+import services from '../assets/svg/customerservice/services.svg'
+import services1 from '../assets/svg/customerservice/services1.svg'
+import services2 from '../assets/svg/customerservice/services2.svg'
 
 
 
