@@ -1,4 +1,4 @@
-import React, { useState,useEffect,useRef } from 'react'
+import  { useState,useEffect,useRef } from 'react'
 import { useValueContext } from '../contexts/propscontext'
 
 import image2 from "../assets/img/hero/img2.png";
