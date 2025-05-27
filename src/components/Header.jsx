@@ -3,6 +3,7 @@ import search from "../assets/svg/header/search.svg";
 import heart from "../assets/svg/header/heart1.svg";
 import cart from "../assets/svg/header/cart.svg";
 import user from "../assets/svg/header/user.svg";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -12,18 +13,18 @@ const Header = () => {
           <p className="font-[poppins] text-[24px] font-bold">Billy-Mart</p>
 
           <nav className="xl:w-[367px] w-[280px] h-[38px] hidden items-center  font-[Poppins] lg:flex justify-between ">
-            <a
-              href=""
+            <Link
+              to="/"
               className="text-[16px] hover:underline hover:text-slate-500 "
             >
               Home
-            </a>
-            <a
-              href=""
+            </Link>
+            <Link
+              to="/shop"
               className="text-[16px] hover:underline hover:text-slate-500"
             >
               Shop
-            </a>
+            </Link>
             <a
               href=""
               className="text-[16px]  hover:underline hover:text-slate-500 "

@@ -6,6 +6,7 @@ import ContextProvider from '../src/contexts/propscontext.jsx'
 import './index.css'
 import App from './App.jsx'
 import Homepage from './pages/Homepage.jsx'
+import Shop from './pages/shop.jsx';
 
 const ScrollToTop = () => {
   const location = useLocation();
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
   {
     path:"/",
     element:<Layout><Homepage /></Layout>,
+  },
+  {
+    path:"/shop",
+    element:<Layout><Shop/></Layout>,
   },
 ])
 
