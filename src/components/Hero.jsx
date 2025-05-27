@@ -8,7 +8,7 @@ import image5 from "../assets/img/hero/img5.png"
 
 
 
-function Hero () {
+function Hero1 () {
 
     const images = [image2, image3, image4, image5];   
 
@@ -70,4 +70,4 @@ function Hero () {
   )
 }
 
-export default Hero
+export default Hero1
