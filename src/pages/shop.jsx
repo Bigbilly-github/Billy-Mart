@@ -1,5 +1,6 @@
 import Category from "../components/category"
 import Header from "../components/Header"
+import ShopDisplay from "../components/shopdisplay"
 
 
 
@@ -9,7 +10,8 @@ function Shop (){
         <>
         <Header/>
         <main>
-            <Category/>
+          
+            <ShopDisplay/>
         </main>
         </>
     )

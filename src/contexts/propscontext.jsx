@@ -7,8 +7,39 @@ const valueContext = createContext();
 
 function ContextProvider ({ children }){
 
+
+    const [displayterm, setDisplayTerm] = useState("category"); 
+     const [displayValue, setDisplayValue] = useState("beauty"); 
     const [products, setProducts] = useState([]);
     const [categories, setCategories] = useState([]);
+
+  
+ 
+
+
+    function HandleCategory (e){
+        setDisplayTerm("category");
+        setDisplayValue(e.target.value);
+
+    }
+    function HandleBrands (e){
+        setDisplayTerm("brand");
+        setDisplayValue(e.target.value);
+
+    }
+
+    
+
+    function ToUp (option){
+        const firstLetter = option.slice(0,1).toUpperCase();
+        const restOfLetters = option.slice(1,option.length)
+        const newOption= `${firstLetter}${restOfLetters}`
+
+        return newOption;
+        
+    }
+   
+   
 
   
 
@@ -28,6 +59,7 @@ function ContextProvider ({ children }){
                 const response1 =await fetch('https://dummyjson.com/products/category-list');
                 const response1Data = await response1.json();
                 setCategories(response1Data.slice(0,10));
+             
                
          
 
@@ -42,7 +74,7 @@ function ContextProvider ({ children }){
     },[])
     return(
         <>
-         <valueContext.Provider value={{products, categories}}>
+         <valueContext.Provider value={{products, categories, HandleBrands,ToUp,HandleCategory,displayValue,setDisplayTerm,displayterm,setDisplayValue}}>
                  {children}
         </valueContext.Provider>
         </>

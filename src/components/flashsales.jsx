@@ -7,7 +7,7 @@ import BodyDetail from "./bodydetail";
 
 function FlashSales() {
   const { products } = useValueContext();
-  console.log(products);
+
 
   const carouselRef = useRef(null);
 

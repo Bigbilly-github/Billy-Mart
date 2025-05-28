@@ -7,7 +7,7 @@ import Ad from '../components/ad'
 import NewArrival from '../components/newarrival'
 import CustomerService from '../components/customerservices'
 import Footer from '../components/footer'
-import Hero from '../components/Hero';
+import Hero from '../components/Hero'
 
 
 
