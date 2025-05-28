@@ -14,6 +14,13 @@ function ContextProvider ({ children }){
     const [categories, setCategories] = useState([]);
 
   
+     
+  
+
+
+   
+
+  
  
 
 
@@ -25,6 +32,14 @@ function ContextProvider ({ children }){
     function HandleBrands (e){
         setDisplayTerm("brand");
         setDisplayValue(e.target.value);
+
+    }
+    function HandleRatings (e){
+         setDisplayTerm("rating");
+         let ratingvalue = e.target.value;
+         const ratingArray= products.filter((product,_)=> Math.floor(product.rating)=== ratingvalue);
+         displayDataRef.current = ratingArray;
+
 
     }
 
@@ -74,7 +89,7 @@ function ContextProvider ({ children }){
     },[])
     return(
         <>
-         <valueContext.Provider value={{products, categories, HandleBrands,ToUp,HandleCategory,displayValue,setDisplayTerm,displayterm,setDisplayValue}}>
+         <valueContext.Provider value={{HandleRatings,products, categories, HandleBrands,ToUp,HandleCategory,displayValue,setDisplayTerm,displayterm,setDisplayValue}}>
                  {children}
         </valueContext.Provider>
         </>

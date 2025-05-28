@@ -6,14 +6,15 @@ import { useValueContext } from '../contexts/propscontext'
 
 
 
+
 function ShopDisplay (){
      const {categories,ToUp,products,HandleCategory,displayValue,setDisplayTerm,displayterm,setDisplayValue} = useValueContext();
-     const displayDataRef =useRef([]);
-    
+   
+  
+       const displayDataRef =useRef([]);
    
     const display = products.filter(product => product[displayterm] === displayValue )
-    displayDataRef.current = display;
-  
+      displayDataRef.current = display;
     
     return(
         <>
