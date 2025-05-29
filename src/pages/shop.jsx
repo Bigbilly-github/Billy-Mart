@@ -8,16 +8,18 @@ import ProductDetails from "../components/productdetails"
 import ProductDisplay from "../components/productdisplay"
 import ShopDisplay from "../components/shopdisplay"
 import ShopHero from "../components/shophero"
+import { useParams } from "react-router-dom"
 
 
 
 function Shop (){
+      const { category, title } = useParams();
 
     return(
         <>
         <Header/>
         <main>
-            <ShopHero/>
+            { category && title ?   <ProductDetails/> :  <ShopHero/>}
             <ProductDisplay/>
             <Category/>
             <BestSelling/>

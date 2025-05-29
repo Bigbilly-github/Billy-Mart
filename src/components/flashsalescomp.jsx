@@ -4,6 +4,7 @@ import rating1 from "../assets/img/flashsalescomp/1rating.png";
 import rating2 from "../assets/img/flashsalescomp/2rating.png";
 import rating3 from "../assets/img/flashsalescomp/3rating.png";
 import rating4 from "../assets/img/flashsalescomp/4rating.png";
+import { useNavigate } from 'react-router-dom';
 
 function FlashSalesComp({ carouselRef, products }) {
 
@@ -22,6 +23,10 @@ function FlashSalesComp({ carouselRef, products }) {
         image;
     }
   }
+      const navigate = useNavigate();
+    const handleProductClick = (category,title) => {
+        navigate(`shop/:${category}/:${title}`);
+      };
 
   return (
     <>
@@ -30,7 +35,7 @@ function FlashSalesComp({ carouselRef, products }) {
         className="flex gap-[30px] overflow-x-auto scroll-smooth no-scrollbar transition-all duration-300"
       >
         {products.map((product, _) => (
-          <div key={product.id} className="w-[270px] h-[100%] ">
+          <div onClick={()=>handleProductClick(product.category,product.title)}  key={product.id} className="w-[270px] h-[100%] ">
             <div className="w-full relative h-[100%] bg-[#F5F5F5] flex  items-center justify-center  rounded-[4px]">
               <img
                 src={product.thumbnail}
