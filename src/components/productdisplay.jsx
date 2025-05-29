@@ -36,7 +36,7 @@ function ProductDisplay (){
     return(
         <>
 
-         <section className="w-full h-auto flex justify-center mt-[70px] mb-[140px] ">
+         <section className="w-full h-auto flex justify-center mt-[70px] mb-[50px] ">
             <div className="w-[90%] px-[30px] flex  flex-col ">
                 <BodyDetail text={displayterm} maintext={displayValue} scroll={scroll} />
 

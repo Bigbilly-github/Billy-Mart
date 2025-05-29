@@ -91,7 +91,7 @@ function Category (){
     return(
         <>
      
-         <section className="w-full h-auto flex justify-center mt-[50px] mb-[140px] ">
+         <section className="w-full h-auto flex justify-center  mb-[140px] ">
                     <div className='w-[90%] px-[30px] flex  flex-col '>
                     <BodyDetail text="categories" maintext="Browse By Category" scroll={scroll}/> 
         

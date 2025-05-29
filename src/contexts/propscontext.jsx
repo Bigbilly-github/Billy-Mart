@@ -13,6 +13,9 @@ function ContextProvider ({ children }){
     const [products, setProducts] = useState([]);
     const [categories, setCategories] = useState([]);
 
+     const [brandterm,setBrandTerm] = useState("brand");
+     const [brandvalue,setBrandValue] = useState("");
+
     console.log(products);
     
     const scrollToTop = () => {
@@ -43,16 +46,17 @@ function ContextProvider ({ children }){
     }
 
     }
-    function HandleBrands (e){
-        setDisplayTerm("brand");
-        setDisplayValue(e.target.value);
-         if (window.innerWidth < 640 ){
-        scrollToTop()
+
+     function HandleBrands (e){
+      
+        setBrandValue(e.target.value);
+         
        
 
     }
+   
 
-}
+
  
 
     
@@ -99,9 +103,10 @@ function ContextProvider ({ children }){
         getApiDetail();
 
     },[])
+
     return(
         <>
-         <valueContext.Provider value={{products, categories, HandleBrands,ToUp,HandleCategory,displayValue,setDisplayTerm,displayterm,setDisplayValue}}>
+         <valueContext.Provider value={{brandterm,brandvalue,products, categories, HandleBrands,ToUp,HandleCategory,displayValue,setDisplayTerm,displayterm,setDisplayValue}}>
                  {children}
         </valueContext.Provider>
         </>
