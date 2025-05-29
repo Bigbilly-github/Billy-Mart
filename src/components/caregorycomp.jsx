@@ -12,10 +12,18 @@ function CategoryComp ({categories,carouselRef,selectImage}){
         return catLength.length;
 
      }
+      const scrollToTop = () => {
+    window.scrollTo({
+      top: 0, 
+      behavior: "smooth",
+    });
+  };
 
         function DisplayCategory (value){
             setDisplayValue(value);
             navigate('/shop');
+            scrollToTop();
+
 
 
       

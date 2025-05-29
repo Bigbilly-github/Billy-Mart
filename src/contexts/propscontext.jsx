@@ -18,12 +18,7 @@ function ContextProvider ({ children }){
 
     console.log(products);
     
-    const scrollToTop = () => {
-    window.scrollTo({
-      top: 700, 
-      behavior: "smooth",
-    });
-  };
+   
 
   
      
@@ -39,11 +34,7 @@ function ContextProvider ({ children }){
     function HandleCategory (e){
         setDisplayTerm("category");
         setDisplayValue(e.target.value);
-         if (window.innerWidth < 640 ){
-        scrollToTop()
-       
-
-    }
+    
 
     }
 
