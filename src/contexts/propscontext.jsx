@@ -9,9 +9,18 @@ function ContextProvider ({ children }){
 
 
     const [displayterm, setDisplayTerm] = useState("category"); 
-     const [displayValue, setDisplayValue] = useState("beauty"); 
+     const [displayValue, setDisplayValue] = useState("groceries"); 
     const [products, setProducts] = useState([]);
     const [categories, setCategories] = useState([]);
+
+    console.log(products);
+    
+    const scrollToTop = () => {
+    window.scrollTo({
+      top: 700, 
+      behavior: "smooth",
+    });
+  };
 
   
      
@@ -27,21 +36,24 @@ function ContextProvider ({ children }){
     function HandleCategory (e){
         setDisplayTerm("category");
         setDisplayValue(e.target.value);
+         if (window.innerWidth < 640 ){
+        scrollToTop()
+       
+
+    }
 
     }
     function HandleBrands (e){
         setDisplayTerm("brand");
         setDisplayValue(e.target.value);
+         if (window.innerWidth < 640 ){
+        scrollToTop()
+       
 
     }
-    function HandleRatings (e){
-         setDisplayTerm("rating");
-         let ratingvalue = e.target.value;
-         const ratingArray= products.filter((product,_)=> Math.floor(product.rating)=== ratingvalue);
-         displayDataRef.current = ratingArray;
 
-
-    }
+}
+ 
 
     
 
@@ -89,7 +101,7 @@ function ContextProvider ({ children }){
     },[])
     return(
         <>
-         <valueContext.Provider value={{HandleRatings,products, categories, HandleBrands,ToUp,HandleCategory,displayValue,setDisplayTerm,displayterm,setDisplayValue}}>
+         <valueContext.Provider value={{products, categories, HandleBrands,ToUp,HandleCategory,displayValue,setDisplayTerm,displayterm,setDisplayValue}}>
                  {children}
         </valueContext.Provider>
         </>

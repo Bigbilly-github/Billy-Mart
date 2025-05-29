@@ -99,7 +99,7 @@ function Category (){
                        
         
                         <div  className='w-full h-[308px] mt-[40px]  overflow-hidden '>
-                            <CategoryComp categories={categories} carouselRef={carouselRef} selectImage={selectImage}/>
+                            <CategoryComp categories={categories.slice(0,10)} carouselRef={carouselRef} selectImage={selectImage}/>
                       
         
         

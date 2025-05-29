@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useValueContext } from "../contexts/propscontext";
-import img from "../assets/svg/flashsales/Frame 611.svg";
-import img1 from "../assets/svg/flashsales/Five star.svg";
+
 import FlashSalesComp from "./flashsalescomp";
 import BodyDetail from "./bodydetail";
 
@@ -35,7 +34,7 @@ function FlashSales() {
 
           <div className="w-full h-[380px] mt-[40px]  overflow-hidden ">
             <FlashSalesComp
-              products={products}
+              products={products.slice(0, 25)}
               
               carouselRef={carouselRef}
             />

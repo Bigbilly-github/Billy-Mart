@@ -6,7 +6,7 @@ import rating3 from "../assets/img/flashsalescomp/3rating.png";
 import rating4 from "../assets/img/flashsalescomp/4rating.png";
 
 function FlashSalesComp({ carouselRef, products }) {
-    
+
   function GetRatings(rating) {
     const productRating = Math.floor(rating);
     switch (productRating) {
@@ -29,7 +29,7 @@ function FlashSalesComp({ carouselRef, products }) {
         ref={carouselRef}
         className="flex gap-[30px] overflow-x-auto scroll-smooth no-scrollbar transition-all duration-300"
       >
-        {products.slice(0, 25).map((product, _) => (
+        {products.map((product, _) => (
           <div key={product.id} className="w-[270px] h-[100%] ">
             <div className="w-full relative h-[100%] bg-[#F5F5F5] flex  items-center justify-center  rounded-[4px]">
               <img
@@ -52,7 +52,7 @@ function FlashSalesComp({ carouselRef, products }) {
                 <img
                   src={GetRatings(product.rating)}
                   alt="rating icon"
-                  className="w-[100px] "
+                  className="w-[100px] bg-transparent "
                 />
                 <p>({product.stock})</p>
               </div>

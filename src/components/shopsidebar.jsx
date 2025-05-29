@@ -12,39 +12,13 @@ function ShopSidebar (){
      const {categories,ToUp,products,HandleCategory,HandleBrands,HandleRatings} = useValueContext();
       const brands = products.map((product,_)=> product.brand )
 
-      const ratings = [
-        {
-            image:rating1,
-            value:"1",
-            text:"rating1"
-        },
-         {
-            image:rating2,
-            value:"2",
-              text:"rating2"
-        },
-         {
-            image:rating3,
-            value:"3",
-              text:"rating3"
-        },
-         {
-            image:rating4,
-            value:"4",
-              text:"rating4"
-        },
-         {
-            image:rating5,
-            value:"5",
-              text:"rating5"
-        },
-       ]
+     
    
   
 
     return(
         <>
-            <div className="w-[20%]  pl-[22px] ">
+            <div className="lg:w-[20%] sm:w-[30%] w-[90%] pl-[22px] ">
                 <h1 className="font-semibold text-[20px]">
                     Filter by categories
                 </h1>
@@ -69,18 +43,7 @@ function ShopSidebar (){
                 )}
                 </div>
 
-                 <h1 className="font-semibold text-[20px]  ">
-                    Filter by ratings
-                </h1>
 
-                 <div className="mt-[16px]">
-                  { ratings.map((rating,index)=>  <div key={index} className="flex gap-[8px] mb-[8px]">
-                        <input type="radio" name="ratings" id={rating.text} value={rating.value}  />
-                       <label htmlFor={rating.text}><img src={rating.image} alt="" className='w-[100px] object-contain' /></label> 
-                       
-                    </div>
-                )}
-                </div>
 
 
                
