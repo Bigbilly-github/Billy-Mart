@@ -69,6 +69,10 @@ function Category (){
 
 
      }
+
+     function DisplayCategory (){
+      
+     }
     
         const scroll = (direction) => {
             const container = carouselRef.current;
