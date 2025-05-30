@@ -21,10 +21,10 @@ function ProductDetails ({title}){
 
     return(
         <>
-        <section className="w-full h-auto flex mt-[50px]  justify-center mb-[140px]">
-           { selectedProduct.map((product,_)=> <div key={product.id} className="flex flex-col items-center w-[100%]"> <div key={product.id} className="w-[90%]  flex lg:flex-row flex-col  gap-[50px] ">
-                <div className="lg:w-[60%] w-[100%] flex  ">
-                    <div className="lg:w-[20%] w-[30%] lg:mr-[50px] mr-[20px]  ">
+        <section className="w-full h-auto flex mt-[50px]  justify-center mb-[140px] ">
+           { selectedProduct.map((product,_)=> <div key={product.id} className="flex flex-col  items-center w-[100%]"> <div key={product.id} className="w-[90%]  flex xl:flex-row flex-col  gap-[50px] ">
+                <div className="xl:w-[60%] w-[100%] flex  ">
+                    <div className="lg:w-[20%] w-[30%] xl:mr-[50px] mr-[20px]  ">
                         
                         <div className="flex  bg-white gap-[20px] flex-col g">
                             { product.images.map((images,index) => <div key={index} className="h-[138px] bg-slate-100 flex justify-center items-center "> <img src={images} alt="image"  className="  w-[50%] object-contain "/></div>)}
@@ -33,14 +33,14 @@ function ProductDetails ({title}){
                     
 
                     </div>
-                    <div className="flex-1 bg-slate-100 rounded-[4px] flex justify-center items-center lg:mr-[50px]">
+                    <div className="flex-1 bg-slate-100 rounded-[4px] flex justify-center items-center xl:mr-[50px]">
                         <img src={product.thumbnail} alt="image"  className="h-[60%] rounded-[4px]"/>
 
                     </div>
 
                 </div>
 
-                <div className="flex-1 px-[20px] pt-[20px]">
+                <div className="flex-1 px-[20px] pt-[20px] border-b pb-[50px] border-slate-500">
                     <h1 className="text-[24px] font-semibold text-black">
                         {product.title}
                     </h1>
