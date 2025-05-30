@@ -13,20 +13,21 @@ import { useParams } from "react-router-dom"
 
 
 function Shop (){
-      const { category, title } = useParams();
+      const { title } = useParams();
+   
 
     return(
         <>
         <Header/>
         <main>
-            { category && title ?   <ProductDetails/> :  <ShopHero/>}
+            {  title ?   <ProductDetails title={title}/> :  <ShopHero/>}
             <ProductDisplay/>
             <Category/>
             <BestSelling/>
             <ShopDisplay/>
             <FlashSales/>
             <NewArrival/>
-            <ProductDetails/>
+            <ProductDetails title={title}/>
           
        
         </main>
