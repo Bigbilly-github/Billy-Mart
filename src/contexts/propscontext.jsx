@@ -100,9 +100,10 @@ function ContextProvider ({ children }){
         
     }
     function addToCart (cart,id,price,cartitemdeliverychoice,cartitemquantity) {
-        
+        const present = cart.filter(item => item.id===id);
 
-        const newCartItem = {
+        if (present.length ===0){
+            const newCartItem = {
             id:id,
             price:price,
             quantity:cartitemquantity,
@@ -111,6 +112,24 @@ function ContextProvider ({ children }){
         };
         setCart(c=>[...c,newCartItem]);
         console.log(cart);
+
+        }
+        else {
+            const updatedCart = cart.map(item => {
+            if (item.id === id) {
+                return {
+                    ...item,
+                    quantity: Number(item.quantity) + Number(cartitemquantity),
+                    delivery: cartitemdeliverychoice
+                };
+            }
+            return item;
+        });
+        setCart(updatedCart);
+        }
+        
+
+        
 
 
     }
