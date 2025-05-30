@@ -1,11 +1,13 @@
 import React from "react";
 import search from "../assets/svg/header/search.svg";
 import heart from "../assets/svg/header/heart1.svg";
-import cart from "../assets/svg/header/cart.svg";
+import carticon from "../assets/svg/header/cart.svg";
 import user from "../assets/svg/header/user.svg";
 import { Link } from "react-router-dom";
+import { useValueContext } from "../contexts/propscontext";
 
 const Header = () => {
+   const { cart} = useValueContext();
   return (
     <>
       <header className="h-[150px] sm:bg-[red] md:bg-[blue] lg:bg-[orange] xl:bg-[brown] z-30 bg-slate-100 fixed right-0 left-0 top-0 flex justify-center items-center">
@@ -64,9 +66,9 @@ const Header = () => {
                 </p>
               </div>
               <div className="relative">
-                    <img src={cart} alt="cart icon" className="w-[24px] h-[24px]" />
+                    <img src={carticon} alt="cart icon" className="w-[24px] h-[24px]" />
                     <p className="absolute -top-[15px] -right-[5px] font-[poppins] font-medium">
-                        2
+                        {cart.length}
                      </p>
 
               </div>
