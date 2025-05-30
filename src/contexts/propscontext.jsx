@@ -29,9 +29,7 @@ function ContextProvider ({ children }){
     
     
        console.log(cart);
-          console.log(cartitemdeliverychoice);
-            
-                   console.log(cartitemquantity);
+        
 
   
      
@@ -102,16 +100,17 @@ function ContextProvider ({ children }){
     function addToCart (cart,id,price,cartitemdeliverychoice,cartitemquantity) {
         const present = cart.filter(item => item.id===id);
 
-        if (present.length ===0){
+        if(cartitemquantity > 0){
+            if (present.length ===0){
             const newCartItem = {
             id:id,
             price:price,
-            quantity:cartitemquantity,
+            quantity:Number(cartitemquantity),
             delivery:cartitemdeliverychoice
 
         };
         setCart(c=>[...c,newCartItem]);
-        console.log(cart);
+        
 
         }
         else {
@@ -127,6 +126,7 @@ function ContextProvider ({ children }){
         });
         setCart(updatedCart);
         }
+    }
         
 
         

@@ -67,7 +67,7 @@ function ProductDetails ({title}){
 
                         <div className="flex flex-col mt-[50px] gap-[10px] ">
                             <div className="flex gap-[10px] items-center ">
-                                  <input type="radio"  id="free" value="0" name="delivery" onChange={HandleDelivery} className="mr-[10px]"/>
+                                  <input type="radio"  id="free" value="0" checked={cartitemdeliverychoice === "0"} name="delivery" onChange={HandleDelivery} className="mr-[10px]"/>
                                 <div className="flex flex-col">
                                     <div>
                                       
@@ -85,7 +85,7 @@ function ProductDetails ({title}){
 
                             </div>
                              <div className="flex gap-[10px] items-center ">
-                                <input type="radio"  id="sevendays" value="25" name="delivery" onChange={HandleDelivery} className="mr-[10px]"/>
+                                <input type="radio"  id="sevendays" value="25" name="delivery" checked={cartitemdeliverychoice === "25"}  onChange={HandleDelivery} className="mr-[10px]"/>
                                 <div className="flex flex-col">
                                     <div>
                                       
