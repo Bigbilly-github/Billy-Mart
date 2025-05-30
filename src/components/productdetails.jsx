@@ -9,10 +9,10 @@ import RelatedItems from "./relateditems";
 
 
 function ProductDetails ({title}){
-     const { products,GetRatings} = useValueContext();
+     const { products,GetRatings,HandleDelivery,HandleQuantity,addToCart,cart,cartitemdeliverychoice,cartitemquantity} = useValueContext();
 
     const selectedProduct = products.filter(product => product.title === title);
-    console.log(selectedProduct);
+   
 
     function RelatedCategories (category) {
         const CategoryArray= products.filter(product=>  product.category === category)
@@ -22,10 +22,10 @@ function ProductDetails ({title}){
     return(
         <>
         <section className="w-full h-auto flex mt-[50px] justify-center mb-[140px]">
-           { selectedProduct.map((product,_)=> <div className="flex flex-col items-center w-[100%]"> <div key={product.id} className="w-[90%] flex ">
+           { selectedProduct.map((product,_)=> <div key={product.id} className="flex flex-col items-center w-[100%]"> <div key={product.id} className="w-[90%] flex ">
                 <div className="w-[15%] mr-[50px]  ">
                     <div className="flex  bg-white gap-[20px] flex-col g">
-                         { product.images.map(images => <div className="h-[138px] bg-slate-100 flex justify-center items-center "> <img src={images} alt="image"  className="  w-[50%] object-contain "/></div>)}
+                         { product.images.map((images,index) => <div key={index} className="h-[138px] bg-slate-100 flex justify-center items-center "> <img src={images} alt="image"  className="  w-[50%] object-contain "/></div>)}
 
                     </div>
                   
@@ -53,25 +53,30 @@ function ProductDetails ({title}){
                      </p>
                    
                       <div className="flex  gap-[15px] mt-[30px]">
-                            <select name="quantity" id="" value="" className="px-[12px] outline-0 text-[18px] rounded-[5px] bg-slate-200 ">
-                                <option value="">Select quantity</option>
+                            <select name="quantity" id="quantity" defaultValue="" onChange={HandleQuantity} className="px-[12px] outline-0 text-[18px] rounded-[5px] bg-slate-200 ">
+                                <option disabled  hidden  value="">Select quantity</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
                                     <option value="5">5</option>
                             </select>
-                            <button className="cursor-pointer px-[20px] hover:bg-white hover:text-[red] duration-150 py-[10px] bg-[red] font-medium rounded-[5px] text-white"> Add to Cart</button>
+                            <button onClick={()=>addToCart(cart,product.id,product.price,cartitemdeliverychoice,cartitemquantity)} className="cursor-pointer px-[20px] hover:bg-white hover:text-[red] duration-150 py-[10px] bg-[red] font-medium rounded-[5px] text-white"> Add to Cart</button>
                             <img src={img} alt="heart icon" />
                         </div> 
 
                         <div className="flex flex-col mt-[50px] gap-[10px] ">
                             <div className="flex gap-[10px] items-center ">
-                                <img src={deliveryicon} alt="delivery truck icon" />
+                                  <input type="radio"  id="free" value="0" name="delivery" onChange={HandleDelivery} className="mr-[10px]"/>
                                 <div className="flex flex-col">
-                                    <p className="font-medium text-[16px]">
-                                        FREE DELIVERY
-                                    </p>
+                                    <div>
+                                      
+                                        <label  htmlFor="free" className="font-medium text-[16px]">
+                                            FREE DELIVERY
+                                        </label>
+
+                                    </div>
+
                                     <p className="font-medium text-[12px] text-slate-600 ">
                                         Get your item within 21 days of placing order.
                                     </p>
@@ -80,11 +85,15 @@ function ProductDetails ({title}){
 
                             </div>
                              <div className="flex gap-[10px] items-center ">
-                                <img src={deliveryicon} alt="delivery truck icon" />
+                                <input type="radio"  id="sevendays" value="25" name="delivery" onChange={HandleDelivery} className="mr-[10px]"/>
                                 <div className="flex flex-col">
-                                    <p className="font-medium text-[16px]">
-                                         7 DAYS DELIVERY 
-                                    </p>
+                                    <div>
+                                      
+                                        <label  htmlFor="sevendays" className="font-medium text-[16px]">
+                                           7 DAYS DELIVERY FOR $25
+                                        </label>
+
+                                    </div>
                                     <p className="font-medium text-slate-600 text-[12px]">
                                         Get your item within 7 days of placing order.
                                     </p>

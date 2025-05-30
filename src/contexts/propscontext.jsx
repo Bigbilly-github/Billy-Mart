@@ -21,10 +21,17 @@ function ContextProvider ({ children }){
 
      const [brandterm,setBrandTerm] = useState("brand");
      const [brandvalue,setBrandValue] = useState("Rolex");
+     const  [cart, setCart] = useState([]);
+     const [cartitemquantity, setCartItemQuantity]= useState(0);
+    const [cartitemdeliverychoice, setCartItemDeliveryChoice]= useState(0);
 
-    console.log(products);
+
     
-   
+    
+       console.log(cart);
+          console.log(cartitemdeliverychoice);
+            
+                   console.log(cartitemquantity);
 
   
      
@@ -49,6 +56,15 @@ function ContextProvider ({ children }){
         setBrandValue(e.target.value);
          
        
+
+    }
+
+    function HandleDelivery (e){
+        setCartItemDeliveryChoice(e.target.value);
+
+    }
+      function HandleQuantity (e){
+        setCartItemQuantity(e.target.value);
 
     }
 
@@ -82,6 +98,21 @@ function ContextProvider ({ children }){
 
         return newOption;
         
+    }
+    function addToCart (cart,id,price,cartitemdeliverychoice,cartitemquantity) {
+        
+
+        const newCartItem = {
+            id:id,
+            price:price,
+            quantity:cartitemquantity,
+            delivery:cartitemdeliverychoice
+
+        };
+        setCart(c=>[...c,newCartItem]);
+        console.log(cart);
+
+
     }
    
    
@@ -120,7 +151,7 @@ function ContextProvider ({ children }){
 
     return(
         <>
-         <valueContext.Provider value={{GetRatings,brandterm,brandvalue,products, categories, HandleBrands,ToUp,HandleCategory,displayValue,setDisplayTerm,displayterm,setDisplayValue}}>
+         <valueContext.Provider value={{addToCart,cart,cartitemdeliverychoice,cartitemquantity,HandleQuantity,HandleDelivery,GetRatings,brandterm,brandvalue,products, categories, HandleBrands,ToUp,HandleCategory,displayValue,setDisplayTerm,displayterm,setDisplayValue}}>
                  {children}
         </valueContext.Provider>
         </>
