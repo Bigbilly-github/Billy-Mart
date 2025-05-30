@@ -7,6 +7,7 @@ import './index.css'
 import App from './App.jsx'
 import Homepage from './pages/Homepage.jsx'
 import Shop from './pages/shop.jsx';
+import Cart from './pages/cart.jsx';
 
 const ScrollToTop = () => {
   const location = useLocation();
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
    {
     path:"/shop/:title",
     element:<Layout><Shop/></Layout>,
+  },
+     {
+    path:"/cart",
+    element:<Layout><Cart/></Layout>,
   },
 ])
 

@@ -125,6 +125,7 @@ function ContextProvider ({ children }){
             return item;
         });
         setCart(updatedCart);
+        localStorage.setItem('cart', JSON.stringify(updatedCart));
         }
     }
         
@@ -138,7 +139,13 @@ function ContextProvider ({ children }){
 
   
 
-   
+   useEffect(() => {
+    const storedCart = localStorage.getItem('cart');
+    if (storedCart) {
+        setCart(JSON.parse(storedCart));
+    }
+}, []);
+
 
    
   
