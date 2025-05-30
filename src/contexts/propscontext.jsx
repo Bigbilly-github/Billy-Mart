@@ -1,4 +1,9 @@
 import { createContext,useContext,useEffect, useState } from "react";
+import rating5 from "../assets/svg/flashsales/Five star.svg";
+import rating1 from "../assets/img/flashsalescomp/1rating.png";
+import rating2 from "../assets/img/flashsalescomp/2rating.png";
+import rating3 from "../assets/img/flashsalescomp/3rating.png";
+import rating4 from "../assets/img/flashsalescomp/4rating.png";
 
 
 const valueContext = createContext();
@@ -46,6 +51,22 @@ function ContextProvider ({ children }){
        
 
     }
+
+     function GetRatings(rating) {
+    const productRating = Math.floor(rating);
+    switch (productRating) {
+      case 1:
+        return rating1;
+      case 2:
+        return rating2;
+      case 3:
+        return rating3;
+      case 4:
+        return rating4;
+      default:
+        rating5;
+    }
+  }
     
    
 
@@ -99,7 +120,7 @@ function ContextProvider ({ children }){
 
     return(
         <>
-         <valueContext.Provider value={{brandterm,brandvalue,products, categories, HandleBrands,ToUp,HandleCategory,displayValue,setDisplayTerm,displayterm,setDisplayValue}}>
+         <valueContext.Provider value={{GetRatings,brandterm,brandvalue,products, categories, HandleBrands,ToUp,HandleCategory,displayValue,setDisplayTerm,displayterm,setDisplayValue}}>
                  {children}
         </valueContext.Provider>
         </>

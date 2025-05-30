@@ -9,7 +9,7 @@ import RelatedItems from "./relateditems";
 
 
 function ProductDetails ({title}){
-     const { products} = useValueContext();
+     const { products,GetRatings} = useValueContext();
 
     const selectedProduct = products.filter(product => product.title === title);
     console.log(selectedProduct);
@@ -40,7 +40,7 @@ function ProductDetails ({title}){
                         {product.title}
                     </h1>
                     <div className="flex gap-[10px] mt-[10px] mb-[10px] items-center">
-                          <img src={rating2} alt="5-star rating image" className="h-[40px]" />
+                          <img src={GetRatings(product.rating)} alt="5-star rating image" className="h-[40px]" />
                         <p>
                             ({product.reviews.length} Review{product.reviews.length > 1 ? "s":null})
                         </p>
