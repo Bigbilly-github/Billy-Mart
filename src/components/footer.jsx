@@ -7,7 +7,7 @@ function Footer (){
         <>
         <footer className="w-full md:h-[440px] h-[300px] flex justify-center items-center bg-black mt-[140px]">
             <div className="w-[90%] flex  justify-between md:h-[280px] h-[150px]" >
-                <div className="w-[206px] ">
+                <div className="lg:w-[206px]  ">
                     <p className="text-[24px] font-bold text-[#FAFAFA]">
                         Billy-Mart
                     </p>
@@ -51,7 +51,7 @@ function Footer (){
 
                 </div>
 
-                <div className="w-[175px] h-[180px] ">
+                <div className="lg:w-[175px]  h-[180px] ">
                     <p className=" text-[20px] font-medium text-[#FAFAFA]">
                     Quick Link
                     </p>
