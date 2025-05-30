@@ -28,7 +28,7 @@ function FlashSales() {
 
   return (
     <>
-      <section className="w-full h-auto flex justify-center mt-[140px] mb-[140px] ">
+      <section className="w-full h-auto flex justify-center mt-[80px] mb-[80px] ">
         <div className="w-[90%] px-[30px] flex  flex-col ">
           <BodyDetail text="Today's" maintext="Flash sales" scroll={scroll} />
 

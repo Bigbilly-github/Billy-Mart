@@ -35,7 +35,7 @@ function BestSelling (){
 
     return(
         <>
-         <section className="w-full h-auto flex justify-center mt-[140px] mb-[140px] ">
+         <section className="w-full h-auto flex justify-center mt-[80px] mb-[100px] ">
                     <div className='w-[90%] px-[30px] flex  flex-col '>
                     <BodyDetail text="This Month" maintext="Best Selling" scroll={scroll}/> 
         
