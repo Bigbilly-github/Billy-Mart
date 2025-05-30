@@ -5,10 +5,12 @@ import rating2 from "../assets/img/flashsalescomp/2rating.png";
 import rating3 from "../assets/img/flashsalescomp/3rating.png";
 import rating4 from "../assets/img/flashsalescomp/4rating.png";
 
-import { Link } from "react-router-dom";
+
+import { useNavigate } from 'react-router-dom';
 
 
 function FlashSalesComp({ carouselRef, products }) {
+   const navigate = useNavigate();
    
 
   function GetRatings(rating) {
@@ -26,6 +28,21 @@ function FlashSalesComp({ carouselRef, products }) {
         image;
     }
   }
+    const scrollToTop = () => {
+    window.scrollTo({
+      top: 0, 
+      behavior: "smooth",
+    });
+  };
+    function DisplayCategory (value){
+            
+            navigate(`/shop/${value}`);
+            scrollToTop();
+
+
+
+      
+     }
      
 
   return (
@@ -35,8 +52,8 @@ function FlashSalesComp({ carouselRef, products }) {
         className="flex gap-[30px] overflow-x-auto scroll-smooth no-scrollbar transition-all duration-300"
       >
         {products.map((product, _) => (
-        <div   key={product.id} className="w-[270px] h-[100%] ">
-           <Link to={`shop/${product.title}`} className="p-0 m-0 block "> 
+        <div onClick={()=> DisplayCategory(product.title)}  key={product.id} className="w-[270px] h-[100%] ">
+           
             <div className="w-full relative h-[100%] bg-[#F5F5F5] flex  items-center justify-center  rounded-[4px]">
               <img
                 src={product.thumbnail}
@@ -62,7 +79,7 @@ function FlashSalesComp({ carouselRef, products }) {
                 />
                 <p>({product.stock})</p>
               </div>
-            </div></Link>
+            </div>
           </div>
         ))}
       </div>

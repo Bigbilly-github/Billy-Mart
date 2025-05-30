@@ -3,6 +3,7 @@
 import { useValueContext } from '../contexts/propscontext'
 import { useNavigate } from 'react-router-dom';
 
+
 function CategoryComp ({categories,carouselRef,selectImage}){
      const {products,isplayValue,setDisplayValue} = useValueContext();
       const navigate = useNavigate();

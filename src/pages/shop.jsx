@@ -21,13 +21,13 @@ function Shop (){
         <Header/>
         <main>
             {  title ?   <ProductDetails title={title}/> :  <ShopHero/>}
-            <ProductDisplay/>
+            { title ? null:  <ProductDisplay/>}
             <Category/>
             <BestSelling/>
             <ShopDisplay/>
             <FlashSales/>
             <NewArrival/>
-            <ProductDetails title={title}/>
+          
           
        
         </main>

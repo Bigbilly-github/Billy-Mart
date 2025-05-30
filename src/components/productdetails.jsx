@@ -21,7 +21,7 @@ function ProductDetails ({title}){
 
     return(
         <>
-        <section className="w-full h-auto flex mt-[50px] justify-center">
+        <section className="w-full h-auto flex mt-[50px] justify-center mb-[140px]">
            { selectedProduct.map((product,_)=> <div className="flex flex-col items-center w-[100%]"> <div key={product.id} className="w-[90%] flex ">
                 <div className="w-[15%] mr-[50px]  ">
                     <div className="flex  bg-white gap-[20px] flex-col g">
