@@ -28,7 +28,7 @@ function ContextProvider ({ children }){
 
     
     
-       console.log(cart);
+      
         
 
   
@@ -81,6 +81,8 @@ function ContextProvider ({ children }){
         rating5;
     }
   }
+
+
     
    
 

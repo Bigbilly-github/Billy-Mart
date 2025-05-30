@@ -1,7 +1,25 @@
 
+import { useState } from "react";
 import beauty from "../assets/img/category/beauty.jpeg"
+import { useValueContext } from '../contexts/propscontext'
 
 function CartDisplay (){
+
+     const { cart,products } = useValueContext();
+    
+
+   const cartProducts = cart.map(item => products.find(product => product.id === item.id));
+
+    console.log(cartProducts)
+
+   function SubTotal(id, cart) {
+        const item = cart.find(product => product.id === id);
+        
+        if (!item) return 0; // optional guard clause if item isn't found
+
+        const subtotal = Number(item.price) * Number(item.quantity);
+        return subtotal;
+   }
 
     return(
         <>
@@ -23,14 +41,14 @@ function CartDisplay (){
 
                 </div>
 
-                <div className="flex  items-center h-[82px] shadow-md  rounded-[4px] justify-around ">
+           { cartProducts.map((item,index) =>    <div key={index} className="flex  items-center h-[82px] shadow-md  rounded-[4px] justify-around ">
                    <div className="flex w-[25%] text-center justify-center   gap-[20px] items-center ">
-                        <img src={beauty} alt="" className="w-[50px] h-[50px] " />
-                        <p className=" text-[14px]"> Product </p>
+                        <img src={item.thumbnail} alt="" className="w-[50px] h-[50px] " />
+                        <p className=" text-[14px]"> {item.title} </p>
                     </div> 
                     <div className="w-[25%] text-center">
                         <p className=" text-[14px] ">
-                        Price
+                        {item.price}
                         </p>
                     </div> 
                     <div className="w-[25%] text-center">
@@ -45,7 +63,7 @@ function CartDisplay (){
                     </div>
                     <div className="w-[25%] text-center">
                          <p className=" text-[14px]">
-                            $380
+                           {SubTotal(item.id,cart)}
                         </p>
 
                     </div>
@@ -53,6 +71,7 @@ function CartDisplay (){
                     
 
                 </div>
+            )}
 
             </div>
 
