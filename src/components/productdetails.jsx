@@ -5,6 +5,7 @@ import img from "../assets/svg/flashsales/Fill Heart.svg";
 import deliveryicon from "../assets/svg/productdetails/icon-delivery.svg";
 import React, { useState, useEffect, useRef } from "react";
 import { useValueContext } from "../contexts/propscontext";
+import RelatedItems from "./relateditems";
 
 
 function ProductDetails ({title}){
@@ -13,10 +14,15 @@ function ProductDetails ({title}){
     const selectedProduct = products.filter(product => product.title === title);
     console.log(selectedProduct);
 
+    function RelatedCategories (category) {
+        const CategoryArray= products.filter(product=>  product.category === category)
+        return CategoryArray
+    }
+
     return(
         <>
-        <section className="w-full h-[500px] flex mt-[50px] justify-center">
-           { selectedProduct.map((product,_)=>  <div key={product.id} className="w-[90%] flex ">
+        <section className="w-full h-auto flex mt-[50px] justify-center">
+           { selectedProduct.map((product,_)=> <div className="flex flex-col items-center w-[100%]"> <div key={product.id} className="w-[90%] flex ">
                 <div className="w-[15%] mr-[50px]  ">
                     <div className="flex  bg-white gap-[20px] flex-col g">
                          { product.images.map(images => <div className="h-[138px] bg-slate-100 flex justify-center items-center "> <img src={images} alt="image"  className="  w-[50%] object-contain "/></div>)}
@@ -92,7 +98,12 @@ function ProductDetails ({title}){
                     
                 </div>
 
+              
+
             </div>
+               <RelatedItems  products={RelatedCategories(product.category)}/>
+               </div> 
+           
             )}
 
         </section>
