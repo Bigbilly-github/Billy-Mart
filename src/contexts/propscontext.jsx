@@ -25,6 +25,8 @@ function ContextProvider ({ children }){
      const [cartitemquantity, setCartItemQuantity]= useState(0);
     const [cartitemdeliverychoice, setCartItemDeliveryChoice]= useState(0);
 
+    console.log(cart);
+
 
     
     

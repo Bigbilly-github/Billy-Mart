@@ -3,81 +3,85 @@ import { useState } from "react";
 import beauty from "../assets/img/category/beauty.jpeg"
 import { useValueContext } from '../contexts/propscontext'
 
-function CartDisplay (){
+function CartDisplay() {
+  const { cart, products,HandleQuantity ,setCart} = useValueContext();
+  const [newquantity,setNewQuantity] = useState(0);
 
-     const { cart,products } = useValueContext();
-    
 
-   const cartProducts = cart.map(item => products.find(product => product.id === item.id));
+  const cartProducts = cart.map(item => {
+    const product = products.find(product => product.id === item.id);
+    return {
+      ...product,
+      quantity: item.quantity,
+      delivery: item.delivery,
+      price: item.price,
+    };
+  });
 
-    console.log(cartProducts)
+  function HandleQuantity2(id, e) {
+        const newQuantity = Number(e.target.value);
+        setNewQuantity(newQuantity)
+       
 
-   function SubTotal(id, cart) {
-        const item = cart.find(product => product.id === id);
-        
-        if (!item) return 0; // optional guard clause if item isn't found
+        const updatedCart = cart.map(item => {
+            if (item.id === id) {
+            return { ...item, quantity: newQuantity };
+            }
+            return item;
+        });
 
-        const subtotal = Number(item.price) * Number(item.quantity);
-        return subtotal;
-   }
+  setCart(updatedCart);
+}
 
-    return(
-        <>
-        <section className="w-full h-[1000px] py-[50px]  flex justify-center">
-            <div className="w-[90%]  flex flex-col gap-[40px] ">
-                <div className="flex   items-center h-[72px] shadow-md  rounded-[4px]   ">
-                    <p className=" w-[25%] text-center font-medium text-[16px]">
-                        Product
-                    </p>
-                     <p className="w-[25%] text-center  font-medium text-[16px]">
-                        Price
-                    </p>
-                     <p className=" w-[25%] text-center font-medium text-[16px]">
-                       Quantity
-                    </p>
-                     <p className=" w-[25%] text-center font-medium text-[16px]">
-                       Sub-total
-                    </p>
 
-                </div>
+  return (
+    <section className="w-full min-h-[600px] py-[50px] flex justify-center">
+      <div className="w-[90%] flex flex-col gap-[40px]">
+       
+        <div className="flex items-center h-[72px] shadow-md rounded-[4px] bg-gray-100">
+          <p className="w-[25%] text-center font-medium text-[14px] sm:text-[16px]">Product</p>
+          <p className="w-[25%] text-center font-medium text-[14px] sm:text-[16px]">Price</p>
+          <p className="w-[25%] text-center font-medium text-[14px] sm:text-[16px]">Quantity</p>
+          <p className="w-[25%] text-center font-medium text-[14px] sm:text-[16px]">Sub-total</p>
+        </div>
 
-           { cartProducts.map((item,index) =>    <div key={index} className="flex  items-center h-[82px] shadow-md  rounded-[4px] justify-around ">
-                   <div className="flex w-[25%] text-center justify-center   gap-[20px] items-center ">
-                        <img src={item.thumbnail} alt="" className="w-[50px] h-[50px] " />
-                        <p className=" text-[14px]"> {item.title} </p>
-                    </div> 
-                    <div className="w-[25%] text-center">
-                        <p className=" text-[14px] ">
-                        {item.price}
-                        </p>
-                    </div> 
-                    <div className="w-[25%] text-center">
-                            <select name="quantity" id="quantity" defaultValue="" className="px-[12px] outline-0 text-[18px] rounded-[5px] bg-slate-200 ">
-                                
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                    <option value="5">5</option>
-                            </select>
-                    </div>
-                    <div className="w-[25%] text-center">
-                         <p className=" text-[14px]">
-                           {SubTotal(item.id,cart)}
-                        </p>
-
-                    </div>
-                    
-                    
-
-                </div>
-            )}
-
+       
+        {cartProducts.map((item, index) => (
+          <div key={index} className="flex items-center h-[82px] sm:pl-0 pl-[10px]  shadow-md rounded-[4px] justify-around">
+            <div className="flex w-[25%] justify-center items-center sm:gap-[20px] gap-[10px] text-center">
+              <img src={item.thumbnail} alt={item.title} className="w-[50px] h-[50px] hidden sm:block " />
+              <p className="md:text-[14px] text-[12px]">{item.title}</p>
             </div>
 
-        </section>
-        </>
-    )
+            <div className="w-[25%] text-center">
+              <p className="md:text-[14px] text-[12px]">${item.price}</p>
+            </div>
 
+            <div className="w-[25%] text-center">
+              <select
+                name={item.id}
+                defaultValue={item.quantity}
+                onChange={(e)=>HandleQuantity2(item.id, e)}
+                
+                className="px-[12px] outline-0 md:text-[18px] sm:text-[16px] py-[6px] text-[12px] rounded-[5px] bg-slate-200"
+              >
+                {[1, 2, 3, 4, 5].map(q => (
+                  <option key={q} value={q}>{q}</option>
+                ))}
+              </select>
+            </div>
+
+            <div className="w-[25%] text-center">
+              <p className="md:text-[14px] text-[12px]">
+              ${(Number(item.price) * Number(newquantity > 0 ? newquantity : item.quantity)).toFixed(2)}
+
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
 }
-export default CartDisplay
+
+export default CartDisplay;
