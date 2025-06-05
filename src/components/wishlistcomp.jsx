@@ -44,24 +44,14 @@ function WishlistComp({ carouselRef, products }) {
                 alt="item thumbnail"
                 className="  object-contain"
               />
-              <div>
-                <img
-                  src={img}
-                  alt="heart icon"
-                  className="absolute bottom-[10px] right-[10px]"
-                />
-              </div>
+             
             </div>
             <div className="w-[201px] h-auto mt-[16px] ">
               <h1 className="font-medium text-[16px]">{product.title}</h1>
               <p className="text-[#DB4444] mt-[7px]">${product.price}</p>
               <div className="flex gap-[15px] items-center mt-[3px] ">
-                <img
-                  src={GetRatings(product.rating)}
-                  alt="rating icon"
-                  className="w-[100px] bg-transparent "
-                />
-                <p>({product.stock})</p>
+               
+             
               </div>
             </div>
           </div>
