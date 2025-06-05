@@ -45,7 +45,7 @@ function WishlistComp({ carouselRef, products }) {
         className="flex gap-[30px] overflow-x-auto scroll-smooth no-scrollbar transition-all duration-300"
       >
         {products.map((product, _) => (
-        <div   key={product.id} className="w-[270px] h-[100%] hover:border hover:border-slate-400 ">
+        <div   key={product.id} className="w-[270px] h-[100%] hover:shadow-lg ">
            
             <div className="w-full relative h-[100%] bg-[#F5F5F5] flex  items-center justify-center  rounded-[4px]">
               <img

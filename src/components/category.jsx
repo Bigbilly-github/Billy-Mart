@@ -1,7 +1,7 @@
 import BodyDetail from "./bodydetail"
 import React, { useState,useEffect,useRef } from 'react'
 import { useValueContext } from '../contexts/propscontext'
-import CategoryComp from "./caregorycomp";
+import CategoryComp from "./categorycomp";
 import beauty from "../assets/img/category/beauty.jpeg"
 import fragrances from "../assets/img/category/fragrances.jpeg"
 import furniture from "../assets/img/category/furniture.jpg"

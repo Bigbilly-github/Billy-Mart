@@ -34,10 +34,10 @@ function FlashSalesComp({ carouselRef, products }) {
     <>
       <div
         ref={carouselRef}
-        className="flex gap-[30px] overflow-x-auto scroll-smooth no-scrollbar transition-all duration-300"
+        className="flex gap-[30px] overflow-x-auto scroll-smooth  no-scrollbar transition-all duration-300"
       >
         {products.map((product, _) => (
-        <div   key={product.id} className="w-[270px] hover:border hover:border-slate-400  h-[100%] ">
+        <div   key={product.id} className="w-[270px] hover:shadow-2xl  h-[100%]  ">
            
             <div className="w-full relative h-[100%] bg-[#F5F5F5] flex  items-center justify-center  rounded-[4px]">
               <img
