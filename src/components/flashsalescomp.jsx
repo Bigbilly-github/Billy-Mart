@@ -1,4 +1,4 @@
-import img from "../assets/svg/flashsales/vector.svg";
+import img from "../assets/svg/flashsales/Vector.svg";
 import { useValueContext } from '../contexts/propscontext'
 
 
