@@ -39,6 +39,28 @@ function DeleteCartItem (id) {
 
 }
 
+function SubTotal () {
+  let subtotal = 0;
+  const newtotal = cart.map(item =>{
+     let pricetotal=  Number(item.quantity) * Number(item.price);
+     subtotal += pricetotal;
+
+  })
+  return subtotal;
+   
+}
+function SubDelivery () {
+  let subtotal = 0;
+  const newtotal = cart.map(item =>  subtotal += Number(item.delivery))
+  return subtotal;
+   
+}
+
+function Total (SubDelivery,SubTotal) {
+  return (SubDelivery() + SubTotal());
+}
+
+
 
   return (
     <section className="w-full min-h-[600px] py-[50px] flex justify-center">
@@ -90,6 +112,46 @@ function DeleteCartItem (id) {
             <button onClick={()=>DeleteCartItem(item.id)}><img src={deleteicon} alt="delete icon" /></button>
 
         </div>))}
+
+        <div className="flex pt-[32px] gap-[24px] px-[24px] flex-col sm:self-end self-center mt-[50px] w-[80%]  lg:mr-[60px] sm:mr-[50px] sm:w-[470px]  border">
+          <h1 className="font-medium text-[16px] sm:text-[20px]">
+            Cart Total
+          </h1>
+          <div className="flex justify-between border-b pb-[10px]">
+             <p className="font-normal text-[14px]  sm:text-[16px]">
+                 Subtotal:
+            </p>
+             <p className="font-normal text-[14px] sm:text-[16px">
+             ${SubTotal()}
+            </p>
+
+          </div>
+          <div className="flex justify-between border-b pb-[10px]">
+             <p className="font-normal text-[14px] sm:text-[16px]">
+                 Shipping:
+            </p>
+             <p className="font-normal text-[14px] sm:text-[16px]">
+              ${SubDelivery()}
+            </p>
+
+          </div>
+
+          <div className="flex justify-between pb-[10px]">
+             <p className="font-normal text-[14px] sm:text-[16px]">
+                 Total:
+            </p>
+             <p className="font-normal text-[14px] sm:text-[16px]">
+              ${Total(SubDelivery,SubTotal)}
+            </p>
+
+          </div>
+
+          <button className="bg-[red] w-[60%] rounded-[5px] text-[14px] sm:text-[16px] text-white font-medium self-center h-[40px] sm:h-[56px] mb-[20px]">
+            Proceed to checkout
+          </button>
+         
+
+        </div>
     </div>
     </section>
   );
