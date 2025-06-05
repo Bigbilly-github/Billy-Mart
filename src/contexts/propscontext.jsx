@@ -24,8 +24,9 @@ function ContextProvider ({ children }){
      const  [cart, setCart] = useState([]);
      const [cartitemquantity, setCartItemQuantity]= useState(0);
     const [cartitemdeliverychoice, setCartItemDeliveryChoice]= useState(0);
+    const [wishlist,setWishList]= useState([]);
 
-    console.log(cart);
+    console.log(wishlist);
 
 
     
@@ -139,6 +140,24 @@ function ContextProvider ({ children }){
 
 
     }
+
+    function AddToWishlist (id){
+         const present = wishlist.filter(item => item.id===id);
+        if (present.length ===0){
+            const matchingItem = products.find(product => product.id===id);
+            const newWishlistItem = {
+           
+            id:matchingItem.id,
+            price:matchingItem.price,
+            thumbnail:matchingItem.thumbnail,
+            title:matchingItem.title,
+            
+
+        };
+         setWishList(c=>[...c,newWishlistItem]);
+
+    }
+}
    
    
 
@@ -150,6 +169,8 @@ function ContextProvider ({ children }){
         setCart(JSON.parse(storedCart));
     }
 }, []);
+
+
 
 
    
@@ -182,7 +203,7 @@ function ContextProvider ({ children }){
 
     return(
         <>
-         <valueContext.Provider value={{addToCart,cart,setCart,cartitemdeliverychoice,cartitemquantity,HandleQuantity,HandleDelivery,GetRatings,brandterm,brandvalue,products, categories, HandleBrands,ToUp,HandleCategory,displayValue,setDisplayTerm,displayterm,setDisplayValue}}>
+         <valueContext.Provider value={{AddToWishlist,wishlist,setWishList,addToCart,cart,setCart,cartitemdeliverychoice,cartitemquantity,HandleQuantity,HandleDelivery,GetRatings,brandterm,brandvalue,products, categories, HandleBrands,ToUp,HandleCategory,displayValue,setDisplayTerm,displayterm,setDisplayValue}}>
                  {children}
         </valueContext.Provider>
         </>
