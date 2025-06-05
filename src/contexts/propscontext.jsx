@@ -107,6 +107,7 @@ function ContextProvider ({ children }){
         if(cartitemquantity > 0){
             if (present.length ===0){
             const newCartItem = {
+           
             id:id,
             price:price,
             quantity:Number(cartitemquantity),
@@ -181,7 +182,7 @@ function ContextProvider ({ children }){
 
     return(
         <>
-         <valueContext.Provider value={{addToCart,cart,cartitemdeliverychoice,cartitemquantity,HandleQuantity,HandleDelivery,GetRatings,brandterm,brandvalue,products, categories, HandleBrands,ToUp,HandleCategory,displayValue,setDisplayTerm,displayterm,setDisplayValue}}>
+         <valueContext.Provider value={{addToCart,cart,setCart,cartitemdeliverychoice,cartitemquantity,HandleQuantity,HandleDelivery,GetRatings,brandterm,brandvalue,products, categories, HandleBrands,ToUp,HandleCategory,displayValue,setDisplayTerm,displayterm,setDisplayValue}}>
                  {children}
         </valueContext.Provider>
         </>

@@ -18,11 +18,8 @@ function CartDisplay() {
     };
   });
 
-  function HandleQuantity2(id, e) {
+  function HandleQuantity2(id,e) {
         const newQuantity = Number(e.target.value);
-        setNewQuantity(newQuantity)
-       
-
         const updatedCart = cart.map(item => {
             if (item.id === id) {
             return { ...item, quantity: newQuantity };
@@ -30,7 +27,8 @@ function CartDisplay() {
             return item;
         });
 
-  setCart(updatedCart);
+    setCart(updatedCart);
+   localStorage.setItem('cart', JSON.stringify(updatedCart));
 }
 
 
@@ -60,8 +58,8 @@ function CartDisplay() {
             <div className="w-[25%] text-center">
               <select
                 name={item.id}
-                defaultValue={item.quantity}
-                onChange={(e)=>HandleQuantity2(item.id, e)}
+                value={item.quantity}
+                onChange={(e)=>HandleQuantity2(item.id,e)}
                 
                 className="px-[12px] outline-0 md:text-[18px] sm:text-[16px] py-[6px] text-[12px] rounded-[5px] bg-slate-200"
               >
@@ -73,7 +71,7 @@ function CartDisplay() {
 
             <div className="w-[25%] text-center">
               <p className="md:text-[14px] text-[12px]">
-              ${(Number(item.price) * Number(newquantity > 0 ? newquantity : item.quantity)).toFixed(2)}
+           ${(Number(item.price) * Number(item.quantity)).toFixed(2)}
 
               </p>
             </div>
