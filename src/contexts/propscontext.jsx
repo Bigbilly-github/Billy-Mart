@@ -155,6 +155,7 @@ function ContextProvider ({ children }){
 
         };
          setWishList(c=>[...c,newWishlistItem]);
+         localStorage.setItem('wishlist', JSON.stringify(wishlist));
 
     }
 }
@@ -167,6 +168,13 @@ function ContextProvider ({ children }){
     const storedCart = localStorage.getItem('cart');
     if (storedCart) {
         setCart(JSON.parse(storedCart));
+    }
+}, []);
+
+   useEffect(() => {
+    const storedWishlist = localStorage.getItem('wishlist');
+    if (storedWishlist) {
+        setWishList(JSON.parse(storedWishlist));
     }
 }, []);
 

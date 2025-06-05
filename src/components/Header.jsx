@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { useValueContext } from "../contexts/propscontext";
 
 const Header = () => {
-   const { cart} = useValueContext();
+   const { cart,wishlist} = useValueContext();
   return (
     <>
       <header className="h-[150px]  z-30 bg-slate-100 fixed right-0 left-0 top-0 flex justify-center items-center">
@@ -62,7 +62,7 @@ const Header = () => {
                   className="w-[24px] h-[24px]"
                 /></Link>
                 <p className="absolute -top-[19px] -right-[5px] font-[poppins] font-medium">
-                  2
+                  {wishlist.length}
                 </p>
               </div>
               <div className="relative">
