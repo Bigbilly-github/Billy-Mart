@@ -45,7 +45,7 @@ function WishlistComp({ carouselRef, products }) {
         className="flex gap-[30px] overflow-x-auto scroll-smooth no-scrollbar transition-all duration-300"
       >
         {products.map((product, _) => (
-        <div   key={product.id} className="w-[270px] h-[100%] ">
+        <div   key={product.id} className="w-[270px] h-[100%] hover:border hover:border-slate-400 ">
            
             <div className="w-full relative h-[100%] bg-[#F5F5F5] flex  items-center justify-center  rounded-[4px]">
               <img
@@ -53,12 +53,12 @@ function WishlistComp({ carouselRef, products }) {
                 alt="item thumbnail"
                 className="  object-contain"
               />
-              <div onClick={()=> DeleteWishlistItem(product.id)} className='absolute top-[10px] right-[10px]' >
-                <img src={deleteicon} alt="deleteicon" />
+              <div  className='absolute top-[10px] right-[10px]' >
+                <img onClick={()=> DeleteWishlistItem(product.id)} src={deleteicon} alt="deleteicon" className='' />
               </div>
              
             </div>
-            <div onClick={()=> DisplayCategory(product.title)} className="w-[201px] h-auto mt-[16px] ">
+            <div onClick={()=> DisplayCategory(product.title)} className="w-[201px] px-[10px] pb-[15px] h-auto mt-[16px] ">
               <h1 className="font-medium text-[16px]">{product.title}</h1>
               <p className="text-[#DB4444] mt-[7px]">${product.price}</p>
               

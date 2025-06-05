@@ -1,4 +1,4 @@
-import img from "../assets/svg/flashsales/Fill Heart.svg";
+import img from "../assets/svg/flashsales/vector.svg";
 import { useValueContext } from '../contexts/propscontext'
 
 
@@ -37,7 +37,7 @@ function FlashSalesComp({ carouselRef, products }) {
         className="flex gap-[30px] overflow-x-auto scroll-smooth no-scrollbar transition-all duration-300"
       >
         {products.map((product, _) => (
-        <div   key={product.id} className="w-[270px] h-[100%] ">
+        <div   key={product.id} className="w-[270px] hover:border hover:border-slate-400  h-[100%] ">
            
             <div className="w-full relative h-[100%] bg-[#F5F5F5] flex  items-center justify-center  rounded-[4px]">
               <img
@@ -45,15 +45,15 @@ function FlashSalesComp({ carouselRef, products }) {
                 alt="item thumbnail"
                 className="  object-contain"
               />
-              <div onClick={()=>AddToWishlist(product.id)}>
+              <div onClick={()=>AddToWishlist(product.id)} className="h-[24px] absolute bottom-[10px] flex items-center justify-center     right-[10px] w-[24px] active:bg-[red]     rounded-[50%]">
                 <img
                   src={img}
                   alt="heart icon"
-                  className="absolute bottom-[10px] right-[10px]"
+                  className="w-[16px] h-[16px]"
                 />
               </div>
             </div>
-            <div onClick={()=> DisplayCategory(product.title)} className="w-[201px] h-auto mt-[16px] ">
+            <div onClick={()=> DisplayCategory(product.title)} className="w-[201px]  px-[10px] pb-[10px] h-auto mt-[16px] ">
               <h1 className="font-medium text-[16px]">{product.title}</h1>
               <p className="text-[#DB4444] mt-[7px]">${product.price}</p>
               <div className="flex gap-[15px] items-center mt-[3px] ">
