@@ -8,6 +8,7 @@ import App from './App.jsx'
 import Homepage from './pages/Homepage.jsx'
 import Shop from './pages/shop.jsx';
 import Cart from './pages/cart.jsx';
+import Wishlist from './pages/wishlist.jsx';
 
 const ScrollToTop = () => {
   const location = useLocation();
@@ -43,6 +44,11 @@ const router = createBrowserRouter([
     path:"/cart",
     element:<Layout><Cart/></Layout>,
   },
+   {
+    path:"/wishlist",
+    element:<Layout><Wishlist/></Layout>,
+  },
+
 ])
 
 

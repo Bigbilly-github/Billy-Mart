@@ -55,12 +55,12 @@ const Header = () => {
               />
             </div>
             <div className="flex justify-between w-[130px] ">
-              <div className="relative ">
-                <img
+             <div className="relative ">
+               <Link to="/wishlist">  <img
                   src={heart}
                   alt="heart icon"
                   className="w-[24px] h-[24px]"
-                />
+                /></Link>
                 <p className="absolute -top-[19px] -right-[5px] font-[poppins] font-medium">
                   2
                 </p>
