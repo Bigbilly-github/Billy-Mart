@@ -57,7 +57,7 @@ function SubDelivery () {
 }
 
 function Total (SubDelivery,SubTotal) {
-  return (SubDelivery() + SubTotal());
+  return (SubDelivery() + SubTotal()).toFixed(2);
 }
 
 
@@ -113,7 +113,7 @@ function Total (SubDelivery,SubTotal) {
 
         </div>))}
 
-        <div className="flex pt-[32px] gap-[24px] px-[24px] flex-col sm:self-end self-center mt-[50px] w-[80%]  lg:mr-[60px] sm:mr-[50px] sm:w-[470px]  border">
+        <div className="flex pt-[32px] gap-[24px] px-[24px] flex-col sm:self-end self-center mt-[50px] w-[80%]  lg:mr-[60px] sm:mr-[50px] sm:w-[470px]  border border-slate-400">
           <h1 className="font-medium text-[16px] sm:text-[20px]">
             Cart Total
           </h1>

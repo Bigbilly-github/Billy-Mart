@@ -1,4 +1,5 @@
 import CartDisplay from "../components/cartdisplay"
+import Footer from "../components/footer"
 import Header from "../components/Header"
 
 
@@ -10,6 +11,7 @@ function Cart () {
         <main>
             <CartDisplay/>
         </main>
+        <Footer/>
         </>
     )
 

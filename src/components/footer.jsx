@@ -5,7 +5,7 @@ function Footer (){
 
     return(
         <>
-        <footer className="w-full md:h-[440px] h-[300px] flex justify-center items-center bg-black mt-[140px]">
+        <footer className="w-full md:h-[440px] h-[300px] flex justify-center items-center bg-black mt-[50px]">
             <div className="w-[90%] flex  justify-between md:h-[280px] h-[150px]" >
                 <div className="lg:w-[206px] w-[40%]  ">
                     <p className="text-[24px] font-bold text-[#FAFAFA]">
