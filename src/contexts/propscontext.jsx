@@ -26,7 +26,7 @@ function ContextProvider ({ children }){
     const [cartitemdeliverychoice, setCartItemDeliveryChoice]= useState(0);
     const [wishlist,setWishList]= useState([]);
 
-    console.log(wishlist);
+    console.log(cart);
 
 
     
@@ -102,44 +102,38 @@ function ContextProvider ({ children }){
         return newOption;
         
     }
-    function addToCart (cart,id,price,cartitemdeliverychoice,cartitemquantity) {
-        const present = cart.filter(item => item.id===id);
+    function addToCart(cart, id, price, cartitemdeliverychoice, cartitemquantity) {
+        const present = cart.filter(item => item.id === id);
 
-        if(cartitemquantity > 0){
-            if (present.length ===0){
+        if (cartitemquantity > 0) {
+            let updatedCart;
+
+            if (present.length === 0) {
             const newCartItem = {
-           
-            id:id,
-            price:price,
-            quantity:Number(cartitemquantity),
-            delivery:cartitemdeliverychoice
-
-        };
-        setCart(c=>[...c,newCartItem]);
-        
-
-        }
-        else {
-            const updatedCart = cart.map(item => {
-            if (item.id === id) {
+                id: id,
+                price: price,
+                quantity: Number(cartitemquantity),
+                delivery: cartitemdeliverychoice
+            };
+            updatedCart = [...cart, newCartItem];
+            } else {
+            updatedCart = cart.map(item => {
+                if (item.id === id) {
                 return {
                     ...item,
                     quantity: Number(item.quantity) + Number(cartitemquantity),
                     delivery: cartitemdeliverychoice
                 };
+                }
+                return item;
+            });
             }
-            return item;
-        });
-        setCart(updatedCart);
-        localStorage.setItem('cart', JSON.stringify(updatedCart));
-        }
-    }
-        
 
-        
+            setCart(updatedCart);
+            localStorage.setItem('cart', JSON.stringify(updatedCart)); // ✅ always save to localStorage
+  }
+}
 
-
-    }
 
     function AddToWishlist (id){
          const present = wishlist.filter(item => item.id===id);

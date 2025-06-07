@@ -43,7 +43,9 @@ function SubTotal () {
   let subtotal = 0;
   const newtotal = cart.map(item =>{
      let pricetotal=  Number(item.quantity) * Number(item.price);
+  
      subtotal += pricetotal;
+    
 
   })
   return subtotal;
@@ -75,8 +77,8 @@ function Total (SubDelivery,SubTotal) {
 
        
         {cartProducts.map((item, index) => (
-        <div className="flex gap-[10px] sm:gap-[20px]">
-            <div key={index} className="flex w-[90%] sm:w-[95%] items-center h-[82px] sm:pl-0 pl-[10px]  shadow-md rounded-[4px] justify-around">
+        <div key={index} className="flex gap-[10px] sm:gap-[20px]">
+            <div  className="flex w-[90%] sm:w-[95%] items-center h-[82px] sm:pl-0 pl-[10px]  shadow-md rounded-[4px] justify-around">
                   <div className="flex w-[25%] justify-center items-center sm:gap-[20px] gap-[10px] text-center">
                     <img src={item.thumbnail} alt={item.title} className="w-[50px] h-[50px] hidden sm:block " />
                     <p className="md:text-[14px] text-[12px]">{item.title}</p>
