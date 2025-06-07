@@ -130,29 +130,29 @@ function ContextProvider ({ children }){
             }
 
             setCart(updatedCart);
-            localStorage.setItem('cart', JSON.stringify(updatedCart)); // ✅ always save to localStorage
+            localStorage.setItem('cart', JSON.stringify(updatedCart)); 
   }
 }
 
 
-    function AddToWishlist (id){
-         const present = wishlist.filter(item => item.id===id);
-        if (present.length ===0){
-            const matchingItem = products.find(product => product.id===id);
+   function AddToWishlist(id) {
+        const present = wishlist.find(item => item.id === id);
+
+        if (!present) {
+            const matchingItem = products.find(product => product.id === id);
             const newWishlistItem = {
-           
-            id:matchingItem.id,
-            price:matchingItem.price,
-            thumbnail:matchingItem.thumbnail,
-            title:matchingItem.title,
-            
+            id: matchingItem.id,
+            price: matchingItem.price,
+            thumbnail: matchingItem.thumbnail,
+            title: matchingItem.title
+            };
 
-        };
-         setWishList(c=>[...c,newWishlistItem]);
-         localStorage.setItem('wishlist', JSON.stringify(wishlist));
-
-    }
+            const updatedWishlist = [...wishlist, newWishlistItem];
+            setWishList(updatedWishlist);
+            localStorage.setItem('wishlist', JSON.stringify(updatedWishlist)); 
+        }
 }
+
    
    
 
