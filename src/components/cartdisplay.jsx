@@ -3,21 +3,14 @@ import { useState } from "react";
 import beauty from "../assets/img/category/beauty.jpeg"
 import { useValueContext } from '../contexts/propscontext'
 import deleteicon from "../assets/svg/cart/icon-cancel.svg"
+import { Link } from "react-router-dom";
 
 function CartDisplay() {
-  const { cart, products,HandleQuantity ,setCart} = useValueContext();
+  const { cart, products,HandleQuantity,cartProducts,setCart,SubTotal,SubDelivery,Total} = useValueContext();
   const [newquantity,setNewQuantity] = useState(0);
 
 
-  const cartProducts = cart.map(item => {
-    const product = products.find(product => product.id === item.id);
-    return {
-      ...product,
-      quantity: item.quantity,
-      delivery: item.delivery,
-      price: item.price,
-    };
-  });
+  
 
   function HandleQuantity2(id,e) {
         const newQuantity = Number(e.target.value);
@@ -39,28 +32,6 @@ function DeleteCartItem (id) {
 
 }
 
-function SubTotal () {
-  let subtotal = 0;
-  const newtotal = cart.map(item =>{
-     let pricetotal=  Number(item.quantity) * Number(item.price);
-  
-     subtotal += pricetotal;
-    
-
-  })
-  return subtotal;
-   
-}
-function SubDelivery () {
-  let subtotal = 0;
-  const newtotal = cart.map(item =>  subtotal += Number(item.delivery))
-  return subtotal;
-   
-}
-
-function Total (SubDelivery,SubTotal) {
-  return (SubDelivery() + SubTotal()).toFixed(2);
-}
 
 
 
@@ -149,7 +120,7 @@ function Total (SubDelivery,SubTotal) {
           </div>
 
           <button className="bg-[red] w-[60%] rounded-[5px] text-[14px] sm:text-[16px] text-white font-medium self-center h-[40px] sm:h-[56px] mb-[20px]">
-            Proceed to checkout
+           <Link to="/checkout">Proceed to checkout</Link> 
           </button>
          
 

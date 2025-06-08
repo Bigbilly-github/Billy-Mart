@@ -134,6 +134,41 @@ function ContextProvider ({ children }){
   }
 }
 
+const cartProducts = cart.map(item => {
+            const product = products.find(product => product.id === item.id);
+            return {
+            ...product,
+            quantity: item.quantity,
+            delivery: item.delivery,
+            price: item.price,
+            };
+        });
+
+
+function SubTotal () {
+  let subtotal = 0;
+  const newtotal = cart.map(item =>{
+     let pricetotal=  Number(item.quantity) * Number(item.price);
+  
+     subtotal += pricetotal;
+    
+
+  })
+  return subtotal;
+   
+}
+function SubDelivery () {
+  let subtotal = 0;
+  const newtotal = cart.map(item =>  subtotal += Number(item.delivery))
+  return subtotal;
+   
+}
+
+function Total (SubDelivery,SubTotal) {
+  return (SubDelivery() + SubTotal()).toFixed(2);
+}
+
+
 
    function AddToWishlist(id) {
         const present = wishlist.find(item => item.id === id);
@@ -205,7 +240,7 @@ function ContextProvider ({ children }){
 
     return(
         <>
-         <valueContext.Provider value={{AddToWishlist,wishlist,setWishList,addToCart,cart,setCart,cartitemdeliverychoice,cartitemquantity,HandleQuantity,HandleDelivery,GetRatings,brandterm,brandvalue,products, categories, HandleBrands,ToUp,HandleCategory,displayValue,setDisplayTerm,displayterm,setDisplayValue}}>
+         <valueContext.Provider value={{SubTotal,cartProducts,SubDelivery,Total,AddToWishlist,wishlist,setWishList,addToCart,cart,setCart,cartitemdeliverychoice,cartitemquantity,HandleQuantity,HandleDelivery,GetRatings,brandterm,brandvalue,products, categories, HandleBrands,ToUp,HandleCategory,displayValue,setDisplayTerm,displayterm,setDisplayValue}}>
                  {children}
         </valueContext.Provider>
         </>
