@@ -4,12 +4,12 @@ import { useValueContext } from '../contexts/propscontext'
 
 
 function BillingHero (){
-      const { cart,products,setCart,cartProducts,SubTotal,SubDelivery,Total} = useValueContext();
+      const { cart,products,setCart,cartProducts,SubTotal,SubDelivery,Total,billingdetails, setBillingDetails} = useValueContext();
       
     return(
         <>
         <section className="w-full flex   h-auto mb-[150px] mt-[50px] justify-center">
-            <div className="w-[90%] ">
+            <div className="w-[88%] ">
                      <h1 className="font-medium text-[36px] mb-[40px] ">
                         Billing Details
                     </h1>
