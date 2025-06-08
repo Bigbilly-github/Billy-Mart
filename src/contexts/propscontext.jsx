@@ -27,7 +27,7 @@ function ContextProvider({ children }) {
     email: "",
   });
 
-  console.log(cart);
+
 
   function HandleCategory(e) {
     setDisplayTerm("category");
@@ -106,7 +106,7 @@ function ContextProvider({ children }) {
     }
   }
 
-  const cartProducts = cart.map((item) => {
+  const cartProducts = cart.map(item => {
     const product = products.find((product) => product.id === item.id);
     return {
       ...product,
@@ -157,6 +157,12 @@ function ContextProvider({ children }) {
     const storedCart = localStorage.getItem("cart");
     if (storedCart) {
       setCart(JSON.parse(storedCart));
+    }
+  }, []);
+   useEffect(() => {
+    const storedbillinginfo = localStorage.getItem("billingdetails");
+    if (storedbillinginfo) {
+      setBillingDetails(JSON.parse(storedbillinginfo));
     }
   }, []);
 

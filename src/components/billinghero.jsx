@@ -17,7 +17,7 @@ function BillingHero (){
             <div className="  flex  items-start justify-between  ">
                 <BillingForm/>
                 <div className=" h-auto w-[60%] ">
-                   {cartProducts.map(item => <div className="flex  justify-between mb-[20px] ">
+                   {cartProducts.map((item,index) => <div key={index} className="flex  justify-between mb-[20px] ">
                         <div className="flex gap-[10px] items-center"> 
                             <img src={item.thumbnail} alt="item image" className="w-[40px] h-[40px]" />
                             <p>
