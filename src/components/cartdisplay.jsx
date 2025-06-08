@@ -123,8 +123,8 @@ function Total (SubDelivery,SubTotal) {
              <p className="font-normal text-[14px]  sm:text-[16px]">
                  Subtotal:
             </p>
-             <p className="font-normal text-[14px] sm:text-[16px">
-             ${SubTotal()}
+             <p className="font-normal text-[14px] sm:text-[16px]">
+             ${SubTotal().toFixed(2)}
             </p>
 
           </div>
@@ -133,7 +133,7 @@ function Total (SubDelivery,SubTotal) {
                  Shipping:
             </p>
              <p className="font-normal text-[14px] sm:text-[16px]">
-              ${SubDelivery()}
+              ${SubDelivery().toFixed(2)}
             </p>
 
           </div>
