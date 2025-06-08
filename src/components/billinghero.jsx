@@ -27,7 +27,7 @@ function BillingHero (){
 
                         </div>
                         <p>
-                               ${(Number(item.price) * Number(item.quantity)).toFixed(2)}
+                               {(Number(item.price) * Number(item.quantity)).toFixed(2)}
                         </p>
 
                     </div>
@@ -61,8 +61,21 @@ function BillingHero (){
 
                         </div>
 
+                        <div className="flex gap-[15px] mt-[30px]">
+                                <input type="radio" id="cash"  />
+                                <label htmlFor="cash" defaultChecked="true">Cash on Delivery </label>
+
+                        </div>
+                             <button
+                            type="btn"
+                            className="bg-[red] text-white py-2 px-[40px] hover:outline-2 hover:outline-offset-2 hover:outline-black duration-150  mt-4 rounded  text-sm"
+                            > Place order</button>
+
+                    
+
 
                 </div>
+               
 
             </div>
 

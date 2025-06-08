@@ -56,7 +56,7 @@ function DeleteCartItem (id) {
                   </div>
 
                   <div className="w-[25%] text-center">
-                    <p className="md:text-[14px] text-[12px]">${item.price}</p>
+                    <p className="md:text-[14px] text-[12px]">{item.price}</p>
                   </div>
 
                   <div className="w-[25%] text-center">
@@ -75,7 +75,7 @@ function DeleteCartItem (id) {
 
                   <div className="w-[25%] text-center">
                     <p className="md:text-[14px] text-[12px]">
-                ${(Number(item.price) * Number(item.quantity)).toFixed(2)}
+                {(Number(item.price) * Number(item.quantity)).toFixed(2)}
 
                     </p>
                   </div>
@@ -119,7 +119,7 @@ function DeleteCartItem (id) {
 
           </div>
 
-          <button className="bg-[red] w-[60%] rounded-[5px] text-[14px] sm:text-[16px] text-white font-medium self-center h-[40px] sm:h-[56px] mb-[20px]">
+          <button className="bg-[red] hover:outline-2 hover:outline-offset-2 hover:outline-black    duration-150   w-[60%] rounded-[5px] text-[14px] sm:text-[16px] text-white font-medium self-center h-[40px] sm:h-[56px] mb-[20px]">
            <Link to="/checkout">Proceed to checkout</Link> 
           </button>
          

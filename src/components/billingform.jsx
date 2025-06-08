@@ -67,7 +67,7 @@ function BillingForm (){
                     )}
                      <button
                             type="submit"
-                            className="bg-[red] text-white py-2 px-4 mt-4 rounded hover:bg-blue-700 text-sm"
+                            className="bg-[red] hover:outline-2 hover:outline-offset-2 hover:outline-black   text-white py-2 px-4 mt-4 rounded text-sm"
                             > Save Billing Details</button>
                     </form>
 
