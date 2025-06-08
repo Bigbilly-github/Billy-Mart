@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 function CartDisplay() {
   const { cart, products,HandleQuantity,cartProducts,setCart,SubTotal,SubDelivery,Total} = useValueContext();
-  const [newquantity,setNewQuantity] = useState(0);
+  
 
 
   
