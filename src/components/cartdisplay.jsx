@@ -120,7 +120,7 @@ function DeleteCartItem (id) {
           </div>
 
           <button className="bg-[red] hover:outline-2 hover:outline-offset-2 hover:outline-black    duration-150   w-[60%] rounded-[5px] text-[14px] sm:text-[16px] text-white font-medium self-center h-[40px] sm:h-[56px] mb-[20px]">
-           <Link to="/checkout">Proceed to checkout</Link> 
+           <Link to="/checkout"><span className="hidden md:block">Proceed to</span> checkout</Link> 
           </button>
          
 
