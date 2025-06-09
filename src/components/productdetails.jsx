@@ -59,7 +59,7 @@ function ProductDetails ({title}){
                      </p>
                    
                       <div className="flex  gap-[15px] mt-[30px]">
-                            <select name="quantity" id="quantity" defaultValue="" onChange={HandleQuantity} className="px-[12px] outline-0 sm:text-[18px] text-[12px] rounded-[5px] bg-slate-200 ">
+                            <select name="quantity" id="quantity" defaultValue="" onChange={HandleQuantity} className="px-[12px] outline-0 sm:text-[18px] text-[14px] rounded-[5px] bg-slate-200 ">
                                 <option disabled  hidden  value="">Select quantity</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
