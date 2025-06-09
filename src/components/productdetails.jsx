@@ -1,7 +1,7 @@
 
 import groceries from "../assets/img/category/groceries.jpg"
 import rating2 from "../assets/img/flashsalescomp/2rating.png";
-import img from "../assets/svg/flashsales/Fill Heart.svg";
+import img from "../assets/svg/flashsales/Vector.svg";
 import deliveryicon from "../assets/svg/productdetails/icon-delivery.svg";
 import React, { useState, useEffect, useRef } from "react";
 import { useValueContext } from "../contexts/propscontext";
