@@ -9,6 +9,11 @@ body{
     
   
   }
+  @media (max-width: 600px) {
+  body {
+        padding-top: 100px;
+  }
+}
   
   html, body {
     overflow-x: hidden; 

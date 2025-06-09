@@ -39,17 +39,17 @@ function DeleteCartItem (id) {
     <section className="w-full min-h-[600px] py-[50px] flex justify-center">
       <div className="w-[90%] flex flex-col gap-[40px]">
        
-        <div className="flex w-[90%] sm:w-[95%] items-center h-[72px] shadow-md rounded-[4px] bg-gray-100">
-          <p className="w-[25%] text-center font-medium text-[14px] sm:text-[16px]">Product</p>
-          <p className="w-[25%] text-center font-medium text-[14px] sm:text-[16px]">Price</p>
-          <p className="w-[25%] text-center font-medium text-[14px] sm:text-[16px]">Quantity</p>
-          <p className="w-[25%] text-center font-medium text-[14px] sm:text-[16px]">Sub-total</p>
+        <div className="flex w-[100%]  sm:w-[95%] items-center h-[72px] shadow-md rounded-[4px] bg-gray-100">
+          <p className="w-[25%] text-center font-medium text-[12px] sm:text-[16px]">Product</p>
+          <p className="w-[25%] text-center font-medium text-[12px] sm:text-[16px]">Price</p>
+          <p className="w-[25%] text-center font-medium text-[12px] sm:text-[16px]">Quantity</p>
+          <p className="w-[25%] text-center font-medium text-[12px] sm:text-[16px]">Sub-total</p>
         </div>
 
        
         {cartProducts.map((item, index) => (
         <div key={index} className="flex gap-[10px] justify-center sm:gap-[20px]">
-            <div  className="flex w-[90%] sm:w-[95%] items-center h-[82px] sm:pl-0 pl-[10px]  shadow-md rounded-[4px] justify-around">
+            <div  className="flex w-[95%] sm:w-[95%] items-center h-[82px] sm:pl-0 pl-[10px]  shadow-md rounded-[4px] justify-around">
                   <div className="flex w-[25%] justify-center items-center sm:gap-[20px] gap-[10px] text-center">
                     <img src={item.thumbnail} alt={item.title} className="w-[50px] h-[50px] hidden sm:block " />
                     <p className="md:text-[14px] text-[12px]">{item.title}</p>
@@ -82,7 +82,7 @@ function DeleteCartItem (id) {
 
             </div>
 
-            <button onClick={()=>DeleteCartItem(item.id)}><img src={deleteicon} alt="delete icon" className="w-[14px] h-[14px] sm:w-[24px] sm:h-[24px] "/></button>
+            <button onClick={()=>DeleteCartItem(item.id)}><img src={deleteicon} alt="delete icon" className="w-[10px] h-[10px] sm:w-[24px] sm:h-[24px] "/></button>
 
         </div>))}
 

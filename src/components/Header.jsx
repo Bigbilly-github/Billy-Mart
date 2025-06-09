@@ -10,9 +10,9 @@ const Header = () => {
    const { cart,wishlist} = useValueContext();
   return (
     <>
-      <header className="h-[150px] z-30 bg-slate-100 fixed right-0 left-0 top-0 flex justify-center items-center">
-        <div className="w-[90%] h-[88px]  bg-white rounded-[40px] shadow-lg flex justify-between items-center  px-[30px]">
-           <Link to="/"><p className="font-[poppins] text-[24px] font-bold">Billy-Mart</p></Link>
+      <header className="sm:h-[150px] h-[120px] z-30  fixed right-0 left-0 top-0 flex justify-center items-center">
+        <div className="w-[90%] sm:h-[88px] h-[60px]  bg-white rounded-[40px] shadow-lg flex justify-between items-center  px-[30px]">
+           <Link to="/"><p className="font-[poppins]  sm:text-[24px] font-bold">Billy-Mart</p></Link>
 
           <nav className="xl:w-[367px] w-[280px] h-[38px] hidden items-center  font-[Poppins] lg:flex justify-between ">
             <Link
@@ -54,19 +54,19 @@ const Header = () => {
                 className="w-[24px] h-[24px]"
               />
             </div>
-            <div className="flex justify-between w-[130px] ">
+            <div className="flex justify-between sm:w-[130px] w-[100px] ">
              <div className="relative ">
                <Link to="/wishlist">  <img
                   src={heart}
                   alt="heart icon"
-                  className="w-[24px] h-[24px]"
+                  className="sm:w-[24px] sm:h-[24px] w-[20px] h-[20px]"
                 /></Link>
                 <p className="absolute -top-[19px] -right-[5px] font-[poppins] font-medium">
                   {wishlist.length}
                 </p>
               </div>
               <div className="relative">
-                  <Link to="/cart"><img src={carticon} alt="cart icon" className="w-[24px] h-[24px]" />
+                  <Link to="/cart"><img src={carticon} alt="cart icon" className="sm:w-[24px] sm:h-[24px] w-[20px] h-[20px]" />
                     <p className="absolute -top-[15px] -right-[5px] font-[poppins] font-medium">
                         {cart.length}
                      </p>
@@ -74,7 +74,7 @@ const Header = () => {
 
               </div>
               <div>
-                <img src={user} alt="user icon"   className="w-[24px] h-[24px]"/>
+                <img src={user} alt="user icon"   className="sm:w-[24px] sm:h-[24px] w-[20px] h-[20px]"/>
               </div>
 
 
