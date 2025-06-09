@@ -150,6 +150,10 @@ function ContextProvider({ children }) {
       const updatedWishlist = [...wishlist, newWishlistItem];
       setWishList(updatedWishlist);
       localStorage.setItem("wishlist", JSON.stringify(updatedWishlist));
+      
+    }
+    else{
+        alert("item already exists in your wishlist");
     }
   }
 

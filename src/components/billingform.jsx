@@ -34,7 +34,14 @@ function BillingForm (){
         }
     ]
 
-    function GetBillingDetails(formData) {
+    const scrollToTop = () => {
+    window.scrollTo({
+      top: 600, 
+      behavior: "smooth",
+    });
+  };
+
+    function GetBillingDetails(formData, formElement) {
         const updated = {
         firstname: formData.get("firstname"),
         address: formData.get("address"),
@@ -43,7 +50,13 @@ function BillingForm (){
         email: formData.get("email"),
         };
         setBillingDetails(prev => ({ ...prev, ...updated }));
-        localStorage.setItem("billingdetails", JSON.stringify(billingdetails));
+        localStorage.setItem("billingdetails", JSON.stringify(updated));
+        alert("Billing details saved succesfully");
+        formElement.reset();
+        if(window.innerWidth < 600) {
+            scrollToTop();
+
+        }
        
   }
     useEffect(() => {
@@ -51,12 +64,12 @@ function BillingForm (){
   }, [billingdetails]);
     return(
         <>
-         <div className="w-[30%] h-auto ">
+         <div className="sm:w-[30%] w-[90%] h-auto ">
                   
                     <form onSubmit={(e)=>{
                         e.preventDefault();
                         const formData = new FormData(e.target);
-                        GetBillingDetails(formData);
+                        GetBillingDetails(formData,e.target);
                     }
                      }         className="flex flex-col gap-[20px] ">
                      { formdetails.map((detail,index)=>  <div key={index} className=" flex flex-col gap-[10px]">

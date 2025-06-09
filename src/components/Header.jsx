@@ -10,7 +10,7 @@ const Header = () => {
    const { cart,wishlist} = useValueContext();
   return (
     <>
-      <header className="h-[150px] sm:bg-[red] md:bg-[blue]  lg:bg-[orange] xl:bg-[brown] z-30 bg-slate-100 fixed right-0 left-0 top-0 flex justify-center items-center">
+      <header className="h-[150px] z-30 bg-slate-100 fixed right-0 left-0 top-0 flex justify-center items-center">
         <div className="w-[90%] h-[88px]  bg-white rounded-[40px] shadow-lg flex justify-between items-center  px-[30px]">
            <Link to="/"><p className="font-[poppins] text-[24px] font-bold">Billy-Mart</p></Link>
 
