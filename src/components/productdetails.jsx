@@ -66,7 +66,7 @@ function ProductDetails ({title}){
                                 <option value="4">4</option>
                                     <option value="5">5</option>
                             </select>
-                            <button onClick={()=>addToCart(cart,product.id,product.price,cartitemdeliverychoice,cartitemquantity)} className="cursor-pointer px-[20px] hover:bg-white hover:text-[red] duration-150 py-[10px] bg-[red] font-medium rounded-[5px] text-white"> Add to Cart</button>
+                            <button onClick={()=>addToCart(cart,product.id,product.price,cartitemdeliverychoice,cartitemquantity)} className="cursor-pointer text-[12px] sm:text-[16px] md:text-[18px] px-[20px] hover:bg-white hover:text-[red] duration-150 py-[10px] bg-[red] font-medium rounded-[5px] text-white"> Add to Cart</button>
                             <img src={img} alt="heart icon" />
                         </div> 
 
