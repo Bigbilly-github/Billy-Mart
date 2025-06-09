@@ -9,7 +9,8 @@ import RelatedItems from "./relateditems";
 
 
 function ProductDetails ({title}){
-     const { products,GetRatings,HandleDelivery,HandleQuantity,addToCart,cart,cartitemdeliverychoice,cartitemquantity} = useValueContext();
+    
+     const { AddToWishlist,products,GetRatings,HandleDelivery,HandleQuantity,addToCart,cart,cartitemdeliverychoice,cartitemquantity} = useValueContext();
 
     const selectedProduct = products.filter(product => product.title === title);
    
@@ -41,7 +42,7 @@ function ProductDetails ({title}){
                 </div>
 
                 <div className="flex-1 px-[20px] pt-[20px] border-b pb-[50px] border-slate-500">
-                    <h1 className="text-[24px] font-semibold text-black">
+                    <h1 className="sm:text-[24px] text-[20px] font-semibold text-black">
                         {product.title}
                     </h1>
                     <div className="flex gap-[10px] mt-[10px] mb-[10px] items-center">
@@ -50,7 +51,7 @@ function ProductDetails ({title}){
                             ({product.reviews.length} Review{product.reviews.length > 1 ? "s":null})
                         </p>
                      </div>
-                     <p className="text-[24px] mb-[20px] font-normal">
+                     <p className="sm:text-[24px] text-[18px] mb-[20px] font-normal">
                         ${product.price}
                      </p>
                      <p className="font-normal text-[14px] pb-[20px] border-b border-slate-500">
@@ -58,7 +59,7 @@ function ProductDetails ({title}){
                      </p>
                    
                       <div className="flex  gap-[15px] mt-[30px]">
-                            <select name="quantity" id="quantity" defaultValue="" onChange={HandleQuantity} className="px-[12px] outline-0 text-[18px] rounded-[5px] bg-slate-200 ">
+                            <select name="quantity" id="quantity" defaultValue="" onChange={HandleQuantity} className="px-[12px] outline-0 sm:text-[18px] text-[12px] rounded-[5px] bg-slate-200 ">
                                 <option disabled  hidden  value="">Select quantity</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -67,7 +68,7 @@ function ProductDetails ({title}){
                                     <option value="5">5</option>
                             </select>
                             <button onClick={()=>addToCart(cart,product.id,product.price,cartitemdeliverychoice,cartitemquantity)} className="cursor-pointer text-[12px] sm:text-[16px] md:text-[18px] px-[20px] hover:bg-white hover:text-[red] duration-150 py-[10px] bg-[red] font-medium rounded-[5px] text-white"> Add to Cart</button>
-                            <img src={img} alt="heart icon" />
+                            <img onClick={()=>AddToWishlist(product.id)} src={img} alt="heart icon"  className="active:bg-[red]     "/>
                         </div> 
 
                         <div className="flex flex-col mt-[50px] gap-[10px] ">
@@ -76,7 +77,7 @@ function ProductDetails ({title}){
                                 <div className="flex flex-col">
                                     <div>
                                       
-                                        <label  htmlFor="free" className="font-medium text-[16px]">
+                                        <label  htmlFor="free" className="font-medium text-[14px] sm:text-[16px]">
                                             FREE DELIVERY
                                         </label>
 
@@ -94,7 +95,7 @@ function ProductDetails ({title}){
                                 <div className="flex flex-col">
                                     <div>
                                       
-                                        <label  htmlFor="sevendays" className="font-medium text-[16px]">
+                                        <label  htmlFor="sevendays" className="font-medium text-[14px] sm:text-[16px] ">
                                            7 DAYS DELIVERY FOR $25
                                         </label>
 
