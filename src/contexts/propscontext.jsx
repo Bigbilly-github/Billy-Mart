@@ -12,6 +12,7 @@ function ContextProvider({ children }) {
   const [displayValue, setDisplayValue] = useState("groceries");
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
+  
 
   const [brandterm, setBrandTerm] = useState("brand");
   const [brandvalue, setBrandValue] = useState("Rolex");

@@ -6,9 +6,11 @@ import image3 from "../assets/img/hero/img3.png"
 import image4 from "../assets/img/hero/img4.png"
 import image5 from "../assets/img/hero/img5.png"
 
-
+import { useNavigate } from 'react-router-dom';
 
 function Hero1 () {
+   const {setDisplayValue} = useValueContext();
+    const navigate = useNavigate();
 
     const images = [image2, image3, image4, image5];   
 
@@ -26,6 +28,14 @@ function Hero1 () {
     
         return () => clearInterval(intervalRef.current);
       },);
+
+
+      function DisplayCategory (value){
+        setDisplayValue(value);
+        navigate("/shop");
+
+
+      }
   
    
     
@@ -34,7 +44,7 @@ function Hero1 () {
     <section className='w-full  max-h-[500px] min-h-[300px] flex justify-center bg-slate-100  border-t border-slate-300'>
         <div className='w-[90%] px-[30px] flex   '>
             <div className='pr-[50px] pb-[50px] hidden md:flex flex-col pt-[30px] border-r border-slate-300 '>
-              { categories.map((category,index) => <a href='' key={index} className='text-[18px]  hover:text-slate-500 hover:underline  mb-[16px] font-[poppins]'>
+              { categories.map((category,index) => <a onClick={()=> DisplayCategory(category)} key={index} className='text-[18px]  hover:text-slate-500 hover:underline  mb-[16px] font-[poppins]'>
                    { `${category.slice(0,1).toUpperCase()}${category.slice(1,category.length)}`}
                 </a>
             )}
