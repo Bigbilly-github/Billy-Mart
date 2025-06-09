@@ -1,5 +1,5 @@
 
-
+import { Link } from "react-router-dom";
 
 function Footer (){
 
@@ -61,9 +61,9 @@ function Footer (){
                     <p className=" text-[16px] font-medium mt-[24px] text-[#FAFAFA]">
                    Contact Us
                     </p>
-                    <p className=" text-[16px] font-medium mt-[24px] text-[#FAFAFA]">
+                    <Link to="/shop" className=" text-[16px] font-medium mt-[24px] text-[#FAFAFA]">
                    Shop
-                    </p>
+                    </Link>
                    
                    
 
