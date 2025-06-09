@@ -61,9 +61,9 @@ function Footer (){
                     <p className=" text-[16px] font-medium mt-[24px] text-[#FAFAFA]">
                    Contact Us
                     </p>
-                    <Link to="/shop" className=" text-[16px] font-medium mt-[24px] text-[#FAFAFA]">
-                   Shop
-                    </Link>
+                   <p className=" text-[16px] font-medium mt-[24px] text-[#FAFAFA]">
+                    <Link to="/shop">Shop</Link> 
+                    </p>
                    
                    
 
