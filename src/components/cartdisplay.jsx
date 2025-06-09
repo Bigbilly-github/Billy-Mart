@@ -4,6 +4,7 @@ import beauty from "../assets/img/category/beauty.jpeg"
 import { useValueContext } from '../contexts/propscontext'
 import deleteicon from "../assets/svg/cart/icon-cancel.svg"
 import { Link } from "react-router-dom";
+import EmptyCart from "./emptycart";
 
 function CartDisplay() {
   const { cart, products,HandleQuantity,cartProducts,setCart,SubTotal,SubDelivery,Total} = useValueContext();
@@ -36,7 +37,9 @@ function DeleteCartItem (id) {
 
 
   return (
-    <section className="w-full min-h-[600px] py-[50px] flex justify-center">
+    <>
+    {cart.length > 0 ? 
+       (<section className="w-full min-h-[600px] py-[50px] flex justify-center">
       <div className="w-[90%] flex flex-col gap-[40px]">
        
         <div className="flex w-[100%]  sm:w-[95%] items-center h-[72px] shadow-md rounded-[4px] bg-gray-100">
@@ -126,8 +129,10 @@ function DeleteCartItem (id) {
 
         </div>
     </div>
-    </section>
-  );
+    </section>) : ( <EmptyCart/>)}
+
+  </>
+    );
 }
 
 export default CartDisplay;

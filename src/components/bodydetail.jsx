@@ -18,21 +18,21 @@ function BodyDetail ({text,maintext,scroll}){
                     
 
                                 <div className="flex items-center  justify-between mt-[24px] ">
-                                    <p className="md:text-[36px] text-[24px]  font-semibold font-[poppins] tracking-wider">
+                                    <p className="md:text-[36px] sm:text-[24px] text-[16px]  font-semibold font-[poppins] tracking-wider">
                                     {maintext}
                                     </p>
                                     <div className="flex items-center gap-[10px] ">
                                             <button
                                             onClick={() => scroll("left")}
                                             
-                                                className="   bg-slate-300  text-[20px]   text-black px-3 py-1 rounded-full"
+                                                className="   bg-slate-300  sm:text-[20px] text-[12px]   text-black px-3 py-1 rounded-full"
                                             >
                                                 &larr;
                                             </button>
                                             <button
                                             onClick={() => scroll("right")}
                                             
-                                                className="   bg-slate-300 text-[20px]  text-black px-3 py-1 rounded-full"
+                                                className="   bg-slate-300 sm:text-[20px]  text-[12px]  text-black px-3 py-1 rounded-full"
                                             >
                                                 &rarr;
                                                 </button>

@@ -5,13 +5,13 @@ function Footer (){
 
     return(
         <>
-        <footer className="w-full md:h-[440px] h-[300px] flex justify-center items-center bg-black mt-[50px]">
+        <footer className="w-full md:h-[440px] h-[300px] flex justify-center relative bottom-0 right-0 left-0 items-center bg-black mt-[50px]">
             <div className="w-[90%] flex  justify-between md:h-[280px] h-[150px]" >
                 <div className="lg:w-[206px] w-[40%]  ">
-                    <p className="text-[24px] font-bold text-[#FAFAFA]">
+                    <p className="sm:text-[24px] text-[18px] font-bold text-[#FAFAFA]">
                         Billy-Mart
                     </p>
-                    <p className=" text-[12px] font-medium mt-[24px] text-[#FAFAFA]">
+                    <p className=" text-[12px] font-medium sm:mt-[24px] mt-[10px] text-[#FAFAFA]">
                         &copy; Copyright Billy-Mart 2025. All right reserved
                     </p>
 
@@ -51,11 +51,11 @@ function Footer (){
 
                 </div>
 
-                <div className="lg:w-[175px] w-[30%]  text-center h-[180px] ">
-                    <p className=" text-[20px] font-medium text-[#FAFAFA]">
+                <div className="lg:w-[175px] w-[30%]   text-center h-[180px] ">
+                    <p className=" text-[20px] hidden sm:block font-medium text-[#FAFAFA]">
                     Quick Link
                     </p>
-                    <p className=" text-[16px] font-medium mt-[24px] text-[#FAFAFA]">
+                    <p className=" text-[16px] font-medium sm:mt-[24px] text-[#FAFAFA]">
                 About Us
                     </p>
                     <p className=" text-[16px] font-medium mt-[24px] text-[#FAFAFA]">

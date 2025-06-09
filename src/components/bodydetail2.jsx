@@ -15,7 +15,7 @@ function BodyDetail2 ({text, maintext}){
                             
 
                                         <div className="flex items-center  justify-between mt-[24px] ">
-                                            <p className="md:text-[36px] text-[24px]  font-semibold font-[poppins] tracking-wider">
+                                            <p className="md:text-[36px] sm:text-[24px] text-[16px]  font-semibold font-[poppins] tracking-wider">
                                          {maintext}
                                             </p>
 
