@@ -82,7 +82,7 @@ function DeleteCartItem (id) {
 
             </div>
 
-            <button onClick={()=>DeleteCartItem(item.id)}><img src={deleteicon} alt="delete icon" /></button>
+            <button onClick={()=>DeleteCartItem(item.id)}><img src={deleteicon} alt="delete icon" className="w-[14px] h-[14px] sm:w-[24px] sm:h-[24px] "/></button>
 
         </div>))}
 
