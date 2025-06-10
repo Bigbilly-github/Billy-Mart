@@ -6,9 +6,9 @@ import image from "../assets/svg/aboutushero/twofemales.svg"
 function AboutUsHero(){
     return(
         <>
-        <section className="w-full flex justify-center  mt-[50px] mb-[80px]">
-            <div className="flex md:w-[90%] w-[80%] md:flex-row flex-col items-center gap-[40px]  md:gap-0 md:items-center md:justify-between ">
-                <div className="md:w-[40%] md:order-0 order-1 ">
+        <section className="w-full flex justify-center  mt-[50px] lg:mb-[140px] mb-[80px]">
+            <div className="flex lg:w-[90%] w-[80%] lg:flex-row flex-col items-center gap-[40px]  lg:gap-0 md:items-center lg:justify-between ">
+                <div className="lg:w-[40%] lg:order-0 order-1 ">
                     <h1 className="xl:text-[54px] lg:text-[44px] sm:text-[36px] mb-[30px] font-semibold">
                         Our Story
                     </h1>
@@ -20,7 +20,7 @@ function AboutUsHero(){
                     </p>
 
                 </div>
-                <img src={image} alt="image of two females with shopping bags" className="rounded-[4px] md:w-[50%]" />
+                <img src={image} alt="image of two females with shopping bags" className="rounded-[4px] lg:w-[50%]" />
             </div>
 
         </section>
