@@ -10,6 +10,7 @@ import Shop from './pages/shop.jsx';
 import Cart from './pages/cart.jsx';
 import Wishlist from './pages/wishlist.jsx';
 import Checkout from './pages/checkout.jsx';
+import AboutUs from './pages/aboutus.jsx';
 
 const ScrollToTop = () => {
   const location = useLocation();
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
    {
     path:"/checkout",
     element:<Layout><Checkout/></Layout>,
+  },
+    {
+    path:"/aboutus",
+    element:<Layout><AboutUs/></Layout>,
   },
 
 ])

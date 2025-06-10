@@ -27,12 +27,12 @@ const Header = () => {
             >
               Shop
             </Link>
-            <a
-              href=""
+            <Link
+              to="/aboutus"
               className="text-[16px]  hover:underline hover:text-slate-500 "
             >
               About
-            </a>
+            </Link>
             <a
               href=""
               className="text-[16px] hover:underline hover:text-slate-500 "
