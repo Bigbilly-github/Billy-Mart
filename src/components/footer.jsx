@@ -12,7 +12,7 @@ function Footer (){
                         Billy-Mart
                     </p>
                     <p className=" text-[12px] font-medium sm:mt-[24px] mt-[10px] text-[#FAFAFA]">
-                        &copy; Copyright Billy-Mart 2025. All right reserved
+                        &copy; Copyright Billy-Mart 2025. 
                     </p>
 
                 </div>

@@ -6,7 +6,7 @@ function EmptyCart (){
 
     return(
         <>
-        <section className="w-full sm:h-[400px] h-[300px] md:mt-0 mt-[50px]  flex items-center justify-center">
+        <section className="w-full sm:h-[400px] h-[200px] md:mt-0 mt-[50px] md:mb-0 mb-[50px] flex items-center justify-center">
             <div className="flex flex-col gap-[30px] ">
                 <h1 className="lg:text-[46px] sm:text-[30px] text-[18px]">
                     No item(s) to be displayed

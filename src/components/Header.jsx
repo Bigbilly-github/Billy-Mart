@@ -61,13 +61,13 @@ const Header = () => {
                   alt="heart icon"
                   className="sm:w-[24px] sm:h-[24px] w-[20px] h-[20px]"
                 /></Link>
-                <p className="absolute -top-[19px] -right-[5px] font-[poppins] font-medium">
+                <p className="absolute -top-[19px] sm:text-[16px] md:text-[18px] text-[14px] -right-[5px] font-[poppins] font-medium">
                   {wishlist.length}
                 </p>
               </div>
               <div className="relative">
                   <Link to="/cart"><img src={carticon} alt="cart icon" className="sm:w-[24px] sm:h-[24px] w-[20px] h-[20px]" />
-                    <p className="absolute -top-[15px] -right-[5px] font-[poppins] font-medium">
+                    <p className="absolute -top-[15px] sm:text-[16px] md:text-[18px] text-[14px] -right-[5px] font-[poppins] font-medium">
                         {cart.length}
                      </p>
                      </Link>  

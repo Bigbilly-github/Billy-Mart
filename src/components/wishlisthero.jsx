@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { useValueContext } from "../contexts/propscontext";
 import BodyDetail from "./bodydetail";
 import WishlistComp from "./wishlistcomp";
+import EmptyCart from "./emptycart";
 
 function WishlistHero() {
   const { products,wishlist } = useValueContext();
@@ -27,7 +28,7 @@ function WishlistHero() {
 
   return (
     <>
-      <section className="w-full h-auto flex justify-center mt-[80px] mb-[80px] ">
+    {wishlist.length > 0 ?  <section className="w-full h-auto flex justify-center mt-[80px] mb-[80px] ">
         <div className="w-[90%] px-[30px] flex  flex-col ">
           <BodyDetail text="Wishlist" maintext="Saved for later" scroll={scroll} />
 
@@ -39,7 +40,7 @@ function WishlistHero() {
             />
           </div>
         </div>
-      </section>
+      </section>: <EmptyCart/>}
     </>
   );
 }
