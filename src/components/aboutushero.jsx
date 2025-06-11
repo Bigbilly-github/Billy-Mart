@@ -7,16 +7,19 @@ function AboutUsHero(){
     return(
         <>
         <section className="w-full flex justify-center  mt-[50px] lg:mb-[140px] mb-[80px]">
-            <div className="flex lg:w-[90%] w-[80%] lg:flex-row flex-col items-center gap-[40px]  lg:gap-0 md:items-center lg:justify-between ">
+            <div className="flex lg:w-[85%] w-[80%] lg:flex-row flex-col items-center gap-[40px]  lg:gap-0 md:items-center lg:justify-between ">
                 <div className="lg:w-[40%] lg:order-0 order-1 ">
                     <h1 className="xl:text-[54px] lg:text-[44px] sm:text-[36px] mb-[30px] font-semibold">
                         Our Story
                     </h1>
                     <p className="sm:text-[16px] text-[14px]  mb-[24px]">
-                        Launced in 2015, Exclusive is South Asia’s premier online shopping makterplace with an active presense in Bangladesh. Supported by wide range of tailored marketing, data and service solutions, Exclusive has 10,500 sallers and 300 brands and serves 3 millioons customers across the region. 
+                        Launched in 2025, BillyMart is a fast-growing online shopping platform built with the goal of simplifying everyday purchases across Nigeria and beyond. We aim to make quality products easily accessible to everyone, wherever they are.
                     </p>
-                     <p className="sm:text-[16px] text-[14px] ">
-                        Exclusive has more than 1 Million products to offer, growing at a very fast. Exclusive offers a diverse assotment in categories ranging  from consumer.
+                    <p className="sm:text-[16px] text-[14px]  mb-[24px]">
+                        From fashion, electronics, and groceries to home essentials and personal care, BillyMart offers a wide variety of carefully curated products, with more being added every day.
+                    </p>
+                    <p className="sm:text-[16px] text-[14px] ">
+                       We’re more than just a marketplace, we’re building a digital shopping culture that’s local, seamless, and community-driven.
                     </p>
 
                 </div>
