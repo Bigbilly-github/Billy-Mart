@@ -38,7 +38,7 @@ function Footer (){
                   My Account
                     </p>
                     <p className=" text-[16px] font-medium mt-[24px] text-[#FAFAFA]">
-                    Login / Register
+                    <Link to="/login">Login / Register</Link>
                     </p>
                     <p className=" text-[16px] font-medium mt-[24px] text-[#FAFAFA]">
                    <Link to="/cart"> Cart</Link>

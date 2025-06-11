@@ -14,6 +14,7 @@ import AboutUs from './pages/aboutus.jsx';
 import ContactUs from './pages/contactus.jsx';
 import NotFound from './pages/notfound.jsx';
 import Profile from './pages/profile.jsx';
+import LoginSignup from './pages/loginSignup.jsx';
 
 const ScrollToTop = () => {
   const location = useLocation();
@@ -76,6 +77,11 @@ const router = createBrowserRouter([
    {
     path:"/profile",
     element:<Layout><Profile/></Layout>,
+    errorElement: <Layout><NotFound/></Layout>,
+  },
+   {
+    path:"/login",
+    element:<Layout><LoginSignup/></Layout>,
     errorElement: <Layout><NotFound/></Layout>,
   },
 
