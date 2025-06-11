@@ -1,28 +1,41 @@
 
 import phoneimage from "../assets/svg/contactus/icons-phone.svg";
 import mailimage from "../assets/svg/contactus/icons-mail.svg";
-
+import { useValueContext } from '../contexts/propscontext'
 
 function ContactUsHero (){
+     const {  messages,setMessages} = useValueContext();
     const contactarray = [
         {
             image:phoneimage,
             text:"Call to us",
             text2:"We are available 24/7, 7 days a week.",
-            text3:"Phone: +8801611112222"
+            text3:"Phone: +2349196034643"
         },
           {
             image:mailimage,
             text:"Write to us",
-            text2:"Fill out our form and we will contact you within 24 hours.",
-            text3:"Emails: customer@exclusive.com"
+            text2:"Fill out our form and we will contact you.",
+            text3:"Emails: yusufabiola555@gmail.com"
         }
     ]
+    function GetMessage (formData,formElement){
+        const updated = {
+        name: formData.get("name"),
+        email: formData.get("email"),
+        message: formData.get("message"),
+       
+        };
+        setMessages(m=>[...m,updated]);
+          localStorage.setItem("messages", JSON.stringify(messages));
+        alert("Message saved succesfully");
+          formElement.reset();
+    }
     return(
         <>
         <section className="w-full h-auto  pb-[50px] pt-[50px] mt-[50px]  flex justify-center">
-            <div className="w-[90%] flex gap-[50px] items-center">
-                <div className="w-[30%]  pl-[30px]  ">
+            <div className="w-[90%] flex md:flex-row flex-col  gap-[50px] items-center">
+                <div className="md:w-[30%]  md:pl-[30px]  ">
                  {contactarray.map((item,index)=> 
                      <div key={index} className="mb-[50px]">
                          <div className=" flex gap-[10px] mb-[24px] items-center">
@@ -49,7 +62,11 @@ function ContactUsHero (){
 
                 </div>
                 <div className="flex-1  ">
-                    <form action="" className="w-[100%] flex flex-col  ">
+                    <form onSubmit={(e)=>{
+                        e.preventDefault();
+                        const formData = new FormData(e.target);
+                        GetMessage(formData,e.target);
+                    }} className="md:w-[100%]  flex flex-col  ">
                         <div className="flex justify-between mb-[30px]">
                             <input type="text" id="name" name="name" placeholder="Your name" className="outline-0   bg-slate-100 w-[45%] p-[15px] rounded-[5px] " />
                          <input type="email" id="email" name="email" placeholder="Your email" className="outline-0  bg-slate-100  w-[45%] p-[15px] rounded-[5px]" />
@@ -60,7 +77,7 @@ function ContactUsHero (){
 
                         </div>
 
-                         <button className="bg-[red] self-end hover:outline-2 hover:outline-offset-2 hover:outline-black    duration-150   w-[30%] rounded-[5px] text-[14px] sm:text-[16px] text-white font-medium  h-[40px] sm:h-[56px] mb-[20px]">
+                         <button className="bg-[red] self-end hover:outline-2 hover:outline-offset-2 hover:outline-black    duration-150   w-[30%] rounded-[5px] text-[12px] sm:text-[16px] text-white font-medium  h-[40px] sm:h-[56px] mb-[20px]">
                                     Send Message
                         </button>
                     </form>

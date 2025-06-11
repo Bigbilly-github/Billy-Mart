@@ -12,6 +12,7 @@ function ContextProvider({ children }) {
   const [displayValue, setDisplayValue] = useState("groceries");
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
+  const [messages,setMessages] = useState([]);
   
 
   const [brandterm, setBrandTerm] = useState("brand");
@@ -165,6 +166,12 @@ function ContextProvider({ children }) {
     }
   }, []);
    useEffect(() => {
+    const storedMessages = localStorage.getItem("messages");
+    if (storedMessages) {
+      setMessages(JSON.parse(storedMessages));
+    }
+  }, []);
+   useEffect(() => {
     const storedbillinginfo = localStorage.getItem("billingdetails");
     if (storedbillinginfo) {
       setBillingDetails(JSON.parse(storedbillinginfo));
@@ -227,7 +234,9 @@ function ContextProvider({ children }) {
           displayterm,
           setDisplayValue,
           billingdetails,
-          setBillingDetails
+          setBillingDetails,
+          messages,
+          setMessages
         }}
       >
         {children}

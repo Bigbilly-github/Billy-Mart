@@ -1,4 +1,5 @@
 import ContactUsHero from "../components/contactushero"
+import Footer from "../components/footer"
 import Header from "../components/Header"
 
 
@@ -14,6 +15,7 @@ function ContactUs (){
         <main>
             <ContactUsHero/>
         </main>
+        <Footer/>
         </>
     )
 
