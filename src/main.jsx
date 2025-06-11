@@ -12,6 +12,7 @@ import Wishlist from './pages/wishlist.jsx';
 import Checkout from './pages/checkout.jsx';
 import AboutUs from './pages/aboutus.jsx';
 import ContactUs from './pages/contactus.jsx';
+import NotFound from './pages/notfound.jsx';
 
 const ScrollToTop = () => {
   const location = useLocation();
@@ -34,34 +35,42 @@ const router = createBrowserRouter([
   {
     path:"/",
     element:<Layout><Homepage /></Layout>,
+      errorElement: <Layout><NotFound/></Layout>,
   },
   {
     path:"/shop",
     element:<Layout><Shop/></Layout>,
+    errorElement: <Layout><NotFound/></Layout>,
   },
    {
     path:"/shop/:title",
     element:<Layout><Shop/></Layout>,
+    errorElement: <Layout><NotFound/></Layout>,
   },
      {
     path:"/cart",
     element:<Layout><Cart/></Layout>,
+    errorElement: <Layout><NotFound/></Layout>,
   },
    {
     path:"/wishlist",
     element:<Layout><Wishlist/></Layout>,
+    errorElement: <Layout><NotFound/></Layout>,
   },
    {
     path:"/checkout",
     element:<Layout><Checkout/></Layout>,
+    errorElement: <Layout><NotFound/></Layout>,
   },
     {
     path:"/aboutus",
     element:<Layout><AboutUs/></Layout>,
+    errorElement: <Layout><NotFound/></Layout>,
   },
    {
     path:"/contactus",
     element:<Layout><ContactUs/></Layout>,
+    errorElement: <Layout><NotFound/></Layout>,
   },
 
 ])
