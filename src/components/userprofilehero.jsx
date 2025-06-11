@@ -43,12 +43,13 @@ function UserProfileHero() {
               key={`order-group-${orderGroupIndex}`}
               className="mb-[30px] shadow-md cursor-pointer"
             >
-              <h1
+             <h1
                 onClick={() => toggleOrderVisibility(orderGroupIndex)}
-                className="md:text-[36px] sm:text-[24px] text-[16px] text-slate-700 pl-[40px] font-semibold mb-[30px]"
-              >
-                Order {orderGroupIndex + 1}
-              </h1>
+                className="md:text-[36px] sm:text-[24px] text-[16px] text-slate-700 pl-[40px] font-semibold mb-[30px] flex items-center gap-2 cursor-pointer"
+                >
+               <span className="font-normal">{openIndexes[orderGroupIndex] ? "-" : "+"} </span>  Order {orderGroupIndex + 1}
+            </h1>
+
 
               {orders.map((order, orderIndex) => (
                 <div
