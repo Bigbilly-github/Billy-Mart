@@ -8,11 +8,11 @@ function LoginSignUpHero (){
 
     return(
         <>
-        <section className="w-full flex justify-center mt-[50px]">
-            <div className="w-[90%] flex items-center justify-between  pb-[50px]  ">
-                <img src={image} alt="side image" className="object-contain" />
-                <div className="w-[30%]">
-                    <h1 className="text-[36px] font-medium mb-[20px]"> 
+        <section className="w-full flex justify-center pt-[50px]  bg-slate-100 ">
+            <div className="w-[90%] flex items-center justify-center lg:justify-between  pb-[50px]  ">
+                <img src={image} alt="side image" className="object-contain lg:w-[50%] hidden lg:block " />
+                <div className="lg:w-[40%] w-[60%] ">
+                    <h1 className="md:text-[36px] sm:text-[36px] text-[24px] font-medium mb-[20px]"> 
                        {action==="signup" ? "Create an account" : "Log in to Billymart"}
                     </h1>
                     <p className="text-[16px] mb-[20px]">
