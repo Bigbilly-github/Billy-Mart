@@ -41,10 +41,10 @@ function Footer (){
                     Login / Register
                     </p>
                     <p className=" text-[16px] font-medium mt-[24px] text-[#FAFAFA]">
-                  Cart
+                   <Link to="/cart"> Cart</Link>
                     </p>
                     <p className=" text-[16px] font-medium mt-[24px] text-[#FAFAFA]">
-                    Wishlist
+                  <Link to="/wishlist"> Wishlist</Link>
                     </p>
 
                    
@@ -56,13 +56,13 @@ function Footer (){
                     Quick Link
                     </p>
                     <p className=" text-[16px] font-medium sm:mt-[24px] text-[#FAFAFA]">
-                About Us
+                        <Link to="/aboutus">  About Us</Link>
                     </p>
                     <p className=" text-[16px] font-medium mt-[24px] text-[#FAFAFA]">
-                   Contact Us
+                        <Link to="/contactus">Contact Us</Link> 
                     </p>
                    <p className=" text-[16px] font-medium mt-[24px] text-[#FAFAFA]">
-                    <Link to="/shop">Shop</Link> 
+                        <Link to="/shop">Shop</Link> 
                     </p>
                    
                    

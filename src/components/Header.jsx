@@ -74,7 +74,7 @@ const Header = () => {
 
               </div>
               <div>
-                <img src={user} alt="user icon"   className="sm:w-[24px] sm:h-[24px] w-[20px] h-[20px]"/>
+             <Link to ="/profile"> <img src={user} alt="user icon"   className="sm:w-[24px] sm:h-[24px] w-[20px] h-[20px]"/></Link> 
               </div>
 
 

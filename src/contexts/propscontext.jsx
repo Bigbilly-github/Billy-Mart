@@ -13,6 +13,8 @@ function ContextProvider({ children }) {
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [messages,setMessages] = useState([]);
+  const [placedorders,setPlacedOrders] = useState([]);
+  console.log(placedorders);
   
 
   const [brandterm, setBrandTerm] = useState("brand");
@@ -166,6 +168,12 @@ function ContextProvider({ children }) {
     }
   }, []);
    useEffect(() => {
+    const storedOrders = localStorage.getItem("placedorders");
+    if (storedOrders) {
+      setPlacedOrders(JSON.parse(storedOrders));
+    }
+  }, []);
+   useEffect(() => {
     const storedMessages = localStorage.getItem("messages");
     if (storedMessages) {
       setMessages(JSON.parse(storedMessages));
@@ -236,7 +244,9 @@ function ContextProvider({ children }) {
           billingdetails,
           setBillingDetails,
           messages,
-          setMessages
+          setMessages,
+          placedorders,
+          setPlacedOrders
         }}
       >
         {children}

@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 function BillingHero (){
-      const { cart,products,setCart,cartProducts,SubTotal,SubDelivery,Total,billingdetails, setBillingDetails} = useValueContext();
+      const { cart,products,setCart, placedorders,setPlacedOrders,cartProducts,SubTotal,SubDelivery,Total,billingdetails, setBillingDetails} = useValueContext();
       const [iscash,setIsCash] =  useState("");
             const navigate = useNavigate();
 
@@ -16,6 +16,11 @@ function BillingHero (){
 
   function PlaceOrder (){
     if(iscash==="true"){
+          const newOrders = [...placedorders, cart];
+          setPlacedOrders(newOrders);
+         localStorage.setItem("placedorders", JSON.stringify(newOrders));
+            setCart([]);
+         localStorage.setItem("cart", JSON.stringify([]));
         alert("Your order is being processed, check your order section in your profile for more details");
        setTimeout(() => {
          navigate('/');

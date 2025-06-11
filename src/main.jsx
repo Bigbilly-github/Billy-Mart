@@ -13,6 +13,7 @@ import Checkout from './pages/checkout.jsx';
 import AboutUs from './pages/aboutus.jsx';
 import ContactUs from './pages/contactus.jsx';
 import NotFound from './pages/notfound.jsx';
+import Profile from './pages/profile.jsx';
 
 const ScrollToTop = () => {
   const location = useLocation();
@@ -70,6 +71,11 @@ const router = createBrowserRouter([
    {
     path:"/contactus",
     element:<Layout><ContactUs/></Layout>,
+    errorElement: <Layout><NotFound/></Layout>,
+  },
+   {
+    path:"/profile",
+    element:<Layout><Profile/></Layout>,
     errorElement: <Layout><NotFound/></Layout>,
   },
 

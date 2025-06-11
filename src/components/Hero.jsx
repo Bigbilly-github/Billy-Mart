@@ -44,7 +44,7 @@ function Hero1 () {
     <section className='w-full  max-h-[500px] min-h-[300px] flex justify-center bg-slate-100  border-t border-slate-300'>
         <div className='w-[90%] px-[30px] flex   '>
             <div className='pr-[50px] pb-[50px] hidden md:flex flex-col pt-[30px] border-r border-slate-300 '>
-              { categories.map((category,index) => <a onClick={()=> DisplayCategory(category)} key={index} className='text-[18px]  hover:text-slate-500 hover:underline  mb-[16px] font-[poppins]'>
+              { categories.map((category,index) => <a onClick={()=> DisplayCategory(category)} key={index} className='text-[18px] cursor-pointer  hover:text-slate-500 hover:underline  mb-[16px] font-[poppins]'>
                    { `${category.slice(0,1).toUpperCase()}${category.slice(1,category.length)}`}
                 </a>
             )}
