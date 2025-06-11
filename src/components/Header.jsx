@@ -33,12 +33,12 @@ const Header = () => {
             >
               About
             </Link>
-            <a
-              href=""
+            <Link
+              to="/contactus"
               className="text-[16px] hover:underline hover:text-slate-500 "
             >
               Contact Us
-            </a>
+            </Link>
           </nav>
 
           <div className=" xl:w-[496px] md:w-[396px]  h-[38px]  justify-between flex  items-center">
