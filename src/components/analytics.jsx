@@ -1,9 +1,9 @@
 
 
-import image1 from "../assets/svg/analytics/services.svg"
+import image1 from "../assets/svg/analytics/Services.svg"
 import image2 from "../assets/svg/analytics/Services2.svg"
-import image3 from "../assets/svg/analytics/services3.svg"
-import image4 from "../assets/svg/analytics/services.svg"
+import image3 from "../assets/svg/analytics/Services3.svg"
+import image4 from "../assets/svg/analytics/Services4.svg"
 
 function Analytics (){
     const AnalyticsArray = [
