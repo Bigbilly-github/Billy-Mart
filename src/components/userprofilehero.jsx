@@ -2,6 +2,7 @@
 import { useState } from "react";
 import groceries from "../assets/img/category/groceries.jpg";
 import { useValueContext } from "../contexts/propscontext";
+import { Link } from "react-router-dom";
 
 function UserProfileHero() {
   const { placedorders, products } = useValueContext();
@@ -30,14 +31,16 @@ function UserProfileHero() {
     <section className="w-full flex mt-[50px] h-auto justify-center">
       <div className="w-[90%] flex">
       
-        <div className="sm:w-[20%] w-[25%] border-r border-slate-200">
-          <h1 className="md:text-[24px] sm:text-[18px] text-[16px] cursor-pointer hover:underline transition-all duration-150">
+        <div className="sm:w-[20%] flex  flex-col justify-between w-[25%] border-r border-slate-200">
+          <h1 className="md:text-[24px] sm:text-[18px] text-[16px]  ">
             My Orders
           </h1>
+        <button className="bg-[red] hover:outline-2 hover:outline-offset-2 hover:outline-black self-start   duration-150   w-[60%] rounded-[5px] text-[14px] sm:text-[16px] text-white font-medium self-center h-[40px] sm:h-[56px] mb-[20px]"><Link to="/shop">Logout</Link></button>
         </div>
 
       
-        <div className="w-[80%] flex flex-col">
+  {placedorders.length > 0 ?     ( 
+    <div className="w-[80%] flex flex-col">
           {placedorders.map((orders, orderGroupIndex) => (
             <div
               key={`order-group-${orderGroupIndex}`}
@@ -90,7 +93,10 @@ function UserProfileHero() {
               ))}
             </div>
           ))}
-        </div>
+        </div>) :<div className="h-[400px] w-[100%] gap-[30px] flex flex-col items-center justify-center"> 
+            <p className="  lg:text-[46px] sm:text-[30px] text-[18px] font-semibold ">No Order(s) to be displayed</p> 
+             <button className="bg-[red] hover:outline-2 hover:outline-offset-2 hover:outline-black    duration-150   w-[60%] rounded-[5px] text-[14px] sm:text-[16px] text-white font-medium self-center h-[40px] sm:h-[56px] mb-[20px]"><Link to="/shop">Continue Shopping</Link></button>
+            </div>}
       </div>
     </section>
   );

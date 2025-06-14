@@ -11,9 +11,9 @@ function EmptyCart (){
                 <h1 className="lg:text-[46px] sm:text-[30px] text-[18px]">
                     No item(s) to be displayed
                 </h1>
-                <div  className="flex gap-[10px]">
-                    <button className="bg-[red] hover:outline-2 hover:outline-offset-2 hover:outline-black    duration-150   w-[60%] rounded-[5px] text-[14px] sm:text-[16px] text-white font-medium self-center h-[40px] sm:h-[56px] mb-[20px]"><Link to="/">Home</Link></button>
-                    <button className="bg-[red] hover:outline-2 hover:outline-offset-2 hover:outline-black    duration-150   w-[60%] rounded-[5px] text-[14px] sm:text-[16px] text-white font-medium self-center h-[40px] sm:h-[56px] mb-[20px]"><Link to="/shop">Shop</Link></button>
+                <div  className="flex gap-[10px] justify-center">
+                
+                    <button className="bg-[red] hover:outline-2 hover:outline-offset-2 hover:outline-black    duration-150   w-[60%] rounded-[5px] text-[14px] sm:text-[16px] text-white font-medium self-center h-[40px] sm:h-[56px] mb-[20px]"><Link to="/shop">Continue Shopping</Link></button>
                 </div>
             </div>
 
