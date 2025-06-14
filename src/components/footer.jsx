@@ -1,7 +1,13 @@
 
 import { Link } from "react-router-dom";
+import {  signOut } from "firebase/auth";
+import { auth } from "../js/firebase";
 
 function Footer (){
+
+      const logout = () => {
+            signOut(auth);
+        };
 
     return(
         <>
@@ -38,7 +44,7 @@ function Footer (){
                   My Account
                     </p>
                     <p className=" text-[16px] font-medium mt-[24px] text-[#FAFAFA]">
-                    <Link to="/">Login / Register</Link>
+                    <a onClick={logout}>Login / Register</a>
                     </p>
                     <p className=" text-[16px] font-medium mt-[24px] text-[#FAFAFA]">
                    <Link to="/cart"> Cart</Link>
@@ -53,7 +59,7 @@ function Footer (){
 
                 <div className="lg:w-[175px] w-[30%]   text-center h-[180px] ">
                     <p className=" text-[20px] hidden sm:block font-medium text-[#FAFAFA]">
-                    Quick Link
+                    <a onClick={logout}>Quick Link</a>
                     </p>
                     <p className=" text-[16px] font-medium sm:mt-[24px] text-[#FAFAFA]">
                         <Link to="/aboutus">  About Us</Link>

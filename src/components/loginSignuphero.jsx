@@ -26,6 +26,8 @@ function LoginSignUpHero (){
         await createUserWithEmailAndPassword(auth, useremail, userpassword);
       }
       navigate("/homepage");
+      setUserEmail("");
+      setUserPassword("");
     } catch (err) {
       alert(err.message);
     }
