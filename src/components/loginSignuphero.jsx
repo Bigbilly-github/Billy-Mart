@@ -42,7 +42,12 @@ function LoginSignUpHero (){
   if (error.code === "auth/email-already-in-use") {
     alert("That email is already registered. Please log in instead.");
     setAction("login");
-  } else {
+  } if (error.code === "auth/invalid-credential"){
+     alert("Incorrect Email or password.Please try again");
+
+
+  }
+  else {
     alert(error.message);
   }
 }

@@ -12,7 +12,7 @@ const Header = () => {
     <>
       <header className="sm:h-[150px]  h-[120px] z-30  bg-slate-100 fixed right-0 left-0 top-0 flex justify-center items-center">
         <div className="w-[90%] sm:h-[88px] h-[60px]  bg-white rounded-[40px] shadow-lg flex justify-between items-center  px-[30px]">
-           <Link to="/"><p className="font-[poppins]  sm:text-[24px] font-bold">Billy-Mart</p></Link>
+           <Link to="/homepage"><p className="font-[poppins]  sm:text-[24px] font-bold">Billy-Mart</p></Link>
 
           <nav className="xl:w-[367px] w-[280px] h-[38px] hidden items-center  font-[Poppins] lg:flex justify-between ">
             <Link
