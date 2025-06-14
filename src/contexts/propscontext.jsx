@@ -15,7 +15,7 @@ function ContextProvider({ children }) {
   const [messages,setMessages] = useState([]);
   const [placedorders,setPlacedOrders] = useState([]);
    const [action,setAction] = useState("signup");
-  console.log(placedorders);
+ 
   
 
   const [brandterm, setBrandTerm] = useState("brand");

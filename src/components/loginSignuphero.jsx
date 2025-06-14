@@ -10,6 +10,8 @@ import {
 } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { useValueContext } from "../contexts/propscontext";
+import { sendPasswordResetEmail } from "firebase/auth";
+
 
 
 function LoginSignUpHero (){
@@ -46,6 +48,20 @@ function LoginSignUpHero (){
 }
 }
 
+    const handleForgotPassword = async () => {
+    if (!useremail) {
+        alert("Please enter your email first.");
+        return;
+    }
+
+    try {
+        await sendPasswordResetEmail(auth, useremail);
+        alert("Password reset email sent! Check your inbox.");
+    } catch (error) {
+        alert(error.message);
+    }
+    };
+
     return(
         <>
         <section className="w-full flex justify-center pt-[50px]  bg-slate-100 ">
@@ -73,7 +89,7 @@ function LoginSignUpHero (){
                             setAction("login")
                         }}>Log in</span>
                     </p> : <div> <p className="text-slate-500">
-                        Forgot password? &nbsp; &nbsp; &nbsp; <span className="underline cursor-pointer" >Click here</span>  &nbsp; &nbsp; &nbsp; <span className="underline font-bold cursor-pointer" onClick={()=>{
+                        Forgot password? &nbsp; &nbsp; &nbsp; <span onClick={handleForgotPassword} className="underline cursor-pointer" >Click here</span>  &nbsp; &nbsp; &nbsp; <span className="underline font-bold cursor-pointer" onClick={()=>{
                             setAction("signup")
                         }} >Sign up</span>
                     </p>
