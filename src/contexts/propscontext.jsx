@@ -14,6 +14,7 @@ function ContextProvider({ children }) {
   const [categories, setCategories] = useState([]);
   const [messages,setMessages] = useState([]);
   const [placedorders,setPlacedOrders] = useState([]);
+   const [action,setAction] = useState("signup");
   console.log(placedorders);
   
 
@@ -246,7 +247,9 @@ function ContextProvider({ children }) {
           messages,
           setMessages,
           placedorders,
-          setPlacedOrders
+          setPlacedOrders,
+          action,
+          setAction
         }}
       >
         {children}

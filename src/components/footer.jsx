@@ -2,12 +2,20 @@
 import { Link } from "react-router-dom";
 import {  signOut } from "firebase/auth";
 import { auth } from "../js/firebase";
+import { useValueContext } from "../contexts/propscontext";
+import { useAuthState } from "react-firebase-hooks/auth";
+
+
 
 function Footer (){
+    const [user] = useAuthState(auth);
 
       const logout = () => {
             signOut(auth);
+            setAction("login");
         };
+
+         const {  action,  setAction } = useValueContext();
 
     return(
         <>
@@ -43,9 +51,16 @@ function Footer (){
                     <p className=" text-[16px] font-medium mt-[24px] text-[#FAFAFA]">
                   My Account
                     </p>
-                    <p className=" text-[16px] font-medium mt-[24px] text-[#FAFAFA]">
-                    <a onClick={logout}>Login / Register</a>
-                    </p>
+                {user ? (
+                <p onClick={logout} className="text-[16px] font-medium mt-[24px] text-[#FAFAFA] cursor-pointer">
+                    Logout
+                </p>
+                ) : (
+                <Link to="/login" className="text-[16px] font-medium mt-[24px] text-[#FAFAFA]">
+                   <p className="text-[16px] font-medium mt-[34px] text-[#FAFAFA]">Login / Register</p> 
+                </Link>
+                )}
+
                     <p className=" text-[16px] font-medium mt-[24px] text-[#FAFAFA]">
                    <Link to="/cart"> Cart</Link>
                     </p>

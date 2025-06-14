@@ -9,10 +9,12 @@ import {
   updateProfile
 } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import { useValueContext } from "../contexts/propscontext";
 
 
 function LoginSignUpHero (){
-    const [action,setAction] = useState("signup");
+     const {  action,  setAction } = useValueContext();
+   
     const [username,setUserName] = useState("");
     const [useremail,setUserEmail] = useState("");
     const [userpassword,setUserPassword] = useState("");
