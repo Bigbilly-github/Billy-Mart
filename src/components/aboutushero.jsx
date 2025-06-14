@@ -4,6 +4,11 @@ import image from "../assets/svg/aboutushero/twofemales.svg";
 
 function AboutUsHero() {
   return (
+    <>
+              <div className="w-[100%] h-[60px] rounded-[4px] mb-[30px]  text-black text-[20px] font-semibold bg-slate-100 flex items-center justify-center ">
+       About Us
+
+             </div>
     <section className="w-full flex justify-center mt-[50px] mb-[80px] lg:mb-[140px]">
       <div className="flex w-[80%] lg:w-[85%] flex-col lg:flex-row items-center lg:justify-between gap-[40px] lg:gap-0">
         
@@ -31,6 +36,7 @@ function AboutUsHero() {
         />
       </div>
     </section>
+    </>
   );
 }
 

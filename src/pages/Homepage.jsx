@@ -36,6 +36,8 @@ function Homepage () {
       }
       else{
          setDisplayName(currentUser.displayName);
+         
+
          alert(`Welcome ${currentUser.displayName.slice(0,1).toUpperCase()}${currentUser.displayName.slice(1,currentUser.displayName.length)}`)
       }
       

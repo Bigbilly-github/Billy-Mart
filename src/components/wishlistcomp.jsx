@@ -58,11 +58,12 @@ function WishlistComp({ carouselRef, products }) {
               </div>
              
             </div>
-            <div onClick={()=> DisplayCategory(product.title)} className="w-[201px] px-[10px] pb-[15px] h-auto mt-[16px] ">
+            <div  className="w-[251px] px-[10px] pb-[15px] h-auto mt-[16px] ">
               <h1 className="font-medium text-[16px]">{product.title}</h1>
               <p className="text-[#DB4444] mt-[7px]">${product.price}</p>
-              
+              <button  onClick={()=> DisplayCategory(product.title)}  className="bg-[#ba3131] mt-[15px] hover:outline-2 hover:outline-offset-2 hover:outline-black    duration-150   w-[100%] rounded-[5px] text-[14px] sm:text-[16px] text-white font-medium self-center h-[40px] sm:h-[50px] mb-[20px]">View Item</button>
             </div>
+            
           </div>
         ))}
       </div>

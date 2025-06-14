@@ -28,14 +28,20 @@ function UserProfileHero() {
   };
 
   return (
-    <section className="w-full flex mt-[50px] h-auto justify-center">
+    <>
+              <div className="w-[100%] h-[60px] rounded-[4px] mb-[30px]  text-black text-[20px] font-semibold bg-slate-100 flex items-center justify-center ">
+       My Account
+
+             </div>
+    <section className="w-full flex flex-col gap-[30px] h-auto items-center">
+         
       <div className="w-[90%] flex">
       
         <div className="sm:w-[20%] flex  flex-col justify-between w-[25%] border-r border-slate-200">
-          <h1 className="md:text-[24px] sm:text-[18px] text-[16px]  ">
+          <h1 className="lg:text-[24px] sm:text-[18px] text-[16px]  ">
             My Orders
           </h1>
-        <button className="bg-[red] hover:outline-2 hover:outline-offset-2 hover:outline-black self-start   duration-150   w-[60%] rounded-[5px] text-[14px] sm:text-[16px] text-white font-medium self-center h-[40px] sm:h-[56px] mb-[20px]"><Link to="/shop">Logout</Link></button>
+        <button className="bg-[red] hover:outline-2 hover:outline-offset-2 hover:outline-black self-start   duration-150 sm:w-[80%]  w-[80%] rounded-[5px] text-[12px] sm:text-[14px] md:text-[16px] text-white font-medium  h-[40px] sm:h-[56px] mb-[20px]"><Link to="/shop">Logout</Link></button>
         </div>
 
       
@@ -99,6 +105,7 @@ function UserProfileHero() {
             </div>}
       </div>
     </section>
+    </>
   );
 }
 

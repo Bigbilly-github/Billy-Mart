@@ -38,9 +38,15 @@ function DeleteCartItem (id) {
 
   return (
     <>
+              <div className="w-[100%] h-[60px] rounded-[4px]    text-black text-[20px] font-semibold bg-slate-100 flex items-center justify-center ">
+       Cart
+
+             </div>
     {cart.length > 0 ? 
-       (<section className="w-full min-h-[600px] py-[50px] flex justify-center">
+       (<section className="w-full min-h-[600px] py-[50px] flex flex-col items-center justify-center">
+
       <div className="w-[90%] flex flex-col gap-[40px]">
+
        
         <div className="flex w-[100%]  sm:w-[95%] items-center h-[72px] shadow-md rounded-[4px] bg-gray-100">
           <p className="w-[25%] text-center font-medium text-[12px] sm:text-[16px]">Product</p>

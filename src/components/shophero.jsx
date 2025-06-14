@@ -10,7 +10,7 @@ function ShopHero (){
              
         <>
         <section className="w-full flex justify-center">
-             <div className="w-[90%] h-[60px] rounded-[4px] mt-[30px] text-black text-[20px] font-semibold bg-slate-100 flex items-center justify-center ">
+             <div className="w-[100%] h-[60px] rounded-[4px]  text-black text-[20px] font-semibold bg-slate-100 flex items-center justify-center ">
           {displayValue}
 
              </div>

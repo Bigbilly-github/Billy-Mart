@@ -74,7 +74,7 @@ function Footer (){
 
                 <div className="lg:w-[175px] w-[30%]   text-center h-[180px] ">
                     <p className=" text-[20px] hidden sm:block font-medium text-[#FAFAFA]">
-                    <a onClick={logout}>Quick Link</a>
+                    Quick Link
                     </p>
                     <p className=" text-[16px] font-medium sm:mt-[24px] text-[#FAFAFA]">
                         <Link to="/aboutus">  About Us</Link>

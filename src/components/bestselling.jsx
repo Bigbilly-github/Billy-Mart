@@ -42,7 +42,7 @@ function BestSelling (){
                         
                        
         
-                        <div  className='w-full h-[308px] mt-[40px]  overflow-hidden '>
+                        <div  className='w-full h-auto pb-[50px]  mt-[40px]  overflow-hidden '>
                         <FlashSalesComp products={bestselling}   carouselRef={carouselRef} />
                            
                       

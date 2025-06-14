@@ -40,7 +40,7 @@ function ProductDisplay (){
             <div className="w-[90%] px-[30px] flex  flex-col ">
                 <BodyDetail text={displayterm} maintext={displayValue} scroll={scroll} />
 
-                <div className="w-full h-[380px] mt-[40px]  overflow-hidden ">
+                <div className="w-full h-auto pb-[50px] mt-[40px]  overflow-hidden ">
                     <FlashSalesComp
                     products={display}
                     

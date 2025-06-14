@@ -31,6 +31,10 @@ function ContactUsHero() {
   }
   return (
     <>
+              <div className="w-[100%] h-[60px] rounded-[4px] mb-[30px]  text-black text-[20px] font-semibold bg-slate-100 flex items-center justify-center ">
+       Contact Us
+
+             </div>
       <section className="w-full h-auto  pb-[50px] pt-[50px] mt-[50px]  flex justify-center">
         <div className="w-[90%] flex md:flex-row flex-col  gap-[50px] items-center">
           <div className="md:w-[30%]  md:pl-[30px]  ">
