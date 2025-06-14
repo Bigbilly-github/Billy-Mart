@@ -21,9 +21,9 @@ function LoginSignUpHero (){
     e.preventDefault();
     try {
       if (action!=="signup") {
-        await signInWithEmailAndPassword(auth, email, password);
+        await signInWithEmailAndPassword(auth, useremail, userpassword);
       } else {
-        await createUserWithEmailAndPassword(auth, email, password);
+        await createUserWithEmailAndPassword(auth, useremail, userpassword);
       }
       navigate("/homepage");
     } catch (err) {

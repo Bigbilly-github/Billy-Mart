@@ -16,7 +16,7 @@ const Header = () => {
 
           <nav className="xl:w-[367px] w-[280px] h-[38px] hidden items-center  font-[Poppins] lg:flex justify-between ">
             <Link
-              to="/"
+              to="/homepage"
               className="text-[16px] hover:underline hover:text-slate-500 "
             >
               Home

@@ -28,7 +28,7 @@ function Homepage () {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       if (!currentUser) {
-        navigate("/login");
+        navigate("/");
       }
     });
     return () => unsubscribe();

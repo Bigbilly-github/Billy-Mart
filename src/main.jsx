@@ -35,7 +35,7 @@ const Layout = ({ children }) => (
 
 const router = createBrowserRouter([
   {
-    path:"/",
+    path:"/homepage",
     element:<Layout><Homepage /></Layout>,
       errorElement: <Layout><NotFound/></Layout>,
   },
@@ -80,7 +80,7 @@ const router = createBrowserRouter([
     errorElement: <Layout><NotFound/></Layout>,
   },
    {
-    path:"/login",
+    path:"/",
     element:<Layout><LoginSignup/></Layout>,
     errorElement: <Layout><NotFound/></Layout>,
   },
