@@ -22,6 +22,8 @@ import { useNavigate } from "react-router-dom";
 function Homepage () {
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
+    const [displayName, setDisplayName] = useState("");
+    
 
 
   useEffect(() => {
@@ -29,7 +31,14 @@ function Homepage () {
       setUser(currentUser);
       if (!currentUser) {
         navigate("/");
+       
+        
       }
+      else{
+         setDisplayName(currentUser.displayName);
+         alert(`Welcome ${currentUser.displayName.slice(0,1).toUpperCase()}${currentUser.displayName.slice(1,currentUser.displayName.length)}`)
+      }
+      
     });
     return () => unsubscribe();
   }, [navigate]);

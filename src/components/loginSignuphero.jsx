@@ -6,6 +6,7 @@ import { auth } from "../js/firebase";
 import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
+  updateProfile
 } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
@@ -21,17 +22,27 @@ function LoginSignUpHero (){
     e.preventDefault();
     try {
       if (action!=="signup") {
-        await signInWithEmailAndPassword(auth, useremail, userpassword);
+         await signInWithEmailAndPassword(auth, useremail, userpassword);
       } else {
-        await createUserWithEmailAndPassword(auth, useremail, userpassword);
+       const userCredential =  await createUserWithEmailAndPassword(auth, useremail, userpassword);
+         await updateProfile(userCredential.user, {
+        displayName: username,
+      });
       }
       navigate("/homepage");
+      
       setUserEmail("");
       setUserPassword("");
-    } catch (err) {
-      alert(err.message);
-    }
-  };
+    } 
+    catch (error) {
+  if (error.code === "auth/email-already-in-use") {
+    alert("That email is already registered. Please log in instead.");
+    setAction("login");
+  } else {
+    alert(error.message);
+  }
+}
+}
 
     return(
         <>
