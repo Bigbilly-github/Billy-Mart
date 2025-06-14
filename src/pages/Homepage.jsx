@@ -8,6 +8,9 @@ import NewArrival from '../components/newarrival'
 import CustomerService from '../components/customerservices'
 import Footer from '../components/footer'
 import Hero from '../components/Hero'
+import { onAuthStateChanged, signOut } from "firebase/auth";
+import { auth } from "../js/firebase";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -17,6 +20,20 @@ import Hero from '../components/Hero'
 
 
 function Homepage () {
+  const [user, setUser] = useState(null);
+  const navigate = useNavigate();
+
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+      if (!currentUser) {
+        navigate("/login");
+      }
+    });
+    return () => unsubscribe();
+  }, [navigate]);
+
   return (
     <>
         <Header/>

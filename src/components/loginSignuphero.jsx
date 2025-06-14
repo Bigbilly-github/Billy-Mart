@@ -2,9 +2,34 @@
 import { useState } from "react";
 import image from "../assets/svg/login/image.svg";
 
+import { auth } from "../js/firebase";
+import {
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+} from "firebase/auth";
+import { useNavigate } from "react-router-dom";
+
 
 function LoginSignUpHero (){
     const [action,setAction] = useState("signup");
+    const [username,setUserName] = useState("");
+    const [useremail,setUserEmail] = useState("");
+    const [userpassword,setUserPassword] = useState("");
+    const navigate = useNavigate();
+
+    const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      if (action!=="signup") {
+        await signInWithEmailAndPassword(auth, email, password);
+      } else {
+        await createUserWithEmailAndPassword(auth, email, password);
+      }
+      navigate("/homepage");
+    } catch (err) {
+      alert(err.message);
+    }
+  };
 
     return(
         <>
@@ -18,11 +43,11 @@ function LoginSignUpHero (){
                     <p className="text-[16px] mb-[20px]">
                             {action==="signup" ? "Enter your details below" : "Enter your details below"}
                     </p>
-                    <form action="">
-                      {action ==="signup" ? <input type="text" id="name" name="name" placeholder="Name" className="w-[100%] mb-[10px] outline-0 p-[10px] border-b border-slate-300"  required/> : <div></div>}
-                         <input type="email" id="email" name="email" placeholder="Email" className="w-[100%] mb-[10px] outline-0 p-[10px] border-b border-slate-300" required />
-                        <input type="password" id="password" name="password" placeholder="Password" className="w-[100%] mb-[10px] outline-0 p-[10px] border-b border-slate-300" required />
-                        <button className="bg-[red] hover:outline-2 hover:outline-offset-2 hover:outline-black  mt-[30px]  duration-150   w-[100%] rounded-[5px] text-[14px] sm:text-[16px] text-white font-medium self-center h-[40px] sm:h-[56px] mb-[20px]">
+                    <form onSubmit={handleSubmit}>
+                      {action ==="signup" ? <input type="text" id="name" name="name" value={username} onChange={(e) => setUserName(e.target.value)} placeholder="Name" className="w-[100%] mb-[10px] outline-0 p-[10px] border-b border-slate-300"  required/> : <div></div>}
+                         <input type="email" id="email" name="email" placeholder="Email" value={useremail} onChange={(e) => setUserEmail(e.target.value)} className="w-[100%] mb-[10px] outline-0 p-[10px] border-b border-slate-300" required />
+                        <input type="password" id="password" name="password" placeholder="Password" value={userpassword} onChange={(e) => setUserPassword(e.target.value)} className="w-[100%] mb-[10px] outline-0 p-[10px] border-b border-slate-300" required />
+                        <button type="submit" className="bg-[red] hover:outline-2 hover:outline-offset-2 hover:outline-black  mt-[30px]  duration-150   w-[100%] rounded-[5px] text-[14px] sm:text-[16px] text-white font-medium self-center h-[40px] sm:h-[56px] mb-[20px]">
                             {action==="signup" ? "Create Account":"Login"}
                         </button>
 
