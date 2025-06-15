@@ -73,7 +73,7 @@ function LoginSignUpHero (){
 
     return(
         <>
-        <section className="w-full sm:h-[55vh] h-[70vh] flex justify-center pt-[50px] lg:pb-[50px] pb-[50px]  ">
+        <section className="w-full sm:h-[55vh] h-[70vh] flex justify-center pt-[50px] lg:pb-[100px] pb-[50px]  ">
             <div className="w-[90%] flex items-center justify-center lg:justify-between  pb-[50px]  ">
                 <img src={image} alt="side image" className="object-contain lg:w-[50%] hidden lg:block " />
                 <div className="lg:w-[40%] w-[60%] ">
