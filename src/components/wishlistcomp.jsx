@@ -1,6 +1,7 @@
 
 import { useValueContext } from '../contexts/propscontext'
 import deleteicon from "../assets/svg/wishlist/delete.svg"
+import { toast } from 'react-toastify';
 
 
 
@@ -33,6 +34,7 @@ function WishlistComp({ carouselRef, products }) {
   const newWishlistItem = wishlist.filter(item=> item.id !== id);
      setWishList(newWishlistItem);
    localStorage.setItem('wishlist', JSON.stringify(newWishlistItem));
+    toast.success("Item removed from wishlist,wishlist updated");
 
 }
      

@@ -1,4 +1,5 @@
 import CartDisplay from "../components/cartdisplay"
+import FlashSales from "../components/flashsales"
 import Footer from "../components/footer"
 import Header from "../components/Header"
 
@@ -10,6 +11,7 @@ function Cart () {
         <Header/>
         <main>
             <CartDisplay/>
+     
         </main>
         <Footer/>
         </>

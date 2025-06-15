@@ -5,6 +5,7 @@ import { useValueContext } from '../contexts/propscontext'
 import deleteicon from "../assets/svg/cart/icon-cancel.svg"
 import { Link } from "react-router-dom";
 import EmptyCart from "./emptycart";
+import { toast } from 'react-toastify';
 
 function CartDisplay() {
   const { cart, products,HandleQuantity,cartProducts,setCart,SubTotal,SubDelivery,Total} = useValueContext();
@@ -30,6 +31,7 @@ function DeleteCartItem (id) {
   const newcart = cart.filter(item=> item.id !== id);
      setCart(newcart);
    localStorage.setItem('cart', JSON.stringify(newcart));
+   toast.success("Item removed from Cart,Cart updated");
 
 }
 

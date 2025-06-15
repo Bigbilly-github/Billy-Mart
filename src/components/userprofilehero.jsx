@@ -3,8 +3,14 @@ import { useState } from "react";
 import groceries from "../assets/img/category/groceries.jpg";
 import { useValueContext } from "../contexts/propscontext";
 import { Link } from "react-router-dom";
+import { auth } from "../js/firebase";
+import { useNavigate } from 'react-router-dom';
+import { useAuthState } from "react-firebase-hooks/auth";
+import { signOut } from "firebase/auth";
+import { toast } from 'react-toastify';
 
 function UserProfileHero() {
+       const navigate = useNavigate();
   const { placedorders, products } = useValueContext();
   const [openIndexes, setOpenIndexes] = useState({});
 
@@ -17,6 +23,23 @@ function UserProfileHero() {
      const match = products.find((product) => product.id === id);
     return match?.thumbnail; 
   };
+    const [user] = useAuthState(auth);
+  
+        const logout = () => {
+            if (user) {
+                signOut(auth)
+                    .then(() => {
+                    setAction("login");
+                    navigate("/");
+                    toast.success("logged out successfully")
+                    })
+                    .catch((error) => {
+                    console.error("Logout error:", error);
+                });
+    }
+          };
+  
+           const {  action,  setAction } = useValueContext();
 
   
 
@@ -41,7 +64,7 @@ function UserProfileHero() {
           <h1 className="lg:text-[24px] sm:text-[18px] text-[16px]  ">
             My Orders
           </h1>
-        <button className="bg-[red] hover:outline-2 hover:outline-offset-2 hover:outline-black self-start   duration-150 sm:w-[80%]  w-[80%] rounded-[5px] text-[12px] sm:text-[14px] md:text-[16px] text-white font-medium  h-[40px] sm:h-[56px] mb-[20px]"><Link to="/shop">Logout</Link></button>
+        <button type="btn" onClick={logout} className="bg-[red] hover:outline-2 hover:outline-offset-2 hover:outline-black self-start   duration-150 sm:w-[80%]  w-[80%] rounded-[5px] text-[12px] sm:text-[14px] md:text-[16px] text-white font-medium  h-[40px] sm:h-[56px] mb-[20px]">Logout</button>
         </div>
 
       

@@ -11,63 +11,52 @@ const Header = () => {
   return (
     <>
       <header className="sm:h-[150px]  h-[120px] z-30  bg-slate-100 fixed right-0 left-0 top-0 flex justify-center items-center">
-        <div className="w-[90%] sm:h-[88px] h-[60px]  bg-white rounded-[40px] shadow-lg flex justify-between items-center  px-[30px]">
-           <Link to="/homepage"><p className="font-[poppins]  sm:text-[24px] font-bold">Billy-Mart</p></Link>
+        <div className="w-[90%] bg-white sm:h-[88px] h-[60px]   rounded-[40px] shadow-lg flex justify-between items-center  px-[30px]">
+           <Link to="/homepage"><p className="font-[poppins] lg:text-[24px]  sm:text-[18px] font-bold">Billy-Mart</p></Link>
 
-          <nav className="xl:w-[367px] w-[280px] h-[38px] hidden items-center  font-[Poppins] lg:flex justify-between ">
+          <nav className="lg:w-[450px] md:w-[300px]  w-[280px] h-[38px] hidden items-center  font-[Poppins] md:flex justify-between ">
             <Link
               to="/homepage"
-              className="text-[16px] hover:underline hover:text-slate-500 "
+              className="md:text-[14px] font-medium   lg:text-[16px] hover:underline hover:text-slate-500 "
             >
               Home
             </Link>
             <Link
               to="/shop"
-              className="text-[16px] hover:underline hover:text-slate-500"
+              className="md:text-[14px] font-medium  lg:text-[16px]hover:underline hover:text-slate-500"
             >
               Shop
             </Link>
             <Link
               to="/aboutus"
-              className="text-[16px]  hover:underline hover:text-slate-500 "
+              className="md:text-[14px] lg:text-[16px] font-medium  hover:underline hover:text-slate-500 "
             >
               About
             </Link>
             <Link
               to="/contactus"
-              className="text-[16px] hover:underline hover:text-slate-500 "
+              className="md:text-[14px] font-medium   lg:text-[16px] hover:underline hover:text-slate-500 "
             >
               Contact Us
             </Link>
           </nav>
 
-          <div className=" xl:w-[496px] md:w-[396px]  h-[38px]  justify-between flex  items-center">
-            <div className="md:flex  hidden flex-1 h-[40px] mr-[20px] px-[10px] py-[10px] pl-[20px] bg-[#00000020] items-center rounded-[20px]">
-              <input
-                type="text"
-                className="flex-1 outline-0"
-                placeholder="Search products"
-              />
-              <img
-                src={search}
-                alt="search icon"
-                className="w-[24px] h-[24px]"
-              />
-            </div>
-            <div className="flex justify-between sm:w-[130px] w-[100px] ">
+          <div className="   h-[38px]  justify-end flex  items-center">
+           
+            <div className="flex justify-between items-center sm:w-[130px] w-[100px] ">
              <div className="relative ">
                <Link to="/wishlist">  <img
                   src={heart}
                   alt="heart icon"
-                  className="sm:w-[24px] sm:h-[24px] w-[20px] h-[20px]"
+                  className="lg:w-[24px] lg:h-[24px] w-[20px] h-[20px]"
                 /></Link>
-                <p className="absolute -top-[19px] sm:text-[16px] md:text-[18px] text-[14px] -right-[5px] font-[poppins] font-medium">
+                <p className="absolute -top-[19px] sm:text-[16px] lg:text-[18px] text-[14px] -right-[5px] font-[poppins] font-medium">
                   {wishlist.length}
                 </p>
               </div>
               <div className="relative">
-                  <Link to="/cart"><img src={carticon} alt="cart icon" className="sm:w-[24px] sm:h-[24px] w-[20px] h-[20px]" />
-                    <p className="absolute -top-[15px] sm:text-[16px] md:text-[18px] text-[14px] -right-[5px] font-[poppins] font-medium">
+                  <Link to="/cart"><img src={carticon} alt="cart icon" className="lg:w-[24px] lg:h-[24px] w-[20px] h-[20px]" />
+                    <p className="absolute -top-[15px] sm:text-[16px] lg:text-[18px] text-[14px] -right-[5px] font-[poppins] font-medium">
                         {cart.length}
                      </p>
                      </Link>  
