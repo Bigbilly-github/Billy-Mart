@@ -73,7 +73,7 @@ function LoginSignUpHero (){
 
     return(
         <>
-        <section className="w-full flex justify-center pt-[50px] lg:pb-[100px] pb-[50px]  bg-slate-100 ">
+        <section className="w-full h-[70vh] flex justify-center pt-[50px] lg:pb-[50px] pb-[50px]  ">
             <div className="w-[90%] flex items-center justify-center lg:justify-between  pb-[50px]  ">
                 <img src={image} alt="side image" className="object-contain lg:w-[50%] hidden lg:block " />
                 <div className="lg:w-[40%] w-[60%] ">
@@ -97,8 +97,8 @@ function LoginSignUpHero (){
                         Already have account? &nbsp; <span className="underline cursor-pointer" onClick={()=>{
                             setAction("login")
                         }}>Log in</span>
-                    </p> : <div> <p className="text-slate-500">
-                        Forgot password? &nbsp; &nbsp; &nbsp; <span onClick={handleForgotPassword} className="underline cursor-pointer" >Click here</span>  &nbsp; &nbsp; &nbsp; <span className="underline font-bold cursor-pointer" onClick={()=>{
+                    </p> : <div> <p className="text-slate-500 sm:text-[16px] text-[12px]">
+                        Forgot password? &nbsp; <span onClick={handleForgotPassword} className="underline cursor-pointer" >Click here</span>  &nbsp; <span className="underline font-bold cursor-pointer" onClick={()=>{
                             setAction("signup")
                         }} >Sign up</span>
                     </p>
