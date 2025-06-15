@@ -11,6 +11,10 @@ import Hero from '../components/Hero'
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../js/firebase";
 import { useNavigate } from "react-router-dom";
+import { toast } from 'react-toastify';
+
+
+
 
 
 
@@ -20,6 +24,8 @@ import { useNavigate } from "react-router-dom";
 
 
 function Homepage () {
+  
+  
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
     const [displayName, setDisplayName] = useState("");
@@ -36,9 +42,9 @@ function Homepage () {
       }
       else{
          setDisplayName(currentUser.displayName);
-         
 
-         alert(`Welcome ${currentUser.displayName.slice(0,1).toUpperCase()}${currentUser.displayName.slice(1,currentUser.displayName.length)}`)
+
+         toast.success(`Welcome ${currentUser.displayName.slice(0,1).toUpperCase()}${currentUser.displayName.slice(1,currentUser.displayName.length)}`)
       }
       
     });

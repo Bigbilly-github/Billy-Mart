@@ -3,6 +3,8 @@ import { createRoot } from 'react-dom/client'
 import { useLocation } from 'react-router-dom';
 import { createBrowserRouter,RouterProvider } from 'react-router-dom'
 import ContextProvider from '../src/contexts/propscontext.jsx'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './index.css'
 import App from './App.jsx'
 import Homepage from './pages/Homepage.jsx'
@@ -93,7 +95,7 @@ createRoot(document.getElementById('root')).render(
     <ContextProvider>
          <RouterProvider router= {router} />
           <ToastContainer 
-              position="top-right"
+              position="top-center"
               autoClose={3000}
               hideProgressBar={false}
               closeOnClick

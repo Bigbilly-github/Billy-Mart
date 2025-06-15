@@ -11,6 +11,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import { useValueContext } from "../contexts/propscontext";
 import { sendPasswordResetEmail } from "firebase/auth";
+import { toast } from 'react-toastify';
 
 
 
@@ -27,11 +28,14 @@ function LoginSignUpHero (){
     try {
       if (action!=="signup") {
          await signInWithEmailAndPassword(auth, useremail, userpassword);
+         toast.success("Logged in successfully!");
+
       } else {
        const userCredential =  await createUserWithEmailAndPassword(auth, useremail, userpassword);
          await updateProfile(userCredential.user, {
         displayName: username,
       });
+         toast.success("Account created!");
       }
       navigate("/homepage");
       
@@ -42,7 +46,7 @@ function LoginSignUpHero (){
   if (error.code === "auth/email-already-in-use") {
     alert("That email is already registered. Please log in instead.");
     setAction("login");
-  } if (error.code === "auth/invalid-credential"){
+  } else if (error.code === "auth/invalid-credential"){
      alert("Incorrect Email or password.Please try again");
 
 

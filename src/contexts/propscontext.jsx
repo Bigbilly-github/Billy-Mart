@@ -4,6 +4,7 @@ import rating1 from "../assets/img/flashsalescomp/1rating.png";
 import rating2 from "../assets/img/flashsalescomp/2rating.png";
 import rating3 from "../assets/img/flashsalescomp/3rating.png";
 import rating4 from "../assets/img/flashsalescomp/4rating.png";
+import { toast } from 'react-toastify';
 
 const valueContext = createContext();
 
@@ -73,43 +74,41 @@ function ContextProvider({ children }) {
 
     return newOption;
   }
-  function addToCart(
-    cart,
-    id,
-    price,
-    cartitemdeliverychoice,
-    cartitemquantity
-  ) {
-    const present = cart.filter((item) => item.id === id);
+    function addToCart(cart, id, price, cartitemdeliverychoice, cartitemquantity) {
+            if (cartitemquantity <= 0) {
+                toast.error("Quantity must be greater than 0");
+                return;
+            }
 
-    if (cartitemquantity > 0) {
-      let updatedCart;
+            const existingItem = cart.find((item) => item.id === id);
+            let updatedCart;
 
-      if (present.length === 0) {
-        const newCartItem = {
-          id: id,
-          price: price,
-          quantity: Number(cartitemquantity),
-          delivery: cartitemdeliverychoice,
-        };
-        updatedCart = [...cart, newCartItem];
-      } else {
-        updatedCart = cart.map((item) => {
-          if (item.id === id) {
-            return {
-              ...item,
-              quantity: Number(item.quantity) + Number(cartitemquantity),
-              delivery: cartitemdeliverychoice,
-            };
-          }
-          return item;
-        });
-      }
-
-      setCart(updatedCart);
-      localStorage.setItem("cart", JSON.stringify(updatedCart));
-    }
+            if (!existingItem) {
+                const newCartItem = {
+                id,
+                price,
+                quantity: Number(cartitemquantity),
+                delivery: cartitemdeliverychoice,
+                };
+                updatedCart = [...cart, newCartItem];
+                toast.success("Added to cart");
+            } else {
+                updatedCart = cart.map((item) =>
+                item.id === id
+                    ? {
+                        ...item,
+                        quantity: Number(cartitemquantity),
+                        delivery: cartitemdeliverychoice,
+                    }
+                    : item
+                );
+                toast.info("Item exists in cart and has been updated");
   }
+
+  setCart(updatedCart);
+  localStorage.setItem("cart", JSON.stringify(updatedCart));
+}
+
 
   const cartProducts = cart.map(item => {
     const product = products.find((product) => product.id === item.id);
@@ -140,27 +139,34 @@ function ContextProvider({ children }) {
     return (SubDelivery() + SubTotal()).toFixed(2);
   }
 
-  function AddToWishlist(id) {
-    const present = wishlist.find((item) => item.id === id);
+    function AddToWishlist(id) {
+        const present = wishlist.find((item) => item.id === id);
 
-    if (!present) {
-      const matchingItem = products.find((product) => product.id === id);
-      const newWishlistItem = {
-        id: matchingItem.id,
-        price: matchingItem.price,
-        thumbnail: matchingItem.thumbnail,
-        title: matchingItem.title,
-      };
+        if (present) {
+            toast.error("Item already exists in your wishlist");
+            return;
+        }
 
-      const updatedWishlist = [...wishlist, newWishlistItem];
-      setWishList(updatedWishlist);
-      localStorage.setItem("wishlist", JSON.stringify(updatedWishlist));
-      
-    }
-    else{
-        alert("item already exists in your wishlist");
-    }
-  }
+        const matchingItem = products.find((product) => product.id === id);
+
+        if (!matchingItem) {
+            toast.error("Product not found");
+            return;
+        }
+
+        const newWishlistItem = {
+            id: matchingItem.id,
+            price: matchingItem.price,
+            thumbnail: matchingItem.thumbnail,
+            title: matchingItem.title,
+        };
+
+        const updatedWishlist = [...wishlist, newWishlistItem];
+        setWishList(updatedWishlist);
+        localStorage.setItem("wishlist", JSON.stringify(updatedWishlist));
+        toast.success("Added to wishlist");
+}
+
 
   useEffect(() => {
     const storedCart = localStorage.getItem("cart");
