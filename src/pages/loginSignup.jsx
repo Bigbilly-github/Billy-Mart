@@ -11,16 +11,12 @@ import LoginSignUpHero from "../components/loginSignuphero";
 function LoginSignup (){
     return(
         <>
-        <div className="min-h-screen">
-             <Header2/>
+           <Header2/>
             <main>
                 <LoginSignUpHero/>
 
             </main>
             <Footer2/>
-
-        </div>
-          
        
         </>
     )
