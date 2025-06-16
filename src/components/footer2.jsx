@@ -20,7 +20,7 @@ function Footer2 (){
         <>
         <footer className="md:h-[300px] h-[200px] flex justify-center  w-full items-center bg-black ">
        
-                <div className="lg:w-[206px] w-[50%]  ">
+                <div className="  ">
                     <p className="sm:text-[24px] text-[16px] font-bold text-[#FAFAFA]">
                         Billy-Mart
                     </p>
