@@ -18,7 +18,7 @@ function Footer2 (){
 
     return(
         <>
-        <footer className="md:h-[300px] h-[200px] flex justify-center  w-full items-center bg-black ">
+        <footer className=" h-[200px] flex justify-center  w-full items-center bg-black ">
        
                 <div className="  ">
                     <p className="sm:text-[24px] text-[16px] font-bold text-[#FAFAFA]">
