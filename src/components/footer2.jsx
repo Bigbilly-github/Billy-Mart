@@ -24,7 +24,7 @@ function Footer2 (){
                     <p className="sm:text-[24px] text-[16px] font-bold text-[#FAFAFA]">
                         Billy-Mart
                     </p>
-                    <p className="w-[100%] text-[12px] font-medium sm:mt-[24px] mt-[10px] text-[#FAFAFA]">
+                    <p className=" text-[12px] font-medium sm:mt-[24px] mt-[10px] text-[#FAFAFA]">
                         &copy; Copyright Billy-Mart 2025. 
                     </p>
 

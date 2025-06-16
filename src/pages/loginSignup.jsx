@@ -16,7 +16,7 @@ function LoginSignup (){
                 <LoginSignUpHero/>
 
             </main>
-            <Footer2/>
+            
        
         </>
     )
