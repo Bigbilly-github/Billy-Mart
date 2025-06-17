@@ -73,7 +73,7 @@ function LoginSignUpHero (){
 
     return(
         <>
-        <section className="w-full lg:h-[90vh]  h-[60vh] items-center flex justify-center pt-[50px] lg:pb-[50px] pb-[0px]  ">
+        <section className="w-full  items-center flex justify-center pt-[50px] lg:pb-[50px] pb-[0px]  ">
             <div className="w-[90%] flex items-center justify-center lg:justify-between  pb-[50px]  ">
                 <img src={image} alt="side image" className="object-contain lg:w-[50%] hidden lg:block " />
                 <div className="lg:w-[40%] w-[60%] ">
@@ -84,7 +84,7 @@ function LoginSignUpHero (){
                             {action==="signup" ? "Enter your details below" : "Enter your details below"}
                     </p>
                     <form onSubmit={handleSubmit}>
-                      {action ==="signup" ? <input type="text" id="name" name="name" value={username} onChange={(e) => setUserName(e.target.value)} placeholder="Name" className="w-[100%] mb-[10px] text-[14px] sm:text-[16px] md:text-[18px] outline-0 p-[10px] border-b border-slate-300"  required/> : <div></div>}
+                      {action ==="signup" ? <input type="text" id="name" name="name" value={username} onChange={(e) => setUserName(e.target.value)} placeholder="Name" className="w-[100%]  mb-[10px] text-[14px] sm:text-[16px] md:text-[18px] outline-0 p-[10px] border-b border-slate-300"  required/> : <div></div>}
                          <input type="email" id="email" name="email" placeholder="Email" value={useremail} onChange={(e) => setUserEmail(e.target.value)} className="w-[100%] mb-[10px] outline-0 text-[14px] sm:text-[16px] md:text-[18px] p-[10px] border-b border-slate-300" required />
                         <input type="password" id="password" name="password" placeholder="Password" value={userpassword} onChange={(e) => setUserPassword(e.target.value)} className="w-[100%] text-[14px] sm:text-[16px] md:text-[18px] mb-[10px] outline-0 p-[10px] border-b border-slate-300" required />
                         <button type="submit" className="bg-[red] hover:outline-2 hover:outline-offset-2 hover:outline-black sm:mt-[30px] mt-[15px]  duration-150   w-[100%] rounded-[5px] text-[14px] sm:text-[16px] text-white font-medium self-center h-[40px] sm:h-[56px] mb-[20px]">
