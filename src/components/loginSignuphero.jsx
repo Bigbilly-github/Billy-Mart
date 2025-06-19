@@ -89,14 +89,14 @@ function LoginSignUpHero (){
     return(
         <>
         <section className="w-full overflow-hidden   items-center flex justify-center pt-[50px] lg:pb-[50px] pb-[0px]  ">
-           <div className="w-[80%]  px-4 flex flex-col lg:flex-row items-center justify-between pb-[50px]">
+           <div className="w-[80%]  lg:w-[90%] px-4 flex flex-col lg:flex-row items-center justify-between pb-[50px]">
 
                 <img src={image} alt="side image" className="object-contain lg:w-[50%] hidden lg:block " />
                <div className="w-full lg:w-[40%] px-4">
 
                     <h1 className="md:text-[36px] text-center sm:text-[36px] text-[18px] font-semibold mb-[20px]"> 
                        {action==="signup" ? "Create an account" :
-                       action==="login" ? "Log in to Billymart": "Change password"}
+                       action==="login" ? "Welcome Back": "Change password"}
                     </h1>
                     <p className="text-[16px] text-center mb-[20px]">
                             {action==="signup" ? "Enter your details below" :
