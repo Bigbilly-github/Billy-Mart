@@ -29,7 +29,7 @@ function RelatedItems ({products}) {
   return (
     <>
       <section className="w-full h-auto flex justify-center mt-[80px]  ">
-        <div className="w-[90%] px-[30px] flex  flex-col ">
+        <div className="w-[95%] px-[30px] flex  flex-col ">
           <BodyDetail text="Related items" maintext="" scroll={scroll} />
 
           <div className="w-full h-auto pb-[50px] mt-[40px]  overflow-hidden ">

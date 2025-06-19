@@ -59,7 +59,7 @@ function CartDisplay() {
     {cart.length > 0 ? 
        (<section className="w-full min-h-[600px] py-[50px] flex flex-col items-center justify-center">
 
-      <div className="w-[90%] flex flex-col gap-[40px]">
+      <div className="w-[95%] flex flex-col gap-[40px]">
 
        
         <div className="flex w-[100%]  sm:w-[95%] items-center h-[72px] shadow-md rounded-[4px] bg-gray-100">

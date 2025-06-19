@@ -72,7 +72,7 @@ function BillingForm (){
    
     return(
         <>
-         <div className="sm:w-[30%] w-[90%] h-auto ">
+         <div className="sm:w-[30%] w-[95%] h-auto ">
                   
                     <form onSubmit={(e)=>{
                         e.preventDefault();

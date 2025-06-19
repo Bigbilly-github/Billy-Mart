@@ -63,10 +63,10 @@ function UserProfileHero() {
              </div>
     <section className="w-full flex flex-col gap-[30px] h-auto items-center">
          
-      <div className="w-[90%] flex">
+      <div className="w-[95%] flex">
       
-        <div className="sm:w-[20%] flex  flex-col justify-between w-[25%] border-r border-slate-200">
-          <h1 className="lg:text-[24px] sm:text-[18px] text-[16px]  ">
+        <div className="sm:w-[25%] flex  flex-col justify-between w-[30%] border-r border-slate-200">
+          <h1 className="lg:text-[24px] sm:text-[18px] text-[14px]  ">
             My Orders
           </h1>
         <button type="btn" onClick={logout} className="bg-[red] hover:outline-2 hover:outline-offset-2 hover:outline-black self-start   duration-150 sm:w-[80%]  w-[80%] rounded-[5px] text-[12px] sm:text-[14px] md:text-[16px] text-white font-medium  h-[40px] sm:h-[56px] mb-[20px]">Logout</button>
@@ -128,8 +128,8 @@ function UserProfileHero() {
             </div>
           ))}
         </div>) :<div className="h-[400px] w-[100%] gap-[30px] flex flex-col items-center justify-center"> 
-            <p className="  lg:text-[46px] sm:text-[30px] text-[18px] font-semibold ">No Order(s) to be displayed</p> 
-             <button className="bg-[red] hover:outline-2 hover:outline-offset-2 hover:outline-black    duration-150   w-[60%] rounded-[5px] text-[14px] sm:text-[16px] text-white font-medium self-center h-[40px] sm:h-[56px] mb-[20px]"><Link to="/shop">Continue Shopping</Link></button>
+            <p className="  lg:text-[46px] sm:text-[30px] text-[14px] font-semibold ">No Order(s) to be displayed</p> 
+             <button className="bg-[red] hover:outline-2 hover:outline-offset-2 hover:outline-black    duration-150   w-[60%] rounded-[5px] text-[12px] sm:text-[16px] text-white font-medium self-center h-[40px] sm:h-[56px] mb-[20px]"><Link to="/shop">Continue Shopping</Link></button>
             </div>}
       </div>
     </section>

@@ -6,7 +6,7 @@ function Ad (){
     return(
         <>
                  <section className="w-full h-auto lg:flex justify-center  hidden mt-[140px] mb-[140px] ">
-                    <div className="w-[90%] bg-black h-[500px] flex  pl-[56px] pr-[44px] rounded-[5px] items-center justify-between">
+                    <div className="w-[95%] bg-black h-[500px] flex  pl-[56px] pr-[44px] rounded-[5px] items-center justify-between">
                         <div className="w-[40%] ">
                              <p className="text-[18px] font-semibold text-[#00FF66]">
                                 categories

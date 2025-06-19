@@ -24,7 +24,7 @@ function BestSelling (){
         } else {
         container.scrollBy({ left: scrollAmount, behavior: "smooth" });
         }
-  };
+  }
 
   if (!Array.isArray(categories) || categories.length === 0) {
     return <p className="text-center mt-10">Loading best selling products...</p>;
@@ -36,7 +36,7 @@ function BestSelling (){
     return(
         <>
          <section className="w-full h-auto flex justify-center mt-[80px] mb-[100px] ">
-                    <div className='w-[90%] px-[30px] flex  flex-col '>
+                    <div className='w-[95%] px-[30px] flex  flex-col '>
                     <BodyDetail text="This Month" maintext="Best Selling" scroll={scroll}/> 
         
                         

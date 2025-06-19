@@ -4,7 +4,7 @@ function NotFoundHero (){
     return(
         <>
         <section className="w-full flex mt-[50px] justify-center" >
-            <div className="w-[90%] flex justify-center ">
+            <div className="w-[95%] flex justify-center ">
                 <div className="flex flex-col items-center ">
                          <h1 className="lg:text-[110px] md:text-[70px] sm:text-[50px] text-[32px] font-medium">
                             404 Not Found

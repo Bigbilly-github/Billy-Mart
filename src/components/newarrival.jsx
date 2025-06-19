@@ -16,7 +16,7 @@ function NewArrival (){
     return(
         <>
          <section className="w-full h-auto flex flex-col items-center  mb-[80px] ">
-                 <div className='w-[90%] px-[30px] '>
+                 <div className='w-[95%] px-[30px] '>
                        <BodyDetail2 text="Featured" maintext="Coming Soon"/>
                  </div>
 

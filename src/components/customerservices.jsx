@@ -23,7 +23,7 @@ function CustomerService() {
 
   return (
     <section className="w-full flex justify-center py-[40px] bg-white">
-      <div className="w-[90%] flex flex-wrap justify-center gap-[20px] lg:gap-[30px]">
+      <div className="w-[95%] flex flex-wrap justify-center gap-[20px] lg:gap-[30px]">
         {servicesArray.map((service, index) => (
           <div
             key={index}

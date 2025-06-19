@@ -10,7 +10,7 @@ function AboutUsHero() {
 
              </div>
     <section className="w-full flex justify-center mt-[50px] mb-[80px] lg:mb-[140px]">
-      <div className="flex w-[80%] lg:w-[85%] flex-col lg:flex-row items-center lg:justify-between gap-[40px] lg:gap-0">
+      <div className="flex w-[90%] lg:w-[90%] flex-col lg:flex-row items-center lg:justify-between gap-[40px] lg:gap-0">
         
         
         <article className="order-1 lg:order-0 lg:w-[40%]">

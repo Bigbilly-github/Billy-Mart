@@ -31,11 +31,11 @@ function Analytics() {
 
   return (
     <section className="w-full flex justify-center mb-[100px] lg:mb-[140px]">
-      <div className="w-[85%] grid grid-cols-2 xl:flex xl:gap-[30px] gap-[30px]">
+      <div className="w-[90%] grid grid-cols-2 xl:flex xl:gap-[30px] gap-[30px]">
         {AnalyticsArray.map((item, index) => (
           <div
             key={index}
-            className="group border border-slate-300 rounded-md p-[24px] xl:w-[270px] xl:h-[230px] flex flex-col items-center justify-center transition-all duration-300 hover:bg-red-500"
+            className="group border border-slate-300 rounded-md p-[24px] xl:w-[370px] xl:h-[230px] flex flex-col items-center justify-center transition-all duration-300 hover:bg-red-500"
           >
             <img
               src={item.image}

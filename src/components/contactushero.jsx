@@ -47,7 +47,7 @@ function ContactUsHero() {
 
              </div>
       <section className="w-full h-auto  pb-[50px] pt-[50px] mt-[50px]  flex justify-center">
-        <div className="w-[90%] flex md:flex-row flex-col  gap-[50px] items-center">
+        <div className="sm:w-[95%] w-[90%] flex md:flex-row flex-col  gap-[50px] items-center">
           <div className="md:w-[30%]  md:pl-[30px]  ">
             {contactarray.map((item, index) => (
               <div key={index} className="mb-[50px]">
@@ -96,7 +96,7 @@ function ContactUsHero() {
                 ></textarea>
               </div>
 
-              <button className="bg-[red] self-end hover:outline-2 hover:outline-offset-2 hover:outline-black    duration-150   w-[30%] rounded-[5px] text-[12px] sm:text-[16px] text-white font-medium  h-[40px] sm:h-[56px] mb-[20px]">
+              <button className="bg-[red]  self-end hover:outline-2 hover:outline-offset-2 hover:outline-black    duration-150   w-[35%] rounded-[5px] text-[12px] sm:text-[16px] text-white font-medium  h-[40px] sm:h-[56px] mb-[20px]">
                 Send Message
               </button>
             </form>

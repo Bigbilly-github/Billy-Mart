@@ -20,7 +20,7 @@ function Footer (){
     return(
         <>
         <footer className="w-full md:h-[440px] h-[300px] mt-[50px] flex justify-center relative bottom-0 right-0 left-0 items-center bg-black ">
-            <div className="w-[90%] flex  justify-between md:h-[280px] h-[150px]" >
+            <div className="w-[95%] flex  justify-between md:h-[280px] h-[150px]" >
                 <div className="lg:w-[206px] w-[40%]  ">
                     <p className="sm:text-[24px] text-[18px] font-bold text-[#FAFAFA]">
                         Billy-Mart
