@@ -37,10 +37,13 @@ function LoginSignUpHero (){
       });
          toast.success("Account created!");
       }
-      navigate("/homepage"), navigate(0);
-      
-      setUserEmail("");
-      setUserPassword("");
+            navigate("/homepage");
+            setTimeout(() => {
+                        navigate(0);
+                        }, 100);
+            
+            setUserEmail("");
+            setUserPassword("");
     } 
     catch (error) {
                 if (error.code === "auth/email-already-in-use") {
