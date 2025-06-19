@@ -73,8 +73,8 @@ function LoginSignUpHero (){
 
     return(
         <>
-        <section className="w-full overflow-x-hidden  outline outline-red-500 items-center flex justify-center pt-[50px] lg:pb-[50px] pb-[0px]  ">
-           <div className=" outline outline-blue-500 w-full max-w-[1240px] px-4 flex flex-col lg:flex-row items-center justify-between pb-[50px]">
+        <section className="w-full overflow-hidden  outline outline-red-500 items-center flex justify-center pt-[50px] lg:pb-[50px] pb-[0px]  ">
+           <div className="w-[80%] outline outline-blue-500 px-4 flex flex-col lg:flex-row items-center justify-between pb-[50px]">
 
                 <img src={image} alt="side image" className="object-contain lg:w-[50%] hidden lg:block " />
                <div className="w-full lg:w-[40%] px-4">
