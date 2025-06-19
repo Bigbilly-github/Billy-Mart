@@ -37,7 +37,7 @@ function LoginSignUpHero (){
       });
          toast.success("Account created!");
       }
-      navigate("/homepage");
+      navigate("/homepage"), navigate(0);
       
       setUserEmail("");
       setUserPassword("");
