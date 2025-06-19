@@ -74,7 +74,7 @@ function UserProfileHero() {
 
       
   {placedorders.length > 0 ?     ( 
-    <div className="w-[80%] flex flex-col">
+    <div className="w-[80%] flex flex-col  min-h-[200px] ">
           {placedorders.map((orders, orderGroupIndex) => (
             <div
               key={`order-group-${orderGroupIndex}`}

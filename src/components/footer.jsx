@@ -34,9 +34,7 @@ function Footer (){
                     <p className=" text-[20px] font-medium text-[#FAFAFA]">
                         Support
                     </p>
-                    <p className=" text-[16px] font-medium mt-[24px] text-[#FAFAFA]">
-                    111 Bijoy sarani, Dhaka, New York.
-                    </p>
+                   
                     <p className=" text-[16px] font-medium mt-[24px] text-[#FAFAFA]">
                    yusufabiola555@gmail.com
                     </p>
