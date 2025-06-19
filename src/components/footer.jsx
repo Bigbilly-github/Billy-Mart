@@ -56,7 +56,7 @@ function Footer (){
                     Logout
                 </p>
                 ) : (
-                <Link to="/login" className="text-[16px] font-medium mt-[24px] text-[#FAFAFA]">
+                <Link to="/" className="text-[16px] font-medium mt-[24px] text-[#FAFAFA]">
                    <p className="text-[16px] font-medium mt-[34px] text-[#FAFAFA]">Login / Register</p> 
                 </Link>
                 )}

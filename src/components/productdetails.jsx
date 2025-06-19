@@ -10,7 +10,7 @@ import RelatedItems from "./relateditems";
 
 function ProductDetails ({title}){
     
-     const { AddToWishlist,products,GetRatings,HandleDelivery,HandleQuantity,addToCart,cart,cartitemdeliverychoice,cartitemquantity} = useValueContext();
+     const { AddToWishlist,products,GetRatings,HandleDelivery,HandleQuantity,addToCart,cart,setCart,cartitemdeliverychoice,cartitemquantity} = useValueContext();
 
     const selectedProduct = products.filter(product => product.title === title);
    
@@ -67,7 +67,7 @@ function ProductDetails ({title}){
                                 <option value="4">4</option>
                                     <option value="5">5</option>
                             </select>
-                            <button onClick={()=>addToCart(cart,product.id,product.price,cartitemdeliverychoice,cartitemquantity)} className="cursor-pointer text-[12px] sm:text-[16px] md:text-[18px] px-[20px] hover:bg-white hover:text-[red] duration-150 py-[10px] bg-[red] font-medium rounded-[5px] text-white"> Add to Cart</button>
+                            <button onClick={()=>addToCart(cart,product.id,product.price,cartitemdeliverychoice,cartitemquantity,setCart)} className="cursor-pointer text-[12px] sm:text-[16px] md:text-[18px] px-[20px] hover:bg-white hover:text-[red] duration-150 py-[10px] bg-[red] font-medium rounded-[5px] text-white"> Add to Cart</button>
                             <img onClick={()=>AddToWishlist(product.id)} src={img} alt="heart icon"  className="active:bg-[red]     "/>
                         </div> 
 

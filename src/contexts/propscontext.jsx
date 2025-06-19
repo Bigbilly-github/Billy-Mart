@@ -5,10 +5,13 @@ import rating2 from "../assets/img/flashsalescomp/2rating.png";
 import rating3 from "../assets/img/flashsalescomp/3rating.png";
 import rating4 from "../assets/img/flashsalescomp/4rating.png";
 import { toast } from 'react-toastify';
+import { auth } from "../js/firebase";
+import { onAuthStateChanged } from "firebase/auth";
 
 const valueContext = createContext();
 
 function ContextProvider({ children }) {
+ 
   const [displayterm, setDisplayTerm] = useState("category");
   const [displayValue, setDisplayValue] = useState("groceries");
   const [products, setProducts] = useState([]);
@@ -74,7 +77,7 @@ function ContextProvider({ children }) {
 
     return newOption;
   }
-    function addToCart(cart, id, price, cartitemdeliverychoice, cartitemquantity) {
+    function addToCart(cart, id, price, cartitemdeliverychoice, cartitemquantity,setCart) {
             if (cartitemquantity <= 0) {
                 toast.error("Quantity must be greater than 0");
                 return;
@@ -105,8 +108,13 @@ function ContextProvider({ children }) {
                 toast.info("Item exists in cart and has been updated");
   }
 
-  setCart(updatedCart);
-  localStorage.setItem("cart", JSON.stringify(updatedCart));
+      setCart(updatedCart);
+      const user = auth.currentUser;
+        if (user) {
+          localStorage.setItem(`cart_${user.uid}`, JSON.stringify(updatedCart));
+        } else {
+          toast.warning("User not logged in. Cart will not be saved persistently.");
+        }
 }
 
 
@@ -168,12 +176,23 @@ function ContextProvider({ children }) {
 }
 
 
-  useEffect(() => {
-    const storedCart = localStorage.getItem("cart");
-    if (storedCart) {
-      setCart(JSON.parse(storedCart));
+ useEffect(() => {
+  const unsubscribe = onAuthStateChanged(auth, (user) => {
+    if (user) {
+      const storedCart = localStorage.getItem(`cart_${user.uid}`);
+      if (storedCart) {
+        setCart(JSON.parse(storedCart));
+      } else {
+        setCart([]);
+      }
+    } else {
+      setCart([]); 
     }
-  }, []);
+  });
+
+  return () => unsubscribe(); 
+}, []);
+
    useEffect(() => {
     const storedOrders = localStorage.getItem("placedorders");
     if (storedOrders) {

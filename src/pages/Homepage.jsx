@@ -44,7 +44,7 @@ function Homepage () {
          setDisplayName(currentUser.displayName);
 
 
-         toast.success(`Welcome ${currentUser.displayName.slice(0,1).toUpperCase()}${currentUser.displayName.slice(1,currentUser.displayName.length)}`)
+       
       }
       
     });

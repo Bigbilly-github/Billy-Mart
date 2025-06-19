@@ -2,6 +2,7 @@ import BillingForm from "./billingform"
 import { useValueContext } from '../contexts/propscontext'
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
+import { auth } from "../js/firebase";
 
 
 
@@ -15,13 +16,22 @@ function BillingHero (){
       }
 
   function PlaceOrder (){
+    const user = auth.currentUser;
+
+    if (!user) {
+        alert("You must be logged in to place an order.");
+        return;
+    }
+
     if(iscash==="true"){
+        const userId = user.uid;
+
           const newOrders = [...placedorders, cart];
           setPlacedOrders(newOrders);
-         localStorage.setItem("placedorders", JSON.stringify(newOrders));
+        localStorage.setItem(`placedorders_${userId}`, JSON.stringify(newOrders));
             setCart([]);
-         localStorage.setItem("cart", JSON.stringify([]));
-        alert("Your order is being processed, check your order section in your profile for more details");
+       localStorage.setItem(`cart_${userId}`, JSON.stringify([]));
+        alert("Your order is being processed, Check your profile's order section for more details.");
        setTimeout(() => {
          navigate('/');
        }, 550);

@@ -6,6 +6,7 @@ import deleteicon from "../assets/svg/cart/icon-cancel.svg"
 import { Link } from "react-router-dom";
 import EmptyCart from "./emptycart";
 import { toast } from 'react-toastify';
+import { auth } from "../js/firebase";
 
 function CartDisplay() {
   const { cart, products,HandleQuantity,cartProducts,setCart,SubTotal,SubDelivery,Total} = useValueContext();
@@ -24,16 +25,27 @@ function CartDisplay() {
         });
 
     setCart(updatedCart);
-   localStorage.setItem('cart', JSON.stringify(updatedCart));
+   
+      const user = auth.currentUser;
+      if (user) {
+        localStorage.setItem(`cart_${user.uid}`, JSON.stringify(updatedCart));
+      } else {
+        toast.warning("User not logged in. Quantity change won't persist.");
+      }
 }
 
-function DeleteCartItem (id) {
-  const newcart = cart.filter(item=> item.id !== id);
-     setCart(newcart);
-   localStorage.setItem('cart', JSON.stringify(newcart));
-   toast.success("Item removed from Cart,Cart updated");
+  function DeleteCartItem (id) {
+    const newcart = cart.filter(item=> item.id !== id);
+      setCart(newcart);
+    const user = auth.currentUser;
+    if (user) {
+      localStorage.setItem(`cart_${user.uid}`, JSON.stringify(newcart));
+    } else {
+      toast.warning("User not logged in. Cart changes will not persist.");
+    }
+    toast.success("Item removed from Cart,Cart updated");
 
-}
+  }
 
 
 
@@ -131,7 +143,7 @@ function DeleteCartItem (id) {
           </div>
 
           <button className="bg-[red] hover:outline-2 hover:outline-offset-2 hover:outline-black    duration-150   w-[60%] rounded-[5px] text-[14px] sm:text-[16px] text-white font-medium self-center h-[40px] sm:h-[56px] mb-[20px]">
-           <Link to="/checkout"><span className="hidden md:block">Proceed to</span> checkout</Link> 
+           <Link to="/checkout"> Checkout</Link> 
           </button>
          
 
