@@ -14,6 +14,8 @@ function AboutUs (){
             <Analytics/>
             <CustomerService/>
 
+            
+
         </main>
         <Footer/>
         </>
