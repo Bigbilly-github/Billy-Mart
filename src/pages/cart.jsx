@@ -11,6 +11,7 @@ function Cart () {
         <Header/>
         <main>
             <CartDisplay/>
+            <FlashSales/>
      
         </main>
         <Footer/>
