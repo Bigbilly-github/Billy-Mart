@@ -147,32 +147,44 @@ function ContextProvider({ children }) {
     return (SubDelivery() + SubTotal()).toFixed(2);
   }
 
-    function AddToWishlist(id) {
-        const present = wishlist.find((item) => item.id === id);
+function AddToWishlist(id) {
+    const user = auth.currentUser;
 
-        if (present) {
-            toast.error("Item already exists in your wishlist");
-            return;
-        }
+    if (!user) {
+        toast.error("You must be logged in to use wishlist");
+        return;
+    }
 
-        const matchingItem = products.find((product) => product.id === id);
+    const userWishlistKey = `wishlist_${user.uid}`;
+    const storedWishlist = localStorage.getItem(userWishlistKey);
+    const wishlist = storedWishlist ? JSON.parse(storedWishlist) : [];
 
-        if (!matchingItem) {
-            toast.error("Product not found");
-            return;
-        }
+    const present = wishlist.find((item) => item.id === id);
+    if (present) {
+        toast.error("Item already exists in your wishlist");
+        return;
+    }
 
-        const newWishlistItem = {
-            id: matchingItem.id,
-            price: matchingItem.price,
-            thumbnail: matchingItem.thumbnail,
-            title: matchingItem.title,
-        };
+    const matchingItem = products.find((product) => product.id === id);
+    if (!matchingItem) {
+        toast.error("Product not found");
+        return;
+    }
 
-        const updatedWishlist = [...wishlist, newWishlistItem];
-        setWishList(updatedWishlist);
-        localStorage.setItem("wishlist", JSON.stringify(updatedWishlist));
-        toast.success("Added to wishlist");
+    const newWishlistItem = {
+        id: matchingItem.id,
+        price: matchingItem.price,
+        thumbnail: matchingItem.thumbnail,
+        title: matchingItem.title,
+    };
+
+    const updatedWishlist = [...wishlist, newWishlistItem];
+
+    
+    setWishList(updatedWishlist);
+    localStorage.setItem(userWishlistKey, JSON.stringify(updatedWishlist));
+
+    toast.success("Added to wishlist");
 }
 
 
@@ -212,12 +224,25 @@ function ContextProvider({ children }) {
     }
   }, []);
 
-  useEffect(() => {
-    const storedWishlist = localStorage.getItem("wishlist");
-    if (storedWishlist) {
-      setWishList(JSON.parse(storedWishlist));
+ useEffect(() => {
+  const unsubscribe = onAuthStateChanged(auth, (user) => {
+    if (user) {
+      const userWishlistKey = `wishlist_${user.uid}`;
+      const storedWishlist = localStorage.getItem(userWishlistKey);
+
+      if (storedWishlist) {
+        setWishList(JSON.parse(storedWishlist));
+      } else {
+        setWishList([]); 
+      }
+    } else {
+      setWishList([]); 
     }
-  }, []);
+  });
+    return () => unsubscribe();
+}, []);
+
+
 
   useEffect(() => {
     const getApiDetail = async () => {

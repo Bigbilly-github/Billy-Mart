@@ -2,6 +2,7 @@
 import { useValueContext } from '../contexts/propscontext'
 import deleteicon from "../assets/svg/wishlist/delete.svg"
 import { toast } from 'react-toastify';
+import { auth } from "../js/firebase";
 
 
 
@@ -30,14 +31,26 @@ function WishlistComp({ carouselRef, products }) {
       
      }
 
-     function DeleteWishlistItem (id) {
-  const newWishlistItem = wishlist.filter(item=> item.id !== id);
-     setWishList(newWishlistItem);
-   localStorage.setItem('wishlist', JSON.stringify(newWishlistItem));
-    toast.success("Item removed from wishlist,wishlist updated");
+    function DeleteWishlistItem(id) {
+      const user = auth.currentUser;
 
-}
-     
+      if (!user) {
+        toast.error("You must be logged in to modify wishlist");
+        return;
+      }
+
+      const userWishlistKey = `wishlist_${user.uid}`;
+      const storedWishlist = localStorage.getItem(userWishlistKey);
+      const wishlist = storedWishlist ? JSON.parse(storedWishlist) : [];
+
+      const newWishlistItem = wishlist.filter(item => item.id !== id);
+
+      setWishList(newWishlistItem);
+      localStorage.setItem(userWishlistKey, JSON.stringify(newWishlistItem));
+
+      toast.success("Item removed from wishlist, wishlist updated");
+    }
+        
      
 
   return (
