@@ -17,18 +17,40 @@ function BillingHero (){
       }
 
   function PlaceOrder() {
-        const user = auth.currentUser;
+                const user = auth.currentUser;
 
-        if (!user) {
-            toast.error("You must be logged in to place an order.");
-            return;
-        }
+            if (!user) {
+                toast.error("You must be logged in to place an order.");
+                return;
+            }
 
-        if (iscash === "true") {
             const userId = user.uid;
 
-            const storedOrders = localStorage.getItem(`placedorders_${userId}`);
-            const userOrders = storedOrders ? JSON.parse(storedOrders) : [];
+           
+            const billingKey = `billingdetails_${userId}`;
+            const storedBilling = localStorage.getItem(billingKey);
+
+            if (!storedBilling) {
+                toast.error("Please fill in your billing details before placing an order.");
+                return;
+            }
+
+            const billing = JSON.parse(storedBilling);
+
+           
+            const requiredFields = ["firstname", "address", "town", "phonenumber", "email"];
+            const isBillingComplete = requiredFields.every(field => billing[field] && billing[field].trim() !== "");
+
+            if (!isBillingComplete) {
+                toast.error("Please complete all billing details before placing an order.");
+                return;
+            }
+
+           
+            if (iscash === "true") {
+                const storedOrders = localStorage.getItem(`placedorders_${userId}`);
+                const userOrders = storedOrders ? JSON.parse(storedOrders) : [];
+
 
             const newOrders = [...userOrders, cart];
             setPlacedOrders(newOrders); 

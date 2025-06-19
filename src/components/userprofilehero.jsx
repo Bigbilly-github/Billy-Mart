@@ -9,7 +9,10 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { signOut } from "firebase/auth";
 import { toast } from 'react-toastify';
 
+
+
 function UserProfileHero() {
+  
        const navigate = useNavigate();
   const { placedorders, products } = useValueContext();
   const [openIndexes, setOpenIndexes] = useState({});
@@ -50,10 +53,12 @@ function UserProfileHero() {
     }));
   };
 
+  
+
   return (
     <>
-              <div className="w-[100%] h-[60px] rounded-[4px] mb-[30px]  text-black text-[20px] font-semibold bg-slate-100 flex items-center justify-center ">
-       My Account
+              <div className="w-[100%] h-[60px] rounded-[4px] mb-[30px] font-bold  text-slate-500 text-[20px]  bg-slate-100 flex items-center justify-center ">
+                        {user.displayName.slice(0,1).toUpperCase()}{user.displayName.slice(1,user.displayName.length)}'s Profile
 
              </div>
     <section className="w-full flex flex-col gap-[30px] h-auto items-center">

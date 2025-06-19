@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import { useValueContext } from '../contexts/propscontext'
+import { toast } from 'react-toastify';
+import { auth } from "../js/firebase";
 
 
 
@@ -41,27 +43,33 @@ function BillingForm (){
     });
   };
 
-    function GetBillingDetails(formData, formElement) {
-        const updated = {
-        firstname: formData.get("firstname"),
-        address: formData.get("address"),
-        town: formData.get("town"),
-        phonenumber: formData.get("phonenumber"),
-        email: formData.get("email"),
-        };
-        setBillingDetails(prev => ({ ...prev, ...updated }));
-        localStorage.setItem("billingdetails", JSON.stringify(updated));
-        alert("Billing details saved succesfully");
-        formElement.reset();
-        if(window.innerWidth < 600) {
-            scrollToTop();
+  function GetBillingDetails(formData, formElement) {
+        const user = auth.currentUser;
 
+        if (!user) {
+            alert("You must be logged in to save billing details.");
+            return;
         }
-       
-  }
-    useEffect(() => {
-    console.log("Billing details updated:", billingdetails);
-  }, [billingdetails]);
+
+        const updated = {
+            firstname: formData.get("firstname"),
+            address: formData.get("address"),
+            town: formData.get("town"),
+            phonenumber: formData.get("phonenumber"),
+            email: formData.get("email"),
+        };
+
+        const key = `billingdetails_${user.uid}`;
+        setBillingDetails((prev) => ({ ...prev, ...updated }));
+        localStorage.setItem(key, JSON.stringify(updated));
+        toast.success("Billing details saved successfully");
+        formElement.reset();
+
+        if (window.innerWidth < 600) {
+            scrollToTop();
+        }
+}
+   
     return(
         <>
          <div className="sm:w-[30%] w-[90%] h-auto ">

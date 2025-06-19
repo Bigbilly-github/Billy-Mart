@@ -8,10 +8,10 @@ import NewArrival from '../components/newarrival'
 import CustomerService from '../components/customerservices'
 import Footer from '../components/footer'
 import Hero from '../components/Hero'
-import { onAuthStateChanged, signOut } from "firebase/auth";
+import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../js/firebase";
 import { useNavigate } from "react-router-dom";
-import { toast } from 'react-toastify';
+
 
 
 

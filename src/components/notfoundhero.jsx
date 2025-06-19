@@ -13,7 +13,7 @@ function NotFoundHero (){
                             The visited page does not exist. 
                         </p>
                         <button className="bg-[red] sm:mt-[50px] mt-[30px]  self-center hover:outline-2 hover:outline-offset-2 hover:outline-black    duration-150   w-[40%] rounded-[5px] text-[12px] sm:text-[16px] text-white font-medium  h-[40px] sm:h-[56px] mb-[20px]">
-                          <Link to="/">Homepage</Link> 
+                          <Link to="/homepage">Homepage</Link> 
                         </button>
 
                 </div>

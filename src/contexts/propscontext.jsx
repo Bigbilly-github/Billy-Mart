@@ -224,12 +224,20 @@ function AddToWishlist(id) {
       setMessages(JSON.parse(storedMessages));
     }
   }, []);
-   useEffect(() => {
-    const storedbillinginfo = localStorage.getItem("billingdetails");
-    if (storedbillinginfo) {
-      setBillingDetails(JSON.parse(storedbillinginfo));
-    }
-  }, []);
+ useEffect(() => {
+      const unsubscribe = onAuthStateChanged(auth, (user) => {
+        if (user) {
+          const key = `billingdetails_${user.uid}`;
+          const stored = localStorage.getItem(key);
+          setBillingDetails(stored ? JSON.parse(stored) : {});
+        } else {
+          setBillingDetails({});
+        }
+      });
+
+      return () => unsubscribe();
+    }, []);
+
 
  useEffect(() => {
   const unsubscribe = onAuthStateChanged(auth, (user) => {

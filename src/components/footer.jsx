@@ -52,9 +52,9 @@ function Footer (){
                   My Account
                     </p>
                 {user ? (
-                <p onClick={logout} className="text-[16px] font-medium mt-[24px] text-[#FAFAFA] cursor-pointer">
+                 <Link to="/"><p onClick={logout} className="text-[16px] font-medium mt-[24px] text-[#FAFAFA] cursor-pointer">
                     Logout
-                </p>
+                </p></Link>
                 ) : (
                 <Link to="/" className="text-[16px] font-medium mt-[24px] text-[#FAFAFA]">
                    <p className="text-[16px] font-medium mt-[34px] text-[#FAFAFA]">Login / Register</p> 
