@@ -1,6 +1,7 @@
 import phoneimage from "../assets/svg/contactus/icons-phone.svg";
 import mailimage from "../assets/svg/contactus/icons-mail.svg";
 import { useValueContext } from "../contexts/propscontext";
+import { toast } from 'react-toastify';
 
 function ContactUsHero() {
   const { messages, setMessages } = useValueContext();
@@ -19,16 +20,26 @@ function ContactUsHero() {
     },
   ];
   function GetMessage(formData, formElement) {
-    const updated = {
-      name: formData.get("name"),
-      email: formData.get("email"),
-      message: formData.get("message"),
-    };
-    setMessages((m) => [...m, updated]);
-    localStorage.setItem("messages", JSON.stringify(messages));
-    alert("Message saved succesfully");
-    formElement.reset();
+  const name = formData.get("name").trim();
+  const email = formData.get("email").trim();
+  const message = formData.get("message").trim();
+
+ 
+  if (!name || !email || !message) {
+    toast.error("Please fill out all fields before submitting.");
+    return;
   }
+
+  const updated = { name, email, message };
+
+  const newMessages = [...messages, updated];
+  setMessages(newMessages);
+  localStorage.setItem("messages", JSON.stringify(newMessages));
+
+  toast.success("Message received, we will contact you.");
+  formElement.reset();
+}
+
   return (
     <>
               <div className="w-[100%] h-[60px] rounded-[4px] mb-[30px]  text-black text-[20px] font-semibold bg-slate-100 flex items-center justify-center ">
