@@ -17,6 +17,9 @@ import ContactUs from './pages/contactus.jsx';
 import NotFound from './pages/notfound.jsx';
 import Profile from './pages/profile.jsx';
 import LoginSignup from './pages/loginSignup.jsx';
+import { AuthProvider } from './contexts/authcontext.jsx';
+import PrivateRoute from './components/privatewrapper.jsx';
+
 
 const ScrollToTop = () => {
   const location = useLocation();
@@ -37,73 +40,75 @@ const Layout = ({ children }) => (
 
 const router = createBrowserRouter([
   {
-    path:"/homepage",
-    element:<Layout><Homepage /></Layout>,
-      errorElement: <Layout><NotFound/></Layout>,
+    path: "/homepage",
+    element: <Layout><PrivateRoute><Homepage /></PrivateRoute></Layout>,
+    errorElement: <Layout><NotFound /></Layout>,
   },
   {
-    path:"/shop",
-    element:<Layout><Shop/></Layout>,
-    errorElement: <Layout><NotFound/></Layout>,
+    path: "/shop",
+    element: <Layout><PrivateRoute><Shop /></PrivateRoute></Layout>,
+    errorElement: <Layout><NotFound /></Layout>,
   },
-   {
-    path:"/shop/:title",
-    element:<Layout><Shop/></Layout>,
-    errorElement: <Layout><NotFound/></Layout>,
+  {
+    path: "/shop/:title",
+    element: <Layout><PrivateRoute><Shop /></PrivateRoute></Layout>,
+    errorElement: <Layout><NotFound /></Layout>,
   },
-     {
-    path:"/cart",
-    element:<Layout><Cart/></Layout>,
-    errorElement: <Layout><NotFound/></Layout>,
+  {
+    path: "/cart",
+    element: <Layout><PrivateRoute><Cart /></PrivateRoute></Layout>,
+    errorElement: <Layout><NotFound /></Layout>,
   },
-   {
-    path:"/wishlist",
-    element:<Layout><Wishlist/></Layout>,
-    errorElement: <Layout><NotFound/></Layout>,
+  {
+    path: "/wishlist",
+    element: <Layout><PrivateRoute><Wishlist /></PrivateRoute></Layout>,
+    errorElement: <Layout><NotFound /></Layout>,
   },
-   {
-    path:"/checkout",
-    element:<Layout><Checkout/></Layout>,
-    errorElement: <Layout><NotFound/></Layout>,
+  {
+    path: "/checkout",
+    element: <Layout><PrivateRoute><Checkout /></PrivateRoute></Layout>,
+    errorElement: <Layout><NotFound /></Layout>,
   },
-    {
-    path:"/aboutus",
-    element:<Layout><AboutUs/></Layout>,
-    errorElement: <Layout><NotFound/></Layout>,
+  {
+    path: "/profile",
+    element: <Layout><PrivateRoute><Profile /></PrivateRoute></Layout>,
+    errorElement: <Layout><NotFound /></Layout>,
   },
-   {
-    path:"/contactus",
-    element:<Layout><ContactUs/></Layout>,
-    errorElement: <Layout><NotFound/></Layout>,
+  {
+    path: "/aboutus",
+    element: <Layout><PrivateRoute><AboutUs /></PrivateRoute></Layout>,
+    errorElement: <Layout><NotFound /></Layout>,
   },
-   {
-    path:"/profile",
-    element:<Layout><Profile/></Layout>,
-    errorElement: <Layout><NotFound/></Layout>,
+  {
+    path: "/contactus",
+    element: <Layout><PrivateRoute><ContactUs /></PrivateRoute></Layout>,
+    errorElement: <Layout><NotFound /></Layout>,
   },
-   {
-    path:"/",
-    element:<Layout><LoginSignup/></Layout>,
-    errorElement: <Layout><NotFound/></Layout>,
+  {
+    path: "/",
+    element: <Layout><LoginSignup /></Layout>, // public login page
+    errorElement: <Layout><NotFound /></Layout>,
   },
+]);
 
-])
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <ContextProvider>
-         <RouterProvider router= {router} />
-          <ToastContainer 
-              position="top-center"
-              autoClose={3000}
-              hideProgressBar={false}
-              closeOnClick
-              pauseOnHover
-              draggable
-              theme="light"
-      />
-    </ContextProvider>
+     <AuthProvider>
+        <ContextProvider>
+            <RouterProvider router= {router} />
+              <ToastContainer 
+                  position="top-center"
+                  autoClose={3000}
+                  hideProgressBar={false}
+                  closeOnClick
+                  pauseOnHover
+                  draggable
+                  theme="light"
+          />
+        </ContextProvider>
+    </AuthProvider>
     
     
   </StrictMode>
