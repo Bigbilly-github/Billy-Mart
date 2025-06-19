@@ -17,7 +17,7 @@ import ContactUs from './pages/contactus.jsx';
 import NotFound from './pages/notfound.jsx';
 import Profile from './pages/profile.jsx';
 import LoginSignup from './pages/loginSignup.jsx';
-import { AuthProvider } from './contexts/authcontext.jsx';
+import  AuthProvider  from './contexts/authcontext.jsx';
 import PrivateRoute from './components/privatewrapper.jsx';
 
 
