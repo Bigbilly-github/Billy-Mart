@@ -3,6 +3,7 @@ import { useValueContext } from '../contexts/propscontext'
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import { auth } from "../js/firebase";
+import { toast } from 'react-toastify';
 
 
 
@@ -15,29 +16,37 @@ function BillingHero (){
         setIsCash(e.target.value);
       }
 
-  function PlaceOrder (){
-    const user = auth.currentUser;
+  function PlaceOrder() {
+        const user = auth.currentUser;
 
-    if (!user) {
-        alert("You must be logged in to place an order.");
-        return;
-    }
+        if (!user) {
+            toast.error("You must be logged in to place an order.");
+            return;
+        }
 
-    if(iscash==="true"){
-        const userId = user.uid;
+        if (iscash === "true") {
+            const userId = user.uid;
 
-          const newOrders = [...placedorders, cart];
-          setPlacedOrders(newOrders);
-        localStorage.setItem(`placedorders_${userId}`, JSON.stringify(newOrders));
+            const storedOrders = localStorage.getItem(`placedorders_${userId}`);
+            const userOrders = storedOrders ? JSON.parse(storedOrders) : [];
+
+            const newOrders = [...userOrders, cart];
+            setPlacedOrders(newOrders); 
+
+            localStorage.setItem(`placedorders_${userId}`, JSON.stringify(newOrders));
+
+        
             setCart([]);
-       localStorage.setItem(`cart_${userId}`, JSON.stringify([]));
-        alert("Your order is being processed, Check your profile's order section for more details.");
-       setTimeout(() => {
-         navigate('/');
-       }, 550);
-          
-    }
-  }
+            localStorage.setItem(`cart_${userId}`, JSON.stringify([]));
+
+            toast.success("Your order is being processed. Check your profile's order section for more details.");
+
+            setTimeout(() => {
+            navigate('/homepage');
+            }, 550);
+        }
+}
+
     return(
         <>
         <section className="w-full flex   h-auto mb-[150px] mt-[50px] justify-center">

@@ -205,12 +205,19 @@ function AddToWishlist(id) {
   return () => unsubscribe(); 
 }, []);
 
-   useEffect(() => {
-    const storedOrders = localStorage.getItem("placedorders");
-    if (storedOrders) {
-      setPlacedOrders(JSON.parse(storedOrders));
-    }
-  }, []);
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const userOrderKey = `placedorders_${user.uid}`;
+        const storedOrders = localStorage.getItem(userOrderKey);
+        setPlacedOrders(storedOrders ? JSON.parse(storedOrders) : []);
+      } else {
+        setPlacedOrders([]);
+      }
+  });
+
+  return () => unsubscribe();
+}, []);
    useEffect(() => {
     const storedMessages = localStorage.getItem("messages");
     if (storedMessages) {
