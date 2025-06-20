@@ -64,7 +64,7 @@ const Header = () => {
           <div className="   h-[38px]  justify-end flex  items-center">
            
             <div className="flex justify-between items-center sm:w-[130px] w-[100px] ">
-             <div className="relative ">
+             <div className="relative group ">
                <Link to="/wishlist">  <img
                   src={heart}
                   alt="heart icon"
@@ -73,17 +73,26 @@ const Header = () => {
                 <p className="absolute -top-[19px]  sm:text-[16px] lg:text-[18px] text-[14px] -right-[5px] font-[poppins] font-medium">
                   {wishlist.length}
                 </p>
+               <p className="absolute hidden group-hover:block -bottom-[25px] sm:-bottom-[35px] rounded-[4px] -left-[12px] sm:-left-[25px] sm:text-[16px] lg:text-[18px] sm:py-[3px] py-[2px] px-[4px] text-slate-700 border border-slate-200 bg-slate-200 text-[10px]  font-[poppins] font-semibold">
+                  wishlist
+                </p>
               </div>
-              <div className="relative">
+              <div className="relative group">
                   <Link to="/cart"><img src={carticon} alt="cart icon" className="lg:w-[24px] lg:h-[24px] w-[20px] h-[20px]" />
                     <p className="absolute -top-[15px] sm:text-[16px] lg:text-[18px] text-[14px] -right-[5px] font-[poppins] font-medium">
                         {cart.length}
                      </p>
                      </Link>  
+                      <p className="absolute hidden group-hover:block -bottom-[25px] sm:-bottom-[35px] rounded-[4px] center sm:-left-[10px] sm:text-[16px] lg:text-[18px] sm:py-[3px] py-[2px] px-[4px] text-slate-700 border border-slate-200 bg-slate-200 text-[10px]  font-[poppins] font-semibold">
+                       cart
+                      </p>
 
               </div>
-              <div>
+              <div className="group relative">
              <Link to ="/profile"> <img src={user} alt="user icon"   className="sm:w-[24px] sm:h-[24px] w-[20px] h-[20px]"/></Link> 
+              <p className="absolute hidden group-hover:block -bottom-[25px] sm:-bottom-[35px] rounded-[4px] -left-[12px] sm:-left-[20px] sm:text-[16px] lg:text-[18px] sm:py-[3px] py-[2px] px-[4px] text-slate-700 border border-slate-200 bg-slate-200 text-[10px]  font-[poppins] font-semibold">
+                  account
+                </p>
               </div>
 
 

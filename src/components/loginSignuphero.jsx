@@ -88,7 +88,7 @@ function LoginSignUpHero (){
 
     return(
         <>
-        <section className="w-full overflow-hidden   items-center flex justify-center pt-[50px] lg:pb-[50px] pb-[0px]  ">
+        <section className="w-full overflow-hidden  sm:h-[65vh] lg:h-auto   items-center flex justify-center pt-[50px] lg:pb-[50px] pb-[0px]  ">
            <div className="w-[80%]  lg:w-[90%] px-4 flex flex-col lg:flex-row items-center justify-between pb-[50px]">
 
                 <img src={image} alt="side image" className="object-contain lg:w-[50%] hidden lg:block " />
@@ -118,9 +118,9 @@ function LoginSignUpHero (){
                             setAction("login")
                         }}>Log in</span></p> : 
                         action==="login" ? <div> <p className="text-slate-500 sm:text-[16px] text-[12px]">
-                        Forgot password? &nbsp; <span onClick={()=> {
+                        Forgot password?  <span onClick={()=> {
                             setAction("passwordrecovery")
-                        }} className="underline cursor-pointer" >Click here</span>  &nbsp; <span className="underline font-bold cursor-pointer" onClick={()=>{
+                        }} className="underline cursor-pointer" >Click here</span>  &nbsp; <span className="underline  sm:text-[16px] text-[12px] cursor-pointer" onClick={()=>{
                             setAction("signup")
                         }} >Sign up</span></p>
 

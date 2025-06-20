@@ -18,10 +18,10 @@ function Footer2 (){
 
     return(
         <>
-        <footer className="md:h-[300px] h-[250px] flex justify-center  w-full items-center bg-black ">
+        <footer className="md:h-[300px] h-[230px] flex justify-center  w-full items-center bg-black ">
        
                 <div className="  ">
-                    <p className="sm:text-[24px] text-[16px] font-bold text-[#FAFAFA]">
+                    <p className="sm:text-[24px] text-center text-[16px] font-bold text-[#FAFAFA]">
                         Billy-Mart
                     </p>
                     <p className=" text-[12px] font-medium sm:mt-[24px] mt-[10px] text-[#FAFAFA]">
