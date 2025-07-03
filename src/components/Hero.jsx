@@ -1,5 +1,6 @@
 import  { useState,useEffect,useRef } from 'react'
 import { useValueContext } from '../contexts/propscontext'
+import {motion} from 'framer-motion'
 
 import image2 from "../assets/img/hero/img2.png"
 import image3 from "../assets/img/hero/img3.png"
@@ -41,7 +42,10 @@ function Hero1 () {
     
     const {categories} = useValueContext();
   return (
-    <section className='w-full  max-h-[500px] min-h-[300px] flex justify-center bg-slate-100  border-t border-slate-300'>
+    <motion.section className='w-full  max-h-[500px] min-h-[300px] flex justify-center bg-slate-100  border-t border-slate-300'
+    initial={{ opacity: 0, y: 250 }}
+    animate={{ opacity: 1, y: 0 }}  
+    transition={{ duration: 2 }}>
         <div className='w-[95%] px-[30px] flex   '>
             <div className='pr-[50px] pb-[50px] hidden md:flex flex-col pt-[30px] border-r border-slate-300 '>
               { categories.map((category,index) => <a onClick={()=> DisplayCategory(category)} key={index} className='text-[18px] cursor-pointer  hover:text-slate-500 hover:underline  mb-[16px] font-[poppins]'>
@@ -76,7 +80,7 @@ function Hero1 () {
 
         </div>
 
-    </section>
+    </motion.section>
   )
 }
 
